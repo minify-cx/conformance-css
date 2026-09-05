@@ -41,6 +41,17 @@ test_valid_rule('@media (width > 1px) { .x { color: red } }');
         self.assertNotIn(hostile, page)
         self.assertEqual(page.count('</script>'), 1)
 
+    def test_dashboard_text_escapes_nift_template_sigils(self):
+        hostile = 'unknown(!@#%{...}more()@stuff []) $[metadata] <tag> & value'
+        escaped = mod.dashboard_text(hostile)
+        self.assertNotIn('@', escaped)
+        self.assertNotIn('$', escaped)
+        self.assertIn('&#64;#%', escaped)
+        self.assertIn('&#64;stuff', escaped)
+        self.assertIn('&#36;[metadata]', escaped)
+        self.assertIn('&lt;tag&gt;', escaped)
+        self.assertIn('&amp; value', escaped)
+
     def test_classification_is_conservative(self):
         case = {'id':'x'}
         self.assertEqual(mod.classify(case, '', 'boom', None)[0], 'minify-error')

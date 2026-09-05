@@ -440,6 +440,18 @@ def run_css(cases: list[dict[str, Any]], minify_bin: Path, chromium: str | None,
     return 1 if hard else 0
 
 
+def dashboard_text(value: str) -> str:
+    """Escape arbitrary evidence for both HTML and Nift template parsing.
+
+    Dashboard evidence is generated HTML that is subsequently consumed through
+    @input(), so HTML escaping alone is insufficient: upstream standards cases
+    may contain Nift-significant sequences such as @# or $[...]. Encoding the
+    sigils as numeric HTML entities preserves the browser-visible text while
+    preventing Nift from interpreting it as template syntax.
+    """
+    return html.escape(value).replace("@", "&#64;").replace("$", "&#36;")
+
+
 def render_dashboard(results: Path) -> int:
     report = load_json(results)
     summary = report["summary"]
@@ -456,10 +468,10 @@ def render_dashboard(results: Path) -> int:
     rows = []
     for case in report["cases"]:
         if case["status"] == "pass": continue
-        inp = html.escape(case.get("input", ""))
-        out = html.escape(case.get("output", ""))
-        detail = html.escape(case.get("detail", ""))
-        source = html.escape(case.get("source", ""))
+        inp = dashboard_text(case.get("input", ""))
+        out = dashboard_text(case.get("output", ""))
+        detail = dashboard_text(case.get("detail", ""))
+        source = dashboard_text(case.get("source", ""))
         rows.append(f'''<tr data-status="{case['status']}">
 <td><span class="status {case['status']}">{html.escape(labels.get(case['status'], case['status']))}</span></td>
 <td><code>{source}</code><small>#{case.get('offset',0)}</small></td>
