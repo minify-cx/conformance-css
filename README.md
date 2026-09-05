@@ -104,4 +104,4 @@ Every real defect found upstream should also become a small permanent Minify++ r
 
 ## Source ownership
 
-`main` owns the harness and dashboard source. Generated site output remains under `public/` for local inspection and is published through the repository's existing two-branch Nift layout: `stage` owns source and the nested `public/` checkout tracks generated `main`.
+`stage` owns the harness and dashboard source. The nested `public/` checkout tracks `main`, and the generated website lives directly at that checkout's root so GitHub Pages can serve `main` as the published site.
