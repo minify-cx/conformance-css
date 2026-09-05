@@ -73,18 +73,18 @@ It does not evaluate JavaScript or template expressions to manufacture cases. Un
 
 ## Verification model
 
-Minify++ is invoked once per batch, not once per test case. Chromium then parses the original and minified CSS with `CSSStyleSheet.replaceSync()` and produces canonical CSSOM serialization for both.
+Minify++ is invoked once per batch, not once per test case. Chromium then parses the original and minified CSS with `CSSStyleSheet.replaceSync()` and produces both raw CSSOM serialization and a structured semantic view of rule types, selectors/conditions, declarations, priorities, and child rules.
 
 Statuses are intentionally diagnostic:
 
-- `pass`: browser accepted both and their CSSOM serialization agrees;
-- `cssom-difference`: both parse, but canonical rule serialization differs;
+- `pass`: browser accepted both and their structured CSSOM agrees;
+- `cssom-difference`: both parse, but the structured CSSOM differs; raw browser serialization is retained as failure evidence;
 - `minify-error`: Minify++ did not produce output;
 - `browser-rejected`: source parses but transformed output does not;
 - `source-rejected`: browser rejects the extracted source, so it is not a valid transformation oracle;
 - `unverified`: no browser oracle was available.
 
-Only `browser-rejected` is a hard failure in this first iteration. A CSSOM difference is **not automatically a Minify++ bug**: two CSS programs can be semantically equivalent while serializing differently. Those cases are triage targets for stronger property/selector/rendering oracles in later iterations.
+`minify-error` and `browser-rejected` are hard failures. A CSSOM difference is **not automatically a Minify++ bug**: the structured oracle intentionally ignores incidental browser formatting, but newer rule types can still require stronger property/selector/rendering checks. Raw before/after serialization is retained so those cases can be triaged rather than hidden.
 
 This avoids making a false conformance claim while the harness is still becoming more semantic.
 

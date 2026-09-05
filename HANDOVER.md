@@ -304,14 +304,26 @@ under ignored `.state/upstreams/` and records the exact revision used. A complet
 run writes structured JSON first; only then should the dashboard be generated.
 The dashboard must remain a static snapshot rather than polling a live test run.
 
-On `main`, edit `content/`, `templates/`, `public/assets/`, `tools/`, `config/`,
-fixtures, tests and workflows. `public/index.html` and `public/results/` are
+On `stage`, edit `content/`, `templates/`, `tools/`, `config/`, fixtures, tests and workflows. `public/index.html` and `public/results/` are
 generated deployment artifacts and are intentionally ignored on `main`; CI may
 publish a completed build from the source `stage` branch into the nested `public/` checkout on `main`.
 
 A standards-corpus disagreement is not automatically a Minify++ defect. Preserve
 status distinctions in the harness and avoid inflating conformance claims. In
-particular, CSSOM serialization differences remain diagnostic until a semantic
+particular, structured CSSOM differences remain diagnostic until a semantic
 oracle proves equivalence or regression. When an independent corpus exposes a
 real Minify++ defect, fix Minify++ in its own repository and add a small permanent
 regression there as well as retaining the external-case evidence here.
+
+### 2026-09-06 initial full CSS run
+
+The first successful full local run extracted 31,137 WPT-derived CSS cases and,
+using Chromium 152 from the Ubuntu Snap, reported 30,435 passes, 694 raw CSSOM
+serialization differences, 8 Minify++ errors, and zero browser/source rejection
+or unverified cases. That run used the original serialization-level oracle.
+
+The follow-up hardening changes CSS recovery to follow browser EOF behaviour and
+upgrades the oracle to compare structured CSSOM while retaining raw before/after
+serialization as triage evidence. Rerun the complete corpus before publishing a
+new pass-count claim; do not reinterpret the earlier 694 differences as defects
+or as passes without the new oracle.

@@ -57,8 +57,8 @@ test_valid_rule('@media (width > 1px) { .x { color: red } }');
         self.assertEqual(mod.classify(case, '', 'boom', None)[0], 'minify-error')
         self.assertEqual(mod.classify(case, 'x', None, {'before':{'ok':False,'error':'bad'},'after':{'ok':False}})[0], 'source-rejected')
         self.assertEqual(mod.classify(case, 'x', None, {'before':{'ok':True,'rules':['a{}']},'after':{'ok':False,'error':'bad'}})[0], 'browser-rejected')
-        self.assertEqual(mod.classify(case, 'x', None, {'before':{'ok':True,'rules':['a{}']},'after':{'ok':True,'rules':['b{}']}})[0], 'cssom-difference')
-        self.assertEqual(mod.classify(case, 'x', None, {'before':{'ok':True,'rules':['a{}']},'after':{'ok':True,'rules':['a{}']}})[0], 'pass')
+        self.assertEqual(mod.classify(case, 'x', None, {'before':{'ok':True,'rules':['a{}'],'semantic':['a']},'after':{'ok':True,'rules':['b{}'],'semantic':['b']}})[0], 'cssom-difference')
+        self.assertEqual(mod.classify(case, 'x', None, {'before':{'ok':True,'rules':['a { --x: 1; }'],'semantic':['same']},'after':{'ok':True,'rules':['a{--x:1}'],'semantic':['same']}})[0], 'pass')
 
 if __name__ == '__main__':
     unittest.main()

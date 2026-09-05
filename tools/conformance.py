@@ -293,11 +293,39 @@ def cssom_oracle_page(pairs: list[tuple[str, str, str]]) -> str:
     payload = base64.b64encode(raw.encode("utf-8")).decode("ascii")
     return f'''<!doctype html><meta charset="utf-8"><pre id="result"></pre><script>
 const cases = JSON.parse(new TextDecoder().decode(Uint8Array.from(atob("{payload}"), c => c.charCodeAt(0))));
+function declarationState(style) {{
+  if (!style) return null;
+  return Array.from(style, name => [
+    name,
+    // CSSOM preserves non-semantic boundary whitespace for custom-property
+    // values. Compare the parsed declaration value rather than that incidental
+    // source formatting while retaining internal token separation.
+    String(style.getPropertyValue(name)).trim(),
+    style.getPropertyPriority(name)
+  ]);
+}}
+function semanticRule(rule) {{
+  const value = {{type: rule.constructor && rule.constructor.name || String(rule.type)}};
+  for (const key of ['selectorText','conditionText','name','keyText','namespaceURI','prefix']) {{
+    if (key in rule && rule[key] != null) value[key] = String(rule[key]);
+  }}
+  if ('style' in rule && rule.style) value.style = declarationState(rule.style);
+  if ('cssRules' in rule && rule.cssRules) value.children = Array.from(rule.cssRules, semanticRule);
+  // Some newer leaf rule types expose no structured CSSOM fields yet. Keep a
+  // canonical browser serialization fallback so they are still compared.
+  if (!value.style && !value.children && Object.keys(value).length === 1)
+    value.cssText = String(rule.cssText).replace(/\\s+/g, ' ').trim();
+  return value;
+}}
 function canonical(css) {{
   const sheet = new CSSStyleSheet();
   try {{
     sheet.replaceSync(css);
-    return {{ok:true, rules:Array.from(sheet.cssRules, r => r.cssText)}};
+    return {{
+      ok:true,
+      rules:Array.from(sheet.cssRules, r => r.cssText),
+      semantic:Array.from(sheet.cssRules, semanticRule)
+    }};
   }} catch (error) {{
     return {{ok:false, error:String(error && error.message || error)}};
   }}
@@ -372,8 +400,8 @@ def classify(case: dict[str, Any], output: str | None, min_error: str | None,
         return "source-rejected", before.get("error", "browser rejected source")
     if not after["ok"]:
         return "browser-rejected", after.get("error", "browser rejected minified CSS")
-    if before["rules"] != after["rules"]:
-        return "cssom-difference", "browser CSSOM serialization differs after minification"
+    if before.get("semantic", before["rules"]) != after.get("semantic", after["rules"]):
+        return "cssom-difference", "browser CSSOM structure differs after minification"
     return "pass", ""
 
 
@@ -415,6 +443,12 @@ def run_css(cases: list[dict[str, Any]], minify_bin: Path, chromium: str | None,
         if status != "pass":
             row["input"] = case["css"]
             if output is not None: row["output"] = output
+            oracle = oracle_map.get(cid)
+            if oracle is not None:
+                if oracle.get("before", {}).get("ok"):
+                    row["browser_before"] = oracle["before"].get("rules", [])
+                if oracle.get("after", {}).get("ok"):
+                    row["browser_after"] = oracle["after"].get("rules", [])
         rows.append(row)
 
     minify_version = run([str(minify_bin), "--version"], check=False).stdout.strip()
@@ -433,10 +467,10 @@ def run_css(cases: list[dict[str, Any]], minify_bin: Path, chromium: str | None,
     history = ROOT / "results" / "history" / (report["generated_at"].replace(":", "-") + ".json")
     write_json(history, report)
     print(f"wrote {result_path}: " + ", ".join(f"{k}={v}" for k, v in sorted(counts.items())))
-    # The broad upstream corpus is diagnostic initially. Hard failures are only
-    # crashes/oracle invalidation; CSSOM differences are triage candidates until
-    # per-kind semantic oracles are mature enough to be release gates.
-    hard = counts.get("browser-rejected", 0)
+    # A standards-derived CSS case that Minify++ cannot emit or whose output the
+    # browser rejects is a hard regression. Structured CSSOM differences remain
+    # triage candidates until the oracle covers every evolving rule type deeply.
+    hard = counts.get("minify-error", 0) + counts.get("browser-rejected", 0)
     return 1 if hard else 0
 
 
@@ -472,11 +506,19 @@ def render_dashboard(results: Path) -> int:
         out = dashboard_text(case.get("output", ""))
         detail = dashboard_text(case.get("detail", ""))
         source = dashboard_text(case.get("source", ""))
+        before_rules = dashboard_text("\n".join(case.get("browser_before", [])))
+        after_rules = dashboard_text("\n".join(case.get("browser_after", [])))
+        browser_evidence = ""
+        if before_rules or after_rules:
+            browser_evidence = (
+                '<h4>Browser CSSOM - input</h4><pre><code>' + before_rules + '</code></pre>' +
+                '<h4>Browser CSSOM - output</h4><pre><code>' + after_rules + '</code></pre>'
+            )
         rows.append(f'''<tr data-status="{case['status']}">
 <td><span class="status {case['status']}">{html.escape(labels.get(case['status'], case['status']))}</span></td>
 <td><code>{source}</code><small>#{case.get('offset',0)}</small></td>
 <td>{html.escape(case.get('kind',''))}</td>
-<td><details><summary>{detail or 'Inspect case'}</summary><h4>Input</h4><pre><code>{inp}</code></pre>{('<h4>Output</h4><pre><code>'+out+'</code></pre>') if out else ''}</details></td>
+<td><details><summary>{detail or 'Inspect case'}</summary><h4>Input</h4><pre><code>{inp}</code></pre>{('<h4>Output</h4><pre><code>'+out+'</code></pre>') if out else ''}{browser_evidence}</details></td>
 </tr>''')
     if not rows:
         rows.append('<tr><td colspan="4" class="empty">No non-passing cases in this run.</td></tr>')
