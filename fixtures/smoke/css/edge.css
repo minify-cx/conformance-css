@@ -1,0 +1,8 @@
+.x\:y, [data-value="a b"], :is(.a, .b) > span {
+  content: "a /* not a comment */ b";
+  background: linear-gradient(45deg, red 0%, blue 100%);
+  width: min(10px + 2vw, 30px);
+}
+@media screen and (width > 10px) {
+  .x\:y { container-type: inline-size; }
+}

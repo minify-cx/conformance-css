@@ -1,0 +1,109 @@
+name: Conformance
+
+on:
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: Maximum WPT CSS cases to extract (0 = all)
+        required: true
+        default: "0"
+      publish:
+        description: Publish the completed static dashboard to main
+        required: true
+        type: boolean
+        default: true
+  schedule:
+    - cron: "17 3 * * 1"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: minify-conformance
+  cancel-in-progress: false
+
+jobs:
+  css-wpt:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Checkout conformance source branch
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Checkout Minify++
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          repository: nift-dev/minify
+          path: minify-source
+
+      - name: Build Minify++
+        working-directory: minify-source
+        run: make
+
+      - name: Verify browser availability
+        shell: bash
+        run: |
+          command -v google-chrome || command -v google-chrome-stable || command -v chromium
+
+      - name: Acquire WPT and record exact revision
+        run: python3 tools/conformance.py sync wpt
+
+      - name: Extract CSS corpus
+        shell: bash
+        run: |
+          limit='${{ inputs.limit }}'
+          if [[ -n "$limit" && "$limit" != 0 ]]; then
+            python3 tools/conformance.py extract-css --limit "$limit"
+          else
+            python3 tools/conformance.py extract-css
+          fi
+
+      - name: Run Minify++ against WPT CSS
+        run: >-
+          python3 tools/conformance.py run-css
+          --cases work/wpt-css.jsonl
+          --minify-bin "$GITHUB_WORKSPACE/minify-source/minify"
+
+      - name: Install reviewed Nift release
+        shell: bash
+        run: |
+          curl -fsSL https://nift.dev/install |
+            NIFT_VERSION=4.0.10 NIFT_INSTALL_DIR="$RUNNER_TEMP/nift-bin" sh
+          echo "$RUNNER_TEMP/nift-bin" >> "$GITHUB_PATH"
+
+      - name: Checkout generated main branch into public
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          rm -rf public
+          git clone --quiet --depth 1 --branch main \
+            "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" public
+
+      - name: Bake completed result into static dashboard
+        run: python3 tools/conformance.py dashboard
+
+      - name: Upload machine-readable evidence and generated dashboard
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        if: always()
+        with:
+          name: minify-conformance-results
+          path: |
+            results/
+            public/
+
+      - name: Publish completed dashboard to main
+        if: github.event_name == 'schedule' || inputs.publish == true
+        shell: bash
+        run: |
+          set -euo pipefail
+          git -C public config user.name github-actions[bot]
+          git -C public config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git -C public add -A
+          if git -C public diff --cached --quiet; then
+            echo "Dashboard unchanged; nothing to publish."
+            exit 0
+          fi
+          git -C public commit -m "Publish conformance dashboard ${GITHUB_SHA::12}"
+          git -C public push origin main

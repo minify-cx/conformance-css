@@ -1,0 +1,47 @@
+import importlib.util
+import json
+from pathlib import Path
+import tempfile
+import unittest
+
+ROOT = Path(__file__).resolve().parents[1]
+spec = importlib.util.spec_from_file_location("conformance", ROOT / "tools" / "conformance.py")
+mod = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(mod)
+
+class HarnessTests(unittest.TestCase):
+    def test_js_unquote(self):
+        self.assertEqual(mod.js_unquote('"a\\n\\u0062"'), 'a\nb')
+        self.assertEqual(mod.js_unquote("'x\\'y'"), "x'y")
+        self.assertIsNone(mod.js_unquote('`x${y}`'))
+
+    def test_extracts_wpt_helpers_and_style_blocks(self):
+        with tempfile.TemporaryDirectory() as td:
+            root = Path(td)
+            (root / 'css').mkdir()
+            (root / 'css' / 'sample.html').write_text('''
+<script>
+test_valid_value("color", "red");
+test_computed_value('margin-left', '1px');
+test_valid_selector('.x\\:y');
+test_valid_rule('@media (width > 1px) { .x { color: red } }');
+</script>
+<style>.from-style { display: grid; }</style>
+''')
+            out = root / 'cases.jsonl'
+            self.assertEqual(mod.extract_wpt_css(root, out), 0)
+            cases = [json.loads(x) for x in out.read_text().splitlines()]
+            kinds = {c['kind'] for c in cases}
+            self.assertTrue({'declaration','selector','rule','style-block'} <= kinds)
+            self.assertTrue(any('color:red' in c['css'] for c in cases))
+
+    def test_classification_is_conservative(self):
+        case = {'id':'x'}
+        self.assertEqual(mod.classify(case, '', 'boom', None)[0], 'minify-error')
+        self.assertEqual(mod.classify(case, 'x', None, {'before':{'ok':False,'error':'bad'},'after':{'ok':False}})[0], 'source-rejected')
+        self.assertEqual(mod.classify(case, 'x', None, {'before':{'ok':True,'rules':['a{}']},'after':{'ok':False,'error':'bad'}})[0], 'browser-rejected')
+        self.assertEqual(mod.classify(case, 'x', None, {'before':{'ok':True,'rules':['a{}']},'after':{'ok':True,'rules':['b{}']}})[0], 'cssom-difference')
+        self.assertEqual(mod.classify(case, 'x', None, {'before':{'ok':True,'rules':['a{}']},'after':{'ok':True,'rules':['a{}']}})[0], 'pass')
+
+if __name__ == '__main__':
+    unittest.main()

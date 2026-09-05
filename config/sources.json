@@ -1,0 +1,12 @@
+{
+  "wpt": {
+    "url": "https://github.com/web-platform-tests/wpt.git",
+    "branch": "master",
+    "path": ".state/upstreams/wpt"
+  },
+  "test262": {
+    "url": "https://github.com/tc39/test262.git",
+    "branch": "main",
+    "path": ".state/upstreams/test262"
+  }
+}

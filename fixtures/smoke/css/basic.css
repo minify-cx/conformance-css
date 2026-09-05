@@ -1,0 +1,10 @@
+/* smoke: declarations, modern values, nested syntax and at-rules */
+:root { --gap: 12px; }
+.card {
+  color: rgb(255 0 0 / 80%);
+  margin: calc(1rem + 0px) 2rem;
+  transform: translateX(1px) scale(2);
+}
+@supports selector(:has(*)) {
+  .card:has(> img) { display: grid; }
+}
