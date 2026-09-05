@@ -35,6 +35,12 @@ test_valid_rule('@media (width > 1px) { .x { color: red } }');
             self.assertTrue({'declaration','selector','rule','style-block'} <= kinds)
             self.assertTrue(any('color:red' in c['css'] for c in cases))
 
+    def test_oracle_payload_is_not_embedded_as_raw_script_text(self):
+        hostile = 'a{content:"</script><script>boom()</script>"}'
+        page = mod.cssom_oracle_page([('x', hostile, hostile)])
+        self.assertNotIn(hostile, page)
+        self.assertEqual(page.count('</script>'), 1)
+
     def test_classification_is_conservative(self):
         case = {'id':'x'}
         self.assertEqual(mod.classify(case, '', 'boom', None)[0], 'minify-error')

@@ -20,6 +20,7 @@ import shutil
 import subprocess
 import sys
 import tempfile
+import base64
 import time
 from typing import Any, Iterable
 
@@ -284,10 +285,14 @@ def chromium_path(explicit: str | None) -> str | None:
     return None
 
 
-def cssom_browser_batch(chromium: str, pairs: list[tuple[str, str, str]], timeout: int = 12) -> dict[str, dict[str, Any]]:
-    payload = json.dumps([{"id": i, "before": b, "after": a} for i, b, a in pairs], ensure_ascii=False)
-    page = f'''<!doctype html><meta charset="utf-8"><pre id="result"></pre><script>
-const cases = {payload};
+def cssom_oracle_page(pairs: list[tuple[str, str, str]]) -> str:
+    # Never splice arbitrary standards-test text directly into executable HTML.
+    # Besides being safer, base64 avoids a CSS string containing </script> from
+    # terminating the oracle script before Chromium can emit its result.
+    raw = json.dumps([{"id": i, "before": b, "after": a} for i, b, a in pairs], ensure_ascii=False)
+    payload = base64.b64encode(raw.encode("utf-8")).decode("ascii")
+    return f'''<!doctype html><meta charset="utf-8"><pre id="result"></pre><script>
+const cases = JSON.parse(new TextDecoder().decode(Uint8Array.from(atob("{payload}"), c => c.charCodeAt(0))));
 function canonical(css) {{
   const sheet = new CSSStyleSheet();
   try {{
@@ -300,7 +305,16 @@ function canonical(css) {{
 const out = cases.map(c => ({{id:c.id, before:canonical(c.before), after:canonical(c.after)}}));
 document.getElementById('result').textContent = JSON.stringify(out);
 </script>'''
-    with tempfile.TemporaryDirectory(prefix="minify-conformance-browser-") as td:
+
+
+def cssom_browser_batch(chromium: str, pairs: list[tuple[str, str, str]], timeout: int = 12) -> dict[str, dict[str, Any]]:
+    page = cssom_oracle_page(pairs)
+    # Snap-packaged Chromium has a private /tmp and cannot read tempfile paths
+    # created there by the host process. Keep oracle files under the repository's
+    # work tree so native and confined Chromium installations can both access them.
+    browser_work = ROOT / "work" / "browser"
+    browser_work.mkdir(parents=True, exist_ok=True)
+    with tempfile.TemporaryDirectory(prefix="oracle-", dir=browser_work) as td:
         path = Path(td) / "oracle.html"
         path.write_text(page, encoding="utf-8")
         proc = run([
@@ -371,13 +385,18 @@ def run_css(cases: list[dict[str, Any]], minify_bin: Path, chromium: str | None,
     oracle_map: dict[str, dict[str, Any]] = {}
     browser_error = None
     if browser:
-        try:
-            pairs = [(c["id"], c["css"], outputs[c["id"]]) for c in cases if c["id"] in outputs]
-            for i in range(0, len(pairs), browser_batch):
-                oracle_map.update(cssom_browser_batch(browser, pairs[i:i+browser_batch], timeout=browser_timeout))
-        except Exception as exc:
-            browser_error = str(exc)
-            print(f"warning: browser oracle unavailable: {browser_error}", file=sys.stderr)
+        pairs = [(c["id"], c["css"], outputs[c["id"]]) for c in cases if c["id"] in outputs]
+        batch_errors: list[str] = []
+        for i in range(0, len(pairs), browser_batch):
+            batch = pairs[i:i+browser_batch]
+            try:
+                oracle_map.update(cssom_browser_batch(browser, batch, timeout=browser_timeout))
+            except Exception as exc:
+                message = f"batch {i // browser_batch + 1} ({len(batch)} cases): {exc}"
+                batch_errors.append(message)
+                print(f"warning: browser oracle failed for {message}", file=sys.stderr)
+        if batch_errors:
+            browser_error = "; ".join(batch_errors)
     else:
         browser_error = "Chromium not found"
 
