@@ -1,0 +1,8 @@
+/* WPT-derived oracle checks: token-equivalent value trivia and nesting spaces. */
+@supports (--a: var(--b,/**/a)) {
+  .outer {
+    --fallback: var(--b,/**/);
+    & .child { color: red; }
+    .ancestor & { color: blue; }
+  }
+}

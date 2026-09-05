@@ -75,6 +75,10 @@ It does not evaluate JavaScript or template expressions to manufacture cases. Un
 
 Minify++ is invoked once per batch, not once per test case. Chromium then parses the original and minified CSS with `CSSStyleSheet.replaceSync()` and produces both raw CSSOM serialization and a structured semantic view of rule types, selectors/conditions, declarations, priorities, and child rules.
 
+The structured comparison deliberately treats different kinds of CSS differently. **Selectors are compared exactly after Chromium parses them**, because whitespace can be a descendant combinator. Declaration values and conditional-rule preludes are compared with a conservative lexical canonicalizer: comments/formatting whitespace may disappear only when doing so preserves CSS token boundaries, strings/escapes, and the whitespace-sensitive binary `+`/`-` grammar. Thus `var(--x, /**/)` and `var(--x,)` can be verified as the same parsed value token sequence, while `& .child` and `&.child` remain different. Raw Chromium serialization is retained for every non-pass so this normalization is auditable rather than a blanket whitespace suppression.
+
+WPT contains a small number of stylesheet encoding fixtures. The extractor detects BOM-marked and unambiguous BOM-less UTF-16LE/BE text before constructing the JavaScript-string CSSOM oracle; NUL-interleaved raw bytes are never treated as ordinary UTF-8 CSS strings.
+
 Statuses are intentionally diagnostic:
 
 - `pass`: browser accepted both and their structured CSSOM agrees;
@@ -84,7 +88,7 @@ Statuses are intentionally diagnostic:
 - `source-rejected`: browser rejects the extracted source, so it is not a valid transformation oracle;
 - `unverified`: no browser oracle was available.
 
-`minify-error` and `browser-rejected` are hard failures. A CSSOM difference is **not automatically a Minify++ bug**: the structured oracle intentionally ignores incidental browser formatting, but newer rule types can still require stronger property/selector/rendering checks. Raw before/after serialization is retained so those cases can be triaged rather than hidden.
+`minify-error` and `browser-rejected` are hard failures. A CSSOM difference is **not automatically a Minify++ bug**: the structured oracle ignores only lexical trivia it can verify without changing token boundaries, while keeping selector whitespace exact. Newer rule types can still require stronger property/selector/rendering checks. Raw before/after serialization is retained so those cases can be triaged rather than hidden.
 
 This avoids making a false conformance claim while the harness is still becoming more semantic.
 

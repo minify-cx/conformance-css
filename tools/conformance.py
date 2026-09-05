@@ -189,6 +189,38 @@ def case_id(source_path: str, offset: int, css: str) -> str:
     return digest
 
 
+def read_wpt_text(path: Path) -> str | None:
+    """Read text test sources without silently turning encoded CSS into NUL text.
+
+    A few WPT CSS encoding fixtures are UTF-16 without a BOM. Feeding those raw
+    NUL-interleaved bytes through a JavaScript-string CSSOM oracle does not test
+    what loading the stylesheet tests. Detect the unambiguous ASCII UTF-16
+    patterns and decode them before extraction; otherwise require UTF-8.
+    """
+    data = path.read_bytes()
+    if data.startswith(b"\xff\xfe") or data.startswith(b"\xfe\xff"):
+        try:
+            return data.decode("utf-16")
+        except UnicodeDecodeError:
+            return None
+    sample = data[:256]
+    if sample and b"\x00" in sample:
+        even_nuls = sum(sample[i] == 0 for i in range(0, len(sample), 2))
+        odd_nuls = sum(sample[i] == 0 for i in range(1, len(sample), 2))
+        half = max(1, len(sample) // 2)
+        try:
+            if odd_nuls / half > 0.6:
+                return data.decode("utf-16-le")
+            if even_nuls / half > 0.6:
+                return data.decode("utf-16-be")
+        except UnicodeDecodeError:
+            return None
+    try:
+        return data.decode("utf-8")
+    except UnicodeDecodeError:
+        return None
+
+
 def extract_wpt_css(wpt: Path, output: Path, limit: int | None = None) -> int:
     roots = [wpt / "css", wpt / "cssom"]
     helpers = {
@@ -219,13 +251,13 @@ def extract_wpt_css(wpt: Path, output: Path, limit: int | None = None) -> int:
             if not path.is_file(): continue
             rel = path.relative_to(wpt).as_posix()
             if path.suffix == ".css":
-                try: text = path.read_text(encoding="utf-8")
-                except UnicodeDecodeError: continue
+                text = read_wpt_text(path)
+                if text is None: continue
                 add("stylesheet", text, rel, 0)
                 continue
             if path.suffix not in {".js", ".html", ".htm", ".xhtml"}: continue
-            try: text = path.read_text(encoding="utf-8")
-            except UnicodeDecodeError: continue
+            text = read_wpt_text(path)
+            if text is None: continue
             for helper, kind in helpers.items():
                 for offset, args in iter_helper_calls(text, helper):
                     if limit is not None and len(cases) >= limit: break
@@ -293,6 +325,64 @@ def cssom_oracle_page(pairs: list[tuple[str, str, str]]) -> str:
     payload = base64.b64encode(raw.encode("utf-8")).decode("ascii")
     return f'''<!doctype html><meta charset="utf-8"><pre id="result"></pre><script>
 const cases = JSON.parse(new TextDecoder().decode(Uint8Array.from(atob("{payload}"), c => c.charCodeAt(0))));
+function wordChar(c) {{
+  if (!c) return false;
+  const n = c.codePointAt(0);
+  return n >= 0x80 || /[A-Za-z0-9_$\\-]/.test(c);
+}}
+function lexicalNeedsSpace(left, right) {{
+  if (!left || !right) return false;
+  if ((wordChar(left) && wordChar(right)) || (left === '/' && right === '*') ||
+      (left === '*' && right === '/')) return true;
+  if ((wordChar(left) || left === '*' || left === "'" || left === '"') &&
+      ['.','#','[','(','*'].includes(right)) return true;
+  if ([')',']','%','*',"'",'"'].includes(left) &&
+      (wordChar(right) || ['.','#','[','(','*',"'",'"'].includes(right))) return true;
+  if ((wordChar(left) || [')',']','%'].includes(left)) && ["'",'"'].includes(right)) return true;
+  return false;
+}}
+function lexicalValue(text) {{
+  // Canonicalize only lexical trivia in declaration values/conditions. This is
+  // deliberately NOT used for selectors, where whitespace is a combinator.
+  // Comments become pending whitespace; whitespace is retained whenever its
+  // removal would merge CSS tokens or violate binary +/- math syntax.
+  let out = '', pending = false, i = 0;
+  while (i < text.length) {{
+    let c = text[i];
+    if (c === '/' && text[i + 1] === '*') {{
+      const end = text.indexOf('*/', i + 2);
+      pending = true;
+      i = end < 0 ? text.length : end + 2;
+      continue;
+    }}
+    if (/\\s/.test(c)) {{ pending = true; i++; continue; }}
+    if (c === "'" || c === '"') {{
+      if (pending && lexicalNeedsSpace(out.at(-1), c)) out += ' ';
+      pending = false;
+      const quote = c;
+      out += c; i++;
+      while (i < text.length) {{
+        c = text[i++]; out += c;
+        if (c === '\\\\' && i < text.length) {{ out += text[i++]; continue; }}
+        if (c === quote || c === '\\n' || c === '\\r' || c === '\\f') break;
+      }}
+      continue;
+    }}
+    if (c === '\\\\' && i + 1 < text.length) {{
+      if (pending && lexicalNeedsSpace(out.at(-1), c)) out += ' ';
+      pending = false;
+      out += c + text[i + 1]; i += 2;
+      continue;
+    }}
+    if (pending) {{
+      const left = out.at(-1) || '';
+      if (lexicalNeedsSpace(left, c) || c === '+' || c === '-' || left === '+' || left === '-') out += ' ';
+      pending = false;
+    }}
+    out += c; i++;
+  }}
+  return out;
+}}
 function declarationState(style) {{
   if (!style) return null;
   return Array.from(style, name => [
@@ -300,15 +390,17 @@ function declarationState(style) {{
     // CSSOM preserves non-semantic boundary whitespace for custom-property
     // values. Compare the parsed declaration value rather than that incidental
     // source formatting while retaining internal token separation.
-    String(style.getPropertyValue(name)).trim(),
+    lexicalValue(String(style.getPropertyValue(name))),
     style.getPropertyPriority(name)
   ]);
 }}
 function semanticRule(rule) {{
   const value = {{type: rule.constructor && rule.constructor.name || String(rule.type)}};
-  for (const key of ['selectorText','conditionText','name','keyText','namespaceURI','prefix']) {{
+  for (const key of ['selectorText','name','keyText','namespaceURI','prefix']) {{
     if (key in rule && rule[key] != null) value[key] = String(rule[key]);
   }}
+  if ('conditionText' in rule && rule.conditionText != null)
+    value.conditionText = lexicalValue(String(rule.conditionText));
   if ('style' in rule && rule.style) value.style = declarationState(rule.style);
   if ('cssRules' in rule && rule.cssRules) value.children = Array.from(rule.cssRules, semanticRule);
   // Some newer leaf rule types expose no structured CSSOM fields yet. Keep a

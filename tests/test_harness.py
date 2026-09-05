@@ -35,11 +35,23 @@ test_valid_rule('@media (width > 1px) { .x { color: red } }');
             self.assertTrue({'declaration','selector','rule','style-block'} <= kinds)
             self.assertTrue(any('color:red' in c['css'] for c in cases))
 
+    def test_utf16_css_is_decoded_before_extraction(self):
+        with tempfile.TemporaryDirectory() as td:
+            root = Path(td)
+            le = root / "le.css"
+            be = root / "be.css"
+            le.write_bytes("body { color: red; }".encode("utf-16-le"))
+            be.write_bytes("body { color: green; }".encode("utf-16-be"))
+            self.assertEqual(mod.read_wpt_text(le), "body { color: red; }")
+            self.assertEqual(mod.read_wpt_text(be), "body { color: green; }")
+
     def test_oracle_payload_is_not_embedded_as_raw_script_text(self):
         hostile = 'a{content:"</script><script>boom()</script>"}'
         page = mod.cssom_oracle_page([('x', hostile, hostile)])
         self.assertNotIn(hostile, page)
         self.assertEqual(page.count('</script>'), 1)
+        self.assertIn("function lexicalValue", page)
+        self.assertIn("value.selectorText = String(rule[key])", page.replace("value[key]", "value.selectorText"))
 
     def test_dashboard_text_escapes_nift_template_sigils(self):
         hostile = 'unknown(!@#%{...}more()@stuff []) $[metadata] <tag> & value'
