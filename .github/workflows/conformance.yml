@@ -3,6 +3,14 @@ name: Conformance
 on:
   workflow_dispatch:
     inputs:
+      minifier:
+        description: CSS minifier to run against the WPT corpus
+        required: true
+        type: choice
+        options:
+          - minifypp
+          - lightningcss
+        default: minifypp
       limit:
         description: Maximum WPT CSS cases to extract (0 = all)
         required: true
@@ -26,6 +34,8 @@ jobs:
   css-wpt:
     runs-on: ubuntu-latest
     timeout-minutes: 45
+    env:
+      MINIFIER: ${{ github.event_name == 'schedule' && 'minifypp' || inputs.minifier }}
     steps:
       - name: Checkout conformance source branch
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
@@ -33,14 +43,23 @@ jobs:
           ref: stage
 
       - name: Checkout Minify++
+        if: env.MINIFIER == 'minifypp'
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
           repository: nift-dev/minify
           path: minify-source
 
       - name: Build Minify++
+        if: env.MINIFIER == 'minifypp'
         working-directory: minify-source
         run: make
+
+      - name: Install pinned Lightning CSS CLI
+        if: env.MINIFIER == 'lightningcss'
+        shell: bash
+        run: |
+          npm install --global lightningcss-cli@1.33.0
+          lightningcss --version
 
       - name: Verify browser availability
         shell: bash
@@ -60,11 +79,21 @@ jobs:
             python3 tools/conformance.py extract-css
           fi
 
-      - name: Run Minify++ against WPT CSS
-        run: >-
-          python3 tools/conformance.py run-css
-          --cases work/wpt-css.jsonl
-          --minify-bin "$GITHUB_WORKSPACE/minify-source/minify"
+      - name: Run selected minifier against WPT CSS
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ "$MINIFIER" == "lightningcss" ]]; then
+            python3 tools/conformance.py run-css \
+              --cases work/wpt-css.jsonl \
+              --minifier lightningcss \
+              --minify-bin "$(command -v lightningcss)"
+          else
+            python3 tools/conformance.py run-css \
+              --cases work/wpt-css.jsonl \
+              --minifier minifypp \
+              --minify-bin "$GITHUB_WORKSPACE/minify-source/minify"
+          fi
 
       - name: Install reviewed Nift release
         shell: bash
@@ -90,7 +119,7 @@ jobs:
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         if: always()
         with:
-          name: minify-conformance-results
+          name: minify-conformance-results-${{ env.MINIFIER }}
           path: |
             results/
             public/

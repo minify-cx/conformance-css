@@ -64,6 +64,81 @@ test_valid_rule('@media (width > 1px) { .x { color: red } }');
         self.assertIn('&lt;tag&gt;', escaped)
         self.assertIn('&amp; value', escaped)
 
+
+    def test_lightningcss_adapter_uses_output_dir_and_maps_outputs(self):
+        import os
+        with tempfile.TemporaryDirectory() as td:
+            root = Path(td)
+            cli = root / "lightningcss"
+            cli.write_text(
+                "#!/usr/bin/env python3\n"
+                "import pathlib, sys\n"
+                "if '--version' in sys.argv:\n"
+                "    print('lightningcss 9.9.9-test')\n"
+                "    raise SystemExit(0)\n"
+                "args = sys.argv[1:]\n"
+                "idx = args.index('--output-dir')\n"
+                "out = pathlib.Path(args[idx + 1])\n"
+                "inputs = [pathlib.Path(x) for x in args[idx + 2:]]\n"
+                "out.mkdir(parents=True, exist_ok=True)\n"
+                "for src in inputs:\n"
+                "    text = src.read_text()\n"
+                "    (out / src.name).write_text(text.replace(' ', ''))\n"
+            )
+            cli.chmod(0o755)
+            cases = [
+                {"id": "a", "css": "a { color: red; }"},
+                {"id": "b", "css": "b { margin: 0; }"},
+            ]
+            outputs, errors = mod.minify_cases(cases, "lightningcss", cli)
+            self.assertEqual(errors, {})
+            self.assertEqual(outputs["a"], "a{color:red;}")
+            self.assertEqual(outputs["b"], "b{margin:0;}")
+
+
+    def test_lightningcss_adapter_isolates_a_failed_case(self):
+        with tempfile.TemporaryDirectory() as td:
+            root = Path(td)
+            cli = root / "lightningcss"
+            cli.write_text(
+                "#!/usr/bin/env python3\n"
+                "import pathlib, sys\n"
+                "args = sys.argv[1:]\n"
+                "idx = args.index('--output-dir')\n"
+                "out = pathlib.Path(args[idx + 1])\n"
+                "inputs = [pathlib.Path(x) for x in args[idx + 2:]]\n"
+                "if any('BAD' in p.read_text() for p in inputs):\n"
+                "    print('parse error in ' + next(p.name for p in inputs if 'BAD' in p.read_text()), file=sys.stderr)\n"
+                "    raise SystemExit(1)\n"
+                "out.mkdir(parents=True, exist_ok=True)\n"
+                "for src in inputs:\n"
+                "    (out / src.name).write_text(src.read_text().replace(' ', ''))\n"
+            )
+            cli.chmod(0o755)
+            cases = [
+                {"id": "good-a", "css": "a { color: red; }"},
+                {"id": "bad", "css": "BAD"},
+                {"id": "good-b", "css": "b { margin: 0; }"},
+            ]
+            outputs, errors = mod.minify_cases(cases, "lightningcss", cli)
+            self.assertEqual(set(outputs), {"good-a", "good-b"})
+            self.assertEqual(set(errors), {"bad"})
+            self.assertIn("case-000001.css", errors["bad"])
+
+    def test_resolve_executable_finds_path_command(self):
+        import os
+        with tempfile.TemporaryDirectory() as td:
+            root = Path(td)
+            exe = root / "fake-minifier"
+            exe.write_text("#!/bin/sh\nexit 0\n")
+            exe.chmod(0o755)
+            old = os.environ.get("PATH", "")
+            os.environ["PATH"] = str(root) + os.pathsep + old
+            try:
+                self.assertEqual(mod.resolve_executable("fake-minifier"), exe)
+            finally:
+                os.environ["PATH"] = old
+
     def test_classification_is_conservative(self):
         case = {'id':'x'}
         self.assertEqual(mod.classify(case, '', 'boom', None)[0], 'minify-error')

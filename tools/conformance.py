@@ -479,7 +479,24 @@ def cssom_browser_batch(chromium: str, pairs: list[tuple[str, str, str]], timeou
         return {v["id"]: v for v in values}
 
 
-def minify_cases(cases: list[dict[str, Any]], minify_bin: Path) -> tuple[dict[str, str], dict[str, str]]:
+def resolve_executable(value: str | Path) -> Path:
+    """Resolve an explicit path or a command available on PATH."""
+    text = str(value)
+    if os.sep not in text and (os.altsep is None or os.altsep not in text):
+        found = shutil.which(text)
+        if found:
+            return Path(found)
+    return Path(text)
+
+
+def _missing_output_error(path: Path, stderr: str) -> str:
+    lines = [ln.strip() for ln in stderr.splitlines() if ln.strip()]
+    marker = path.name
+    line = next((ln for ln in lines if marker in ln), None)
+    return line or (lines[0] if lines else "minifier produced no output")
+
+
+def minify_cases_minifypp(cases: list[dict[str, Any]], minify_bin: Path) -> tuple[dict[str, str], dict[str, str]]:
     outputs: dict[str, str] = {}
     errors: dict[str, str] = {}
     with tempfile.TemporaryDirectory(prefix="minify-conformance-") as td:
@@ -490,21 +507,92 @@ def minify_cases(cases: list[dict[str, Any]], minify_bin: Path) -> tuple[dict[st
             path = temp / f"case-{index:06d}.css"
             path.write_text(case["css"], encoding="utf-8")
             paths.append(path); ids[path] = case["id"]
-        # Batch invocation matters at standards-suite scale; process startup
-        # should not dominate the conformance run.
+        # Minify++ accepts many input files and writes sibling *.min.css files.
+        # Keep one batch so process startup does not dominate a full WPT run.
         proc = run([str(minify_bin), *map(str, paths)], check=False, timeout=max(60, len(paths) // 50 + 60))
         stderr = proc.stderr or ""
         for path in paths:
             dest = path.with_name(path.stem + ".min" + path.suffix)
             cid = ids[path]
-            if dest.exists(): outputs[cid] = dest.read_text(encoding="utf-8")
+            if dest.exists():
+                outputs[cid] = dest.read_text(encoding="utf-8")
             else:
-                # Keep the relevant CLI error where possible; the full stderr is
-                # retained only per failed case to keep successful results small.
-                marker = path.name + ":"
-                line = next((ln for ln in stderr.splitlines() if marker in ln), "minifier produced no output")
-                errors[cid] = line
+                errors[cid] = _missing_output_error(path, stderr)
     return outputs, errors
+
+
+def minify_cases_lightningcss(cases: list[dict[str, Any]], minify_bin: Path, batch_size: int = 400) -> tuple[dict[str, str], dict[str, str]]:
+    """Run Lightning CSS using its multi-input --output-dir CLI mode.
+
+    Successful work stays batched. If Lightning CSS aborts a batch because one
+    input is invalid or unsupported, only the missing outputs are recursively
+    bisected until the failing case(s) are isolated. This prevents one bad WPT
+    fixture from turning hundreds of unrelated cases into minify-error rows.
+    """
+    outputs: dict[str, str] = {}
+    errors: dict[str, str] = {}
+    with tempfile.TemporaryDirectory(prefix="lightningcss-conformance-") as td:
+        temp = Path(td)
+        input_dir = temp / "in"
+        input_dir.mkdir()
+        paths: list[Path] = []
+        ids: dict[Path, str] = {}
+        for index, case in enumerate(cases):
+            path = input_dir / f"case-{index:06d}.css"
+            path.write_text(case["css"], encoding="utf-8")
+            paths.append(path); ids[path] = case["id"]
+
+        invocation = 0
+
+        def run_batch(batch: list[Path]) -> None:
+            nonlocal invocation
+            if not batch:
+                return
+            output_dir = temp / f"out-{invocation:06d}"
+            invocation += 1
+            output_dir.mkdir()
+            proc = run([
+                str(minify_bin), "--minify", "--output-dir", str(output_dir),
+                *map(str, batch),
+            ], check=False, timeout=max(60, len(batch) // 25 + 60))
+            stderr = proc.stderr or ""
+            missing: list[Path] = []
+            for path in batch:
+                cid = ids[path]
+                # Current Lightning CSS writes the input basename under
+                # --output-dir. rglob also tolerates a CLI version that chooses
+                # to preserve an input-directory component.
+                candidates = list(output_dir.rglob(path.name))
+                if len(candidates) == 1:
+                    outputs[cid] = candidates[0].read_text(encoding="utf-8")
+                else:
+                    missing.append(path)
+
+            if not missing:
+                return
+            if len(missing) == 1:
+                path = missing[0]
+                errors[ids[path]] = _missing_output_error(path, stderr)
+                return
+
+            # A non-zero multi-input invocation commonly means one input made
+            # the CLI abort before writing the rest. Re-run only the missing
+            # subset in halves so valid neighbours can still be classified.
+            midpoint = len(missing) // 2
+            run_batch(missing[:midpoint])
+            run_batch(missing[midpoint:])
+
+        for batch_index in range(0, len(paths), batch_size):
+            run_batch(paths[batch_index:batch_index + batch_size])
+    return outputs, errors
+
+
+def minify_cases(cases: list[dict[str, Any]], minifier: str, minify_bin: Path) -> tuple[dict[str, str], dict[str, str]]:
+    if minifier == "minifypp":
+        return minify_cases_minifypp(cases, minify_bin)
+    if minifier == "lightningcss":
+        return minify_cases_lightningcss(cases, minify_bin)
+    raise ValueError(f"unsupported minifier: {minifier}")
 
 
 def classify(case: dict[str, Any], output: str | None, min_error: str | None,
@@ -525,10 +613,11 @@ def classify(case: dict[str, Any], output: str | None, min_error: str | None,
     return "pass", ""
 
 
-def run_css(cases: list[dict[str, Any]], minify_bin: Path, chromium: str | None,
+def run_css(cases: list[dict[str, Any]], minifier: str, minify_bin: Path, chromium: str | None,
             result_path: Path, browser_batch: int = 400, browser_timeout: int = 12) -> int:
     started = time.monotonic()
-    outputs, min_errors = minify_cases(cases, minify_bin)
+    minify_bin = resolve_executable(minify_bin)
+    outputs, min_errors = minify_cases(cases, minifier, minify_bin)
     browser = chromium_path(chromium)
     oracle_map: dict[str, dict[str, Any]] = {}
     browser_error = None
@@ -577,7 +666,7 @@ def run_css(cases: list[dict[str, Any]], minify_bin: Path, chromium: str | None,
         "schema_version": 1,
         "generated_at": utc_now(),
         "duration_seconds": round(time.monotonic() - started, 3),
-        "minifier": {"path": str(minify_bin.resolve()), "version": minify_version},
+        "minifier": {"name": minifier, "path": str(minify_bin.resolve()), "version": minify_version},
         "browser": {"path": browser, "error": browser_error},
         "sources": lock,
         "summary": {"total": len(rows), "counts": counts},
@@ -587,7 +676,7 @@ def run_css(cases: list[dict[str, Any]], minify_bin: Path, chromium: str | None,
     history = ROOT / "results" / "history" / (report["generated_at"].replace(":", "-") + ".json")
     write_json(history, report)
     print(f"wrote {result_path}: " + ", ".join(f"{k}={v}" for k, v in sorted(counts.items())))
-    # A standards-derived CSS case that Minify++ cannot emit or whose output the
+    # A standards-derived CSS case that the selected minifier cannot emit or whose output the
     # browser rejects is a hard regression. Structured CSSOM differences remain
     # triage candidates until the oracle covers every evolving rule type deeply.
     hard = counts.get("minify-error", 0) + counts.get("browser-rejected", 0)
@@ -649,13 +738,15 @@ def render_dashboard(results: Path) -> int:
     browser = report.get("browser", {})
     browser_text = html.escape(browser.get("path") or "not available")
     generated = html.escape(report["generated_at"])
+    minifier = report.get("minifier", {})
+    minifier_label = html.escape(minifier.get("version") or minifier.get("name") or "unknown")
     content = f'''<header class="hero">
-<p class="eyebrow">Minify++ standards lab</p>
+<p class="eyebrow">CSS minifier standards lab</p>
 <h1>Conformance dashboard</h1>
-<p class="lede">Independent standards cases are transformed by Minify++, then parsed again by a real browser. The dashboard is a static snapshot generated only after a run completes.</p>
+<p class="lede">Independent standards cases are transformed by the selected CSS minifier, then parsed again by a real browser. The dashboard is a static snapshot generated only after a run completes.</p>
 </header>
 <section class="metrics">{cards}</section>
-<section class="run-meta"><div><span>Cases</span><strong>{summary['total']:,}</strong></div><div><span>Duration</span><strong>{report['duration_seconds']:.3f}s</strong></div><div><span>Generated</span><strong>{generated}</strong></div><div><span>Browser</span><strong>{browser_text}</strong></div></section>
+<section class="run-meta"><div><span>Cases</span><strong>{summary['total']:,}</strong></div><div><span>Duration</span><strong>{report['duration_seconds']:.3f}s</strong></div><div><span>Minifier</span><strong>{minifier_label}</strong><span>{generated}</span></div><div><span>Browser</span><strong>{browser_text}</strong></div></section>
 <section>
 <div class="section-head"><div><p class="eyebrow">Triage</p><h2>Non-passing cases</h2></div><select id="status-filter" aria-label="Filter failures"><option value="all">All statuses</option>{''.join(f'<option value="{k}">{labels[k]}</option>' for k in order if k != 'pass')}</select></div>
 <div class="table-wrap"><table><thead><tr><th>Status</th><th>Source</th><th>Kind</th><th>Evidence</th></tr></thead><tbody id="cases">{''.join(rows)}</tbody></table></div>
@@ -679,7 +770,8 @@ def render_dashboard(results: Path) -> int:
 
 def command_smoke(args: argparse.Namespace) -> int:
     result = Path(args.results)
-    rc = run_css(smoke_cases(), Path(args.minify_bin), args.chromium, result, browser_timeout=args.browser_timeout)
+    minify_bin = args.minify_bin or (str(ROOT.parent / "minify" / "minify") if args.minifier == "minifypp" else "lightningcss")
+    rc = run_css(smoke_cases(), args.minifier, Path(minify_bin), args.chromium, result, browser_timeout=args.browser_timeout)
     if args.dashboard:
         dash = render_dashboard(result)
         if dash: return dash
@@ -687,7 +779,7 @@ def command_smoke(args: argparse.Namespace) -> int:
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Minify++ standards-conformance harness")
+    parser = argparse.ArgumentParser(description="CSS minifier standards-conformance harness")
     sub = parser.add_subparsers(dest="command", required=True)
 
     p = sub.add_parser("sync", help="clone/update upstream standards suites and record exact revisions")
@@ -700,7 +792,8 @@ def main() -> int:
 
     p = sub.add_parser("run-css", help="minify extracted CSS and verify browser parsing/CSSOM")
     p.add_argument("--cases", type=Path, required=True)
-    p.add_argument("--minify-bin", default=str(ROOT.parent / "minify" / "minify"))
+    p.add_argument("--minifier", choices=["minifypp", "lightningcss"], default="minifypp")
+    p.add_argument("--minify-bin", help="minifier executable path/command (default: ../minify/minify or lightningcss)")
     p.add_argument("--chromium")
     p.add_argument("--results", default=str(DEFAULT_RESULTS))
     p.add_argument("--browser-batch", type=int, default=400)
@@ -709,8 +802,9 @@ def main() -> int:
     p = sub.add_parser("dashboard", help="bake the latest completed result into the static Nift dashboard")
     p.add_argument("--results", type=Path, default=DEFAULT_RESULTS)
 
-    p = sub.add_parser("smoke", help="run the local corpus through Minify++ and Chromium")
-    p.add_argument("--minify-bin", default=str(ROOT.parent / "minify" / "minify"))
+    p = sub.add_parser("smoke", help="run the local corpus through a supported minifier and Chromium")
+    p.add_argument("--minifier", choices=["minifypp", "lightningcss"], default="minifypp")
+    p.add_argument("--minify-bin", help="minifier executable path/command (default: ../minify/minify or lightningcss)")
     p.add_argument("--chromium")
     p.add_argument("--results", default=str(DEFAULT_RESULTS))
     p.add_argument("--browser-timeout", type=int, default=12)
@@ -719,7 +813,9 @@ def main() -> int:
     args = parser.parse_args()
     if args.command == "sync": return sync_sources(args.sources or ["wpt", "test262"])
     if args.command == "extract-css": return extract_wpt_css(args.wpt, args.output, args.limit)
-    if args.command == "run-css": return run_css(load_cases(args.cases), Path(args.minify_bin), args.chromium, Path(args.results), args.browser_batch, args.browser_timeout)
+    if args.command == "run-css":
+        minify_bin = args.minify_bin or (str(ROOT.parent / "minify" / "minify") if args.minifier == "minifypp" else "lightningcss")
+        return run_css(load_cases(args.cases), args.minifier, Path(minify_bin), args.chromium, Path(args.results), args.browser_batch, args.browser_timeout)
     if args.command == "dashboard": return render_dashboard(args.results)
     if args.command == "smoke": return command_smoke(args)
     return 2
