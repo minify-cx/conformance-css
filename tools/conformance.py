@@ -402,6 +402,23 @@ function semanticRule(rule) {{
   if ('conditionText' in rule && rule.conditionText != null)
     value.conditionText = lexicalValue(String(rule.conditionText));
   if ('style' in rule && rule.style) value.style = declarationState(rule.style);
+  // @import exposes its URL and modifiers directly rather than as cssRules.
+  if ('href' in rule) {{
+    for (const key of ['href','media','layerName','supportsText']) {{
+      if (rule[key] != null) value[key] = lexicalValue(String(rule[key]));
+    }}
+  }}
+  // Descriptor-carrying at-rules (@counter-style, @property,
+  // @font-palette-values) expose their semantic fields as rule properties that
+  // the generic declaration view does not see. Apply the same conservative
+  // lexical canonicalization as declaration values: serialization trivia is
+  // ignored only where it cannot change CSS token boundaries.
+  for (const key of ['system','symbols','additiveSymbols','negative','prefix',
+                     'suffix','range','pad','speakAs','fallback','syntax',
+                     'inherits','initialValue','fontFamily','basePalette',
+                     'overrideColors']) {{
+    if (key in rule && rule[key] != null) value[key] = lexicalValue(String(rule[key]));
+  }}
   if ('cssRules' in rule && rule.cssRules) value.children = Array.from(rule.cssRules, semanticRule);
   // Some newer leaf rule types expose no structured CSSOM fields yet. Keep a
   // canonical browser serialization fallback so they are still compared.
@@ -411,15 +428,26 @@ function semanticRule(rule) {{
 }}
 function canonical(css) {{
   const sheet = new CSSStyleSheet();
+  const style = document.createElement('style');
   try {{
+    // replaceSync remains the authoritative invalid-CSS gate: it throws on
+    // styles that the browser cannot parse. Constructable sheets drop @import,
+    // so the semantic view is read from a real <style> element, which keeps the
+    // import rule (href/media/layerName/supportsText) visible. @charset is
+    // consumed as a stylesheet prologue in both forms and is captured from the
+    // source instead of being treated as vacuous equivalence.
     sheet.replaceSync(css);
-    return {{
-      ok:true,
-      rules:Array.from(sheet.cssRules, r => r.cssText),
-      semantic:Array.from(sheet.cssRules, semanticRule)
-    }};
+    style.textContent = css;
+    document.head.appendChild(style);
+    const rules = Array.from(style.sheet.cssRules, r => r.cssText);
+    const semantic = Array.from(style.sheet.cssRules, semanticRule);
+    const charset = /^\\s*@charset\\s+("[^"]*"|'[^']*')\\s*;/.exec(css);
+    if (charset) semantic.unshift({{type: 'charset-prologue', encoding: lexicalValue(charset[1])}});
+    return {{ok:true, rules:rules, semantic:semantic}};
   }} catch (error) {{
     return {{ok:false, error:String(error && error.message || error)}};
+  }} finally {{
+    style.remove();
   }}
 }}
 const out = cases.map(c => ({{id:c.id, before:canonical(c.before), after:canonical(c.after)}}));
