@@ -59,6 +59,29 @@ def source_lock() -> dict[str, Any]:
     return load_json(lock_path) if lock_path.exists() else {}
 
 
+def actual_revisions() -> dict[str, Any]:
+    # Record the revision actually checked out for each configured source. The
+    # sync lock records what `sync` last checked out, which is stale when a
+    # corpus is pinned manually to reproduce a retained checkpoint; results
+    # must carry the revision the extraction truly used.
+    cfg = load_json(ROOT / "config" / "sources.json")
+    lock: dict[str, Any] = source_lock()
+    state: dict[str, Any] = {}
+    for name, spec in cfg.items():
+        destination = ROOT / spec["path"]
+        old = lock.get(name, {})
+        revision = old.get("revision", "")
+        if (destination / ".git").exists():
+            probe = run(["git", "rev-parse", "HEAD"], cwd=destination, check=False)
+            if probe.returncode == 0:
+                revision = probe.stdout.strip()
+        state[name] = {"url": spec.get("url", old.get("url", "")), "branch": old.get("branch", spec.get("branch", "master")), "revision": revision, "synced_at": old.get("synced_at", "")}
+    # Only report sources that are actually checked out; a configured-but-not-
+    # synced entry (for example the CSS suite's unused Test262 slot) is not
+    # part of the corpus evidence.
+    return {k: v for k, v in state.items() if v["revision"]}
+
+
 def sync_sources(names: list[str]) -> int:
     cfg = load_json(ROOT / "config" / "sources.json")
     lock: dict[str, Any] = source_lock()
@@ -661,7 +684,7 @@ def run_css(cases: list[dict[str, Any]], minifier: str, minify_bin: Path, chromi
         rows.append(row)
 
     minify_version = run([str(minify_bin), "--version"], check=False).stdout.strip()
-    lock = source_lock()
+    lock = actual_revisions()
     report = {
         "schema_version": 1,
         "generated_at": utc_now(),
