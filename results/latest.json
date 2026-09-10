@@ -53700,6 +53700,24 @@
     },
     {
       "detail": "",
+      "id": "dffa808a23be626a",
+      "kind": "style-block",
+      "offset": 530,
+      "source": "css/css-lists/list-style-type-transition-tree-scope-keyword.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "6de215e032c8c413",
+      "kind": "style-block",
+      "offset": 685,
+      "source": "css/css-lists/list-style-type-transition-tree-scope-keyword.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "b10fcb74c76baddb",
       "kind": "style-block",
       "offset": 450,
@@ -53929,6 +53947,24 @@
       "kind": "style-block",
       "offset": 368,
       "source": "css/css-lists/counters-002.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "c8fcdb427449a240",
+      "kind": "style-block",
+      "offset": 624,
+      "source": "css/css-lists/list-style-type-transition-tree-scope-custom-ident.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "5e071b37bd6ac449",
+      "kind": "style-block",
+      "offset": 837,
+      "source": "css/css-lists/list-style-type-transition-tree-scope-custom-ident.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -88039,6 +88075,15 @@
       "kind": "style-block",
       "offset": 507,
       "source": "css/css-transitions/transition-property-035-manual.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "f659ae1c88cda2c4",
+      "kind": "style-block",
+      "offset": 468,
+      "source": "css/css-transitions/no-transition-for-unchanged-pointer-valued-properties.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -281327,8 +281372,8 @@
       "suite": "wpt-css"
     }
   ],
-  "duration_seconds": 114.387,
-  "generated_at": "2026-09-10T02:55:50Z",
+  "duration_seconds": 125.504,
+  "generated_at": "2026-09-10T03:19:04Z",
   "minifier": {
     "name": "minifypp",
     "path": "/home/runner/work/conformance-css/conformance-css/minify-source/minify",
@@ -281338,15 +281383,15 @@
   "sources": {
     "wpt": {
       "branch": "master",
-      "revision": "15ea54db0ddb4c478fa423f57aeb04acaf21b084",
-      "synced_at": "2026-09-10T02:53:48Z",
+      "revision": "2b6223e2c8ca580ef20e55c548f1b94e6bb4948d",
+      "synced_at": "2026-09-10T03:16:49Z",
       "url": "https://github.com/web-platform-tests/wpt.git"
     }
   },
   "summary": {
     "counts": {
-      "pass": 31258
+      "pass": 31263
     },
-    "total": 31258
+    "total": 31263
   }
 }
