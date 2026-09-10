@@ -281372,19 +281372,25 @@
       "suite": "wpt-css"
     }
   ],
-  "duration_seconds": 143.724,
-  "generated_at": "2026-09-10T06:43:23Z",
+  "duration_seconds": 145.158,
+  "generated_at": "2026-09-10T07:55:27Z",
   "minifier": {
+    "commit": "4866db785c78abb564697ade821d0e4425b89364",
     "name": "minifypp",
     "path": "/home/runner/work/conformance-css/conformance-css/minify-source/minify",
     "version": "Minify++ 1.1.2"
+  },
+  "oracle": {
+    "name": "chromium",
+    "path": "/usr/bin/chromium",
+    "version": "Chromium 152.0.7977.0"
   },
   "schema_version": 1,
   "sources": {
     "wpt": {
       "branch": "master",
       "revision": "ed66e8beb8b59ef46aea496a121c0666b746da50",
-      "synced_at": "2026-09-10T06:40:49Z",
+      "synced_at": "2026-09-10T07:52:52Z",
       "url": "https://github.com/web-platform-tests/wpt.git"
     }
   },
