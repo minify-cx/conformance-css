@@ -45,7 +45,8 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          if grep -rn "@pathto(" templates content .github HANDOVER.md 2>/dev/null; then
+          if { grep -rn "@pathto(" templates content HANDOVER.md 2>/dev/null; \
+               grep -rn "@pathto(" .github 2>/dev/null | grep -v "conformance.yml"; }; then
             echo "FAIL: non-legacy @pathto( found in active dashboard sources" >&2
             exit 1
           fi
