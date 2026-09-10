@@ -781,7 +781,7 @@ def render_dashboard(results: Path) -> int:
     # depend on fetching it at runtime.
     public_result = ROOT / "public" / "results" / "latest.json"
     public_result.parent.mkdir(parents=True, exist_ok=True)
-    shutil.copy2(results, public_result)
+    shutil.copy(results, public_result)
     nift = shutil.which("nift")
     if not nift:
         raise RuntimeError("nift is required to build the dashboard")
