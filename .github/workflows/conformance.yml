@@ -101,14 +101,19 @@ jobs:
         shell: bash
         run: |
           script="$RUNNER_TEMP/nift-install.sh"
+          code=000
           for attempt in $(seq 1 24); do
-            if curl -fsSL --connect-timeout 20 https://nift.dev/install -o "$script"; then
+            code=$(curl -sS --connect-timeout 20 -o "$script" -w "%{http_code}" https://nift.dev/install) || code=000
+            if [ "$code" = "200" ]; then
               break
             fi
-            echo "install fetch attempt $attempt failed; retrying in 10s"
+            echo "install fetch attempt $attempt failed (HTTP $code); retrying in 10s"
             sleep 10
           done
-          test -s "$script" || { echo "FAIL: could not fetch https://nift.dev/install" >&2; exit 1; }
+          if [ "$code" != "200" ] || [ ! -s "$script" ]; then
+            echo "FAIL: could not fetch https://nift.dev/install (HTTP $code)" >&2
+            exit 1
+          fi
           NIFT_VERSION=4.0.10 NIFT_INSTALL_DIR="$RUNNER_TEMP/nift-bin" sh "$script"
 
           echo "$RUNNER_TEMP/nift-bin" >> "$GITHUB_PATH"
