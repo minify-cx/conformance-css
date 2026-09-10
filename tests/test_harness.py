@@ -147,5 +147,104 @@ test_valid_rule('@media (width > 1px) { .x { color: red } }');
         self.assertEqual(mod.classify(case, 'x', None, {'before':{'ok':True,'rules':['a{}'],'semantic':['a']},'after':{'ok':True,'rules':['b{}'],'semantic':['b']}})[0], 'cssom-difference')
         self.assertEqual(mod.classify(case, 'x', None, {'before':{'ok':True,'rules':['a { --x: 1; }'],'semantic':['same']},'after':{'ok':True,'rules':['a{--x:1}'],'semantic':['same']}})[0], 'pass')
 
+
+
+class IdentityValidationTests(unittest.TestCase):
+    """Explicit identity validation for CSS release-candidate evidence.
+
+    A Minify++ result must carry the normalized schema (name Minify++,
+    semantic version, non-empty version_string, well-formed 40-hex commit) and
+    a browser oracle with non-empty name and version; Lightning CSS is its own
+    separate identity. verify_dashboard must reject matching-but-empty
+    identities.
+    """
+
+    def _valid_minify_payload(self):
+        return {
+            "minifier": {"name": "Minify++", "version": "1.1.2",
+                         "version_string": "Minify++ 1.1.2", "commit": "a" * 40},
+            "oracle": {"name": "chromium", "version": "Chromium 152.0.7977.0"},
+        }
+
+    def test_valid_normalized_minify_identity(self):
+        mod.validate_identity(self._valid_minify_payload())
+        mod.validate_identity(self._valid_minify_payload(), expected_commit="a" * 40)
+
+    def test_missing_minifier_rejected(self):
+        with self.assertRaises(SystemExit):
+            mod.validate_identity({"oracle": {"name": "chromium", "version": "1"}})
+
+    def test_empty_minifier_rejected(self):
+        bad = self._valid_minify_payload(); bad["minifier"] = {}
+        with self.assertRaises(SystemExit):
+            mod.validate_identity(bad)
+
+    def test_missing_or_malformed_semantic_version_rejected(self):
+        for v in ("", "1.1", "v1.1.2", "1.1.2-rc1", "one"):
+            bad = self._valid_minify_payload(); bad["minifier"]["version"] = v
+            with self.assertRaises(SystemExit):
+                mod.validate_identity(bad)
+
+    def test_missing_or_empty_version_string_rejected(self):
+        for v in (None, ""):
+            bad = self._valid_minify_payload(); bad["minifier"]["version_string"] = v
+            with self.assertRaises(SystemExit):
+                mod.validate_identity(bad)
+
+    def test_missing_short_or_nonhex_commit_rejected(self):
+        for c in (None, "", "a" * 39, "z" * 40, "4866db7" * 5, "GGGG" + "a" * 36):
+            bad = self._valid_minify_payload(); bad["minifier"]["commit"] = c
+            with self.assertRaises(SystemExit):
+                mod.validate_identity(bad)
+
+    def test_expected_commit_mismatch_rejected(self):
+        bad = self._valid_minify_payload()
+        with self.assertRaises(SystemExit):
+            mod.validate_identity(bad, expected_commit="f" * 40)
+
+    def test_missing_or_empty_oracle_rejected(self):
+        for o in (None, {}, {"name": "chromium"}, {"version": "1"}):
+            bad = self._valid_minify_payload(); bad["oracle"] = o
+            with self.assertRaises(SystemExit):
+                mod.validate_identity(bad)
+
+    def test_missing_oracle_name_rejected(self):
+        bad = self._valid_minify_payload(); bad["oracle"] = {"version": "1"}
+        with self.assertRaises(SystemExit):
+            mod.validate_identity(bad)
+
+    def test_missing_oracle_version_rejected(self):
+        bad = self._valid_minify_payload(); bad["oracle"] = {"name": "chromium"}
+        with self.assertRaises(SystemExit):
+            mod.validate_identity(bad)
+
+    def test_matching_empty_identities_rejected_by_verify_dashboard(self):
+        empty = {"summary": {"total": 1, "counts": {"pass": 1}}, "sources": {},
+                 "minifier": {}, "oracle": {}, "generated_at": "x"}
+        with tempfile.TemporaryDirectory() as td:
+            td = Path(td)
+            (td / "res.json").write_text(json.dumps(empty))
+            (td / "pub.json").write_text(json.dumps(empty))
+            (td / "index.html").write_text("<h1>ok</h1>")
+            with self.assertRaises(SystemExit):
+                mod.verify_dashboard(td / "res.json", td / "index.html", td / "pub.json")
+
+    def test_lightningcss_is_valid_separate_identity(self):
+        payload = {"minifier": {"name": "lightningcss", "version": "3.4.0"},
+                   "oracle": {"name": "chromium", "version": "Chromium 152"}}
+        mod.validate_identity(payload)
+
+    def test_minifier_identity_minifypp_normalized_schema(self):
+        ident = mod._minifier_identity("minifypp", "Minify++ 1.1.2", "a" * 40, Path("/tmp/x/minify"))
+        self.assertEqual(ident["name"], "Minify++")
+        self.assertEqual(ident["version"], "1.1.2")
+        self.assertEqual(ident["version_string"], "Minify++ 1.1.2")
+        self.assertEqual(ident["commit"], "a" * 40)
+
+    def test_minifier_identity_lightningcss_separate(self):
+        ident = mod._minifier_identity("lightningcss", "3.4.0", None, Path("/tmp/x/lc"))
+        self.assertEqual(ident["name"], "lightningcss")
+        self.assertEqual(ident["version"], "3.4.0")
+
 if __name__ == '__main__':
     unittest.main()
