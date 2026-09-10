@@ -281372,8 +281372,8 @@
       "suite": "wpt-css"
     }
   ],
-  "duration_seconds": 125.504,
-  "generated_at": "2026-09-10T03:19:04Z",
+  "duration_seconds": 123.34,
+  "generated_at": "2026-09-10T06:32:48Z",
   "minifier": {
     "name": "minifypp",
     "path": "/home/runner/work/conformance-css/conformance-css/minify-source/minify",
@@ -281383,8 +281383,8 @@
   "sources": {
     "wpt": {
       "branch": "master",
-      "revision": "2b6223e2c8ca580ef20e55c548f1b94e6bb4948d",
-      "synced_at": "2026-09-10T03:16:49Z",
+      "revision": "ed66e8beb8b59ef46aea496a121c0666b746da50",
+      "synced_at": "2026-09-10T06:30:36Z",
       "url": "https://github.com/web-platform-tests/wpt.git"
     }
   },
