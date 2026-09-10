@@ -895,6 +895,7 @@ def main() -> int:
 
     p = sub.add_parser("dashboard", help="bake the latest completed result into the static Nift dashboard")
     p.add_argument("--results", type=Path, default=DEFAULT_RESULTS)
+    p.add_argument("--require-minifier-commit", dest="expected_commit")
 
     p = sub.add_parser("smoke", help="run the local corpus through a supported minifier and Chromium")
     p.add_argument("--minifier", choices=["minifypp", "lightningcss"], default="minifypp")
