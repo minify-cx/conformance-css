@@ -636,8 +636,16 @@ def classify(case: dict[str, Any], output: str | None, min_error: str | None,
     return "pass", ""
 
 
+def _minifier_identity(name: str, version_text: str, commit: str | None, exe: Path) -> dict[str, Any]:
+    if name == "minifypp":
+        m = re.search(r"(\d+\.\d+\.\d+)", version_text)
+        return {"name": "Minify++", "version": m.group(1) if m else version_text,
+                "version_string": version_text, "commit": commit, "path": str(exe.resolve())}
+    # Lightning CSS (or any other selected minifier) is its own identity.
+    return {"name": name, "version": version_text, "commit": commit, "path": str(exe.resolve())}
+
 def run_css(cases: list[dict[str, Any]], minifier: str, minify_bin: Path, chromium: str | None,
-            result_path: Path, browser_batch: int = 400, browser_timeout: int = 12) -> int:
+            result_path: Path, browser_batch: int = 400, browser_timeout: int = 12, expected_commit: str | None = None) -> int:
     started = time.monotonic()
     minify_bin = resolve_executable(minify_bin)
     outputs, min_errors = minify_cases(cases, minifier, minify_bin)
@@ -699,13 +707,14 @@ def run_css(cases: list[dict[str, Any]], minifier: str, minify_bin: Path, chromi
         "schema_version": 1,
         "generated_at": utc_now(),
         "duration_seconds": round(time.monotonic() - started, 3),
-        "minifier": {"name": minifier, "version": minify_version, "commit": minify_commit, "path": str(minify_bin.resolve())},
+        "minifier": _minifier_identity(minifier, minify_version, minify_commit, minify_bin),
         "oracle": {"name": Path(browser).name if browser else None, "version": browser_version, "path": browser},
         "browser": {"path": browser, "error": browser_error},
         "sources": lock,
         "summary": {"total": len(rows), "counts": counts},
         "cases": rows,
     }
+    validate_identity(report, expected_commit)
     write_json(result_path, report)
     history = ROOT / "results" / "history" / (report["generated_at"].replace(":", "-") + ".json")
     write_json(history, report)
@@ -729,7 +738,30 @@ def dashboard_text(value: str) -> str:
     return html.escape(value).replace("@", "&#64;").replace("$", "&#36;")
 
 
-def render_dashboard(results: Path) -> int:
+def validate_identity(payload: dict[str, Any], expected_commit: str | None = None) -> None:
+    m = payload.get("minifier"); o = payload.get("oracle")
+    if not isinstance(m, dict) or not m:
+        raise SystemExit("identity validation failed: minifier identity missing or empty")
+    if m.get("name") == "Minify++":
+        if not re.match(r"^\d+\.\d+\.\d+$", str(m.get("version") or "")):
+            raise SystemExit("identity validation failed: minifier semantic version missing/malformed")
+        if not m.get("version_string"):
+            raise SystemExit("identity validation failed: minifier version_string empty")
+        c = str(m.get("commit") or "")
+        if not re.match(r"^[0-9a-f]{40}$", c):
+            raise SystemExit("identity validation failed: minifier commit missing/malformed")
+        if expected_commit and c != expected_commit:
+            raise SystemExit(f"identity validation failed: minifier commit {c} != expected {expected_commit}")
+    else:
+        if not m.get("name") or not m.get("version"):
+            raise SystemExit("identity validation failed: minifier name/version missing")
+    if not isinstance(o, dict) or not o:
+        raise SystemExit("identity validation failed: oracle identity missing or empty")
+    for k in ("name", "version"):
+        if not o.get(k):
+            raise SystemExit(f"identity validation failed: oracle field {k} empty")
+
+def render_dashboard(results: Path, expected_commit: str | None = None) -> int:
     report = load_json(results)
     summary = report["summary"]
     counts = summary.get("counts", {})
@@ -806,16 +838,18 @@ def render_dashboard(results: Path) -> int:
     if proc.returncode != 0: return proc.returncode
     proc = run([nift, "status"], cwd=ROOT, check=False, capture=False)
     if proc.returncode != 0: return proc.returncode
-    return verify_dashboard(results, ROOT / "public" / "index.html", public_result)
+    return verify_dashboard(results, ROOT / "public" / "index.html", public_result, expected_commit)
 
 
-def verify_dashboard(result_path: Path, index_path: Path, published_path: Path) -> int:
+def verify_dashboard(result_path: Path, index_path: Path, published_path: Path, expected_commit: str | None = None) -> int:
     # Prove the freshly built dashboard reflects exactly this completed run:
-    # the published JSON must carry the same summary counts/total, sources and
-    # generation timestamp, and the rendered page must contain no unresolved
-    # Nift directives.
+    # the published JSON must carry the same summary counts/total, sources,
+    # complete non-empty identity and generation timestamp, and the rendered
+    # page must contain no unresolved Nift directives.
     data = load_json(result_path)
     pub = load_json(published_path)
+    validate_identity(data, expected_commit)
+    validate_identity(pub, expected_commit)
     for key in ("summary", "sources", "minifier", "oracle", "generated_at"):
         if pub.get(key) != data.get(key):
             raise RuntimeError(f"dashboard mismatch: {key} differs between result and published copy")
@@ -828,11 +862,12 @@ def verify_dashboard(result_path: Path, index_path: Path, published_path: Path) 
 
 
 def command_smoke(args: argparse.Namespace) -> int:
+    expected_commit = getattr(args, "expected_commit", None)
     result = Path(args.results)
     minify_bin = args.minify_bin or (str(ROOT.parent / "minify" / "minify") if args.minifier == "minifypp" else "lightningcss")
-    rc = run_css(smoke_cases(), args.minifier, Path(minify_bin), args.chromium, result, browser_timeout=args.browser_timeout)
+    rc = run_css(smoke_cases(), args.minifier, Path(minify_bin), args.chromium, result, browser_timeout=args.browser_timeout, expected_commit=expected_commit)
     if args.dashboard:
-        dash = render_dashboard(result)
+        dash = render_dashboard(result, expected_commit)
         if dash: return dash
     return rc
 
@@ -868,14 +903,15 @@ def main() -> int:
     p.add_argument("--results", default=str(DEFAULT_RESULTS))
     p.add_argument("--browser-timeout", type=int, default=12)
     p.add_argument("--dashboard", action="store_true")
+    p.add_argument("--require-minifier-commit", dest="expected_commit")
 
     args = parser.parse_args()
     if args.command == "sync": return sync_sources(args.sources or ["wpt", "test262"])
     if args.command == "extract-css": return extract_wpt_css(args.wpt, args.output, args.limit)
     if args.command == "run-css":
         minify_bin = args.minify_bin or (str(ROOT.parent / "minify" / "minify") if args.minifier == "minifypp" else "lightningcss")
-        return run_css(load_cases(args.cases), args.minifier, Path(minify_bin), args.chromium, Path(args.results), args.browser_batch, args.browser_timeout)
-    if args.command == "dashboard": return render_dashboard(args.results)
+        return run_css(load_cases(args.cases), args.minifier, Path(minify_bin), args.chromium, Path(args.results), args.browser_batch, args.browser_timeout, expected_commit=getattr(args, "expected_commit", None))
+    if args.command == "dashboard": return render_dashboard(args.results, getattr(args, "expected_commit", None))
     if args.command == "smoke": return command_smoke(args)
     return 2
 

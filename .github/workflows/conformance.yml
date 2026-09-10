@@ -132,7 +132,7 @@ jobs:
             "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" public
 
       - name: Bake completed result into static dashboard
-        run: python3 tools/conformance.py dashboard
+        run: python3 tools/conformance.py dashboard --require-minifier-commit 4866db785c78abb564697ade821d0e4425b89364
 
       - name: Upload machine-readable evidence and generated dashboard
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
