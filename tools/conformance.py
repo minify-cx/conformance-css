@@ -788,7 +788,26 @@ def render_dashboard(results: Path) -> int:
     proc = run([nift, "build"], cwd=ROOT, check=False, capture=False)
     if proc.returncode != 0: return proc.returncode
     proc = run([nift, "status"], cwd=ROOT, check=False, capture=False)
-    return proc.returncode
+    if proc.returncode != 0: return proc.returncode
+    return verify_dashboard(results, ROOT / "public" / "index.html", public_result)
+
+
+def verify_dashboard(result_path: Path, index_path: Path, published_path: Path) -> int:
+    # Prove the freshly built dashboard reflects exactly this completed run:
+    # the published JSON must carry the same summary counts/total, sources and
+    # generation timestamp, and the rendered page must contain no unresolved
+    # Nift directives.
+    data = load_json(result_path)
+    pub = load_json(published_path)
+    for key in ("summary", "sources", "generated_at"):
+        if pub.get(key) != data.get(key):
+            raise RuntimeError(f"dashboard mismatch: {key} differs between result and published copy")
+    text = index_path.read_text(encoding="utf-8")
+    for token in ("@path(", "@pathto(", "@input(", "@content"):
+        if token in text:
+            raise RuntimeError(f"unresolved Nift directive in dashboard: {token}")
+    print("dashboard verified: published JSON matches run and page has no unresolved directives")
+    return 0
 
 
 def command_smoke(args: argparse.Namespace) -> int:

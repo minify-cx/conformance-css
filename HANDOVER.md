@@ -1,5 +1,5 @@
 # HANDOVER.md
-v0.0.6
+v0.0.8
 
 This is a living handover for working effectively in a Nift project.
 
@@ -78,7 +78,7 @@ The three primitives you will use most often are:
 ```text
 @content
 @input(...)
-@pathto(...)
+@path(...)
 ```
 
 `@content` inserts the tracked page's content into its template.
@@ -99,7 +99,7 @@ leaving it as template syntax:
 
 ```html
 <code>\@content</code>
-<code>\@pathto('about')</code>
+<code>\@path('about')</code>
 <code>\$[title]</code>
 ```
 
@@ -118,7 +118,30 @@ literal output rather than something Nift should execute or resolve.
 @input('templates/footer.html')
 ```
 
-`@pathto(...)` creates project-aware links to tracked pages and local assets.
+### Structured JSON and markup sources
+
+Use name-first `@json` when a template needs immutable structured data:
+
+```text
+@json(name, path)
+@json(name, schema-path, path)
+@json(name, schema-name, path)
+@json(name){...}
+@json(name, schema-path){...}
+@json(name, schema-name){...}
+```
+
+Inline bodies are evaluated as Nift templates before JSON parsing. A schema
+name refers to an earlier JSON binding. Data and schema files are automatic
+dependencies and paths must stay inside the project.
+
+Use `@markup(format){...}` or `@markup(format, path)` for Markdown (`md`),
+AsciiDoc (`adoc`) or reStructuredText (`rst`). Nift evaluates template syntax in
+the source first, Markup++ converts it once, and the resulting HTML is appended
+without being parsed as Nift syntax again. File sources and host-resolved
+AsciiDoc/RST includes are automatic dependencies.
+
+`@path(...)` creates project-aware links to tracked pages and local assets.
 
 Nift has additional features including metadata, JSON data, loops, conditionals, pagination, contracts, and explicit dependencies. Use them when the project actually needs them; do not use advanced features merely because they exist.
 
@@ -130,9 +153,9 @@ When writing expressions inside constructs such as `@if(...)`, refer to values d
 
 Use `$[...]` when resolving or rendering a value into output, for example `$[title]`. Consult the expressions and control-flow documentation when using more advanced expression syntax.
 
-## Internal links: use `@pathto`
+## Internal links: use `@path`
 
-Use `@pathto(...)` for internal links.
+Use `@path(...)` for internal links.
 
 This applies to:
 
@@ -145,23 +168,23 @@ For pages, link to the **tracked page name**, not its generated file.
 
 ```html
 <nav>
-    <a href="@pathto('/')">Home</a>
-    <a href="@pathto('about')">About</a>
-    <a href="@pathto('docs')">Docs</a>
-    <a href="@pathto('contact')">Contact</a>
+    <a href="@path('/')">Home</a>
+    <a href="@path('about')">About</a>
+    <a href="@path('docs')">Docs</a>
+    <a href="@path('contact')">Contact</a>
 </nav>
 ```
 
 Do this:
 
 ```html
-<a href="@pathto('about')">About</a>
+<a href="@path('about')">About</a>
 ```
 
 Do not do this:
 
 ```html
-<a href="@pathto('about.html')">About</a>
+<a href="@path('about.html')">About</a>
 ```
 
 and do not hard-code the generated output path:
@@ -172,11 +195,11 @@ and do not hard-code the generated output path:
 
 The tracked page name is the stable project identity. Its output filename or location may change independently.
 
-CSS and JavaScript includes should also use `@pathto(...)`:
+CSS and JavaScript includes should also use `@path(...)`:
 
 ```html
-<link rel="stylesheet" href="@pathto('public/assets/style.css')">
-<script src="@pathto('public/assets/app.js')"></script>
+<link rel="stylesheet" href="@path('public/assets/style.css')">
+<script src="@path('public/assets/app.js')"></script>
 ```
 
 Do not calculate relative paths such as:
@@ -185,7 +208,7 @@ Do not calculate relative paths such as:
 <link rel="stylesheet" href="../../assets/style.css">
 ```
 
-Using `@pathto` lets Nift resolve the correct output-relative path and check the project relationship during the build.
+Using `@path` lets Nift resolve the correct output-relative path and check the project relationship during the build.
 
 ## Project configuration
 
@@ -275,7 +298,7 @@ When unfamiliar with the project, prioritise:
 
 1. Getting started — https://nift.dev/docs/getting-started.html
 2. the three-primitives/template-language material;
-3. paths and tracked files, especially `@pathto`;
+3. paths and tracked files, especially `@path`;
 4. project structure;
 5. `.nift/config.json` and `.nift/tracked.json`;
 6. incremental builds and CLI commands.

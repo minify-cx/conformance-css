@@ -41,6 +41,14 @@ jobs:
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
           ref: stage
+      - name: Reject non-legacy @pathto usage
+        shell: bash
+        run: |
+          set -euo pipefail
+          if grep -rn "@pathto(" templates content .github HANDOVER.md 2>/dev/null; then
+            echo "FAIL: non-legacy @pathto( found in active dashboard sources" >&2
+            exit 1
+          fi
 
       - name: Checkout Minify++
         if: env.MINIFIER == 'minifypp'
@@ -97,26 +105,19 @@ jobs:
               --browser-timeout 120
           fi
 
-      - name: Install reviewed Nift release
+      - name: Build pinned Nift 4.0.12 candidate
         shell: bash
         run: |
-          script="$RUNNER_TEMP/nift-install.sh"
-          code=000
-          for attempt in $(seq 1 24); do
-            code=$(curl -sS --connect-timeout 20 -o "$script" -w "%{http_code}" https://nift.dev/install) || code=000
-            if [ "$code" = "200" ]; then
-              break
-            fi
-            echo "install fetch attempt $attempt failed (HTTP $code); retrying in 10s"
-            sleep 10
-          done
-          if [ "$code" != "200" ] || [ ! -s "$script" ]; then
-            echo "FAIL: could not fetch https://nift.dev/install (HTTP $code)" >&2
-            exit 1
-          fi
-          NIFT_VERSION=4.0.10 NIFT_INSTALL_DIR="$RUNNER_TEMP/nift-bin" sh "$script"
-
-          echo "$RUNNER_TEMP/nift-bin" >> "$GITHUB_PATH"
+          set -euo pipefail
+          # The dashboard templates use canonical @path, which requires the
+          # reviewed 4.0.12 candidate; older released Nift parses @pathto, not
+          # @path. Build from the pinned reviewed commit until 4.0.12 is released.
+          git clone --quiet https://github.com/nift-dev/nift.git nift-candidate
+          git -C nift-candidate checkout --quiet 77e44d15e43f0936876107c4df1fa6a5b8220be4
+          make -C nift-candidate -j2 >/dev/null
+          test "$(nift-candidate/nift --version)" = "Nift v4.0.12" \
+            || { echo "FAIL: candidate Nift version is not v4.0.12" >&2; exit 1; }
+          echo "$PWD/nift-candidate" >> "$GITHUB_PATH"
 
       - name: Checkout generated main branch into public
         shell: bash
