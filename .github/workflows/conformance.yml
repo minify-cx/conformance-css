@@ -87,12 +87,14 @@ jobs:
             python3 tools/conformance.py run-css \
               --cases work/wpt-css.jsonl \
               --minifier lightningcss \
-              --minify-bin "$(command -v lightningcss)"
+              --minify-bin "$(command -v lightningcss)" \
+              --browser-timeout 120
           else
             python3 tools/conformance.py run-css \
               --cases work/wpt-css.jsonl \
               --minifier minifypp \
-              --minify-bin "$GITHUB_WORKSPACE/minify-source/minify"
+              --minify-bin "$GITHUB_WORKSPACE/minify-source/minify" \
+              --browser-timeout 120
           fi
 
       - name: Install reviewed Nift release
@@ -129,6 +131,17 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
+          python3 - <<'PY'
+          import json, pathlib, sys
+          d = json.loads(pathlib.Path("results/latest.json").read_text())
+          counts = d.get("summary", {}).get("counts", {})
+          unverified = counts.get("unverified", 0)
+          browser_error = (d.get("browser") or {}).get("error")
+          if unverified:
+              sys.exit(f"Refusing to publish: {unverified} unverified cases (browser oracle incomplete)")
+          if browser_error:
+              sys.exit("Refusing to publish: browser oracle error present")
+          PY
           git -C public config user.name github-actions[bot]
           git -C public config user.email 41898282+github-actions[bot]@users.noreply.github.com
           git -C public add -A
