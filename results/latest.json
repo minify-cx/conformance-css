@@ -79269,9 +79269,9 @@
     },
     {
       "detail": "",
-      "id": "e0b4a26b0d7b733c",
+      "id": "c6ac18b86d2da9ce",
       "kind": "style-block",
-      "offset": 716,
+      "offset": 786,
       "source": "css/css-images/object-position-svg-001p.html",
       "status": "pass",
       "suite": "wpt-css"
@@ -80322,9 +80322,9 @@
     },
     {
       "detail": "",
-      "id": "f7f65938ae09c7c5",
+      "id": "3ed34b02e5c51af9",
       "kind": "style-block",
-      "offset": 714,
+      "offset": 784,
       "source": "css/css-images/object-position-svg-001i.html",
       "status": "pass",
       "suite": "wpt-css"
@@ -81114,9 +81114,9 @@
     },
     {
       "detail": "",
-      "id": "b3ec91c5fc15d49a",
+      "id": "735e4df51bc4ea0a",
       "kind": "style-block",
-      "offset": 716,
+      "offset": 786,
       "source": "css/css-images/object-position-svg-002p.html",
       "status": "pass",
       "suite": "wpt-css"
@@ -81537,9 +81537,9 @@
     },
     {
       "detail": "",
-      "id": "f457fa88efd45d57",
+      "id": "7e768a5733789ff2",
       "kind": "style-block",
-      "offset": 714,
+      "offset": 784,
       "source": "css/css-images/object-position-svg-002i.html",
       "status": "pass",
       "suite": "wpt-css"
@@ -281372,13 +281372,14 @@
       "suite": "wpt-css"
     }
   ],
-  "duration_seconds": 145.158,
-  "generated_at": "2026-09-10T07:55:27Z",
+  "duration_seconds": 129.308,
+  "generated_at": "2026-09-10T09:00:24Z",
   "minifier": {
     "commit": "4866db785c78abb564697ade821d0e4425b89364",
-    "name": "minifypp",
+    "name": "Minify++",
     "path": "/home/runner/work/conformance-css/conformance-css/minify-source/minify",
-    "version": "Minify++ 1.1.2"
+    "version": "1.1.2",
+    "version_string": "Minify++ 1.1.2"
   },
   "oracle": {
     "name": "chromium",
@@ -281389,8 +281390,8 @@
   "sources": {
     "wpt": {
       "branch": "master",
-      "revision": "ed66e8beb8b59ef46aea496a121c0666b746da50",
-      "synced_at": "2026-09-10T07:52:52Z",
+      "revision": "c94abb33b8b0d162ab33f259c1dc44724d42f3d3",
+      "synced_at": "2026-09-10T08:58:04Z",
       "url": "https://github.com/web-platform-tests/wpt.git"
     }
   },
