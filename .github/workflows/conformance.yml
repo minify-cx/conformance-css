@@ -100,8 +100,17 @@ jobs:
       - name: Install reviewed Nift release
         shell: bash
         run: |
-          curl --retry 5 --retry-all-errors --retry-delay 5 -fsSL https://nift.dev/install |
-            NIFT_VERSION=4.0.10 NIFT_INSTALL_DIR="$RUNNER_TEMP/nift-bin" sh
+          script="$RUNNER_TEMP/nift-install.sh"
+          for attempt in $(seq 1 24); do
+            if curl -fsSL --connect-timeout 20 https://nift.dev/install -o "$script"; then
+              break
+            fi
+            echo "install fetch attempt $attempt failed; retrying in 10s"
+            sleep 10
+          done
+          test -s "$script" || { echo "FAIL: could not fetch https://nift.dev/install" >&2; exit 1; }
+          NIFT_VERSION=4.0.10 NIFT_INSTALL_DIR="$RUNNER_TEMP/nift-bin" sh "$script"
+
           echo "$RUNNER_TEMP/nift-bin" >> "$GITHUB_PATH"
 
       - name: Checkout generated main branch into public
