@@ -57,6 +57,7 @@ jobs:
         with:
           repository: minify-cx/minify
           path: minify-source
+          ref: 4866db785c78abb564697ade821d0e4425b89364
 
       - name: Build Minify++
         if: env.MINIFIER == 'minifypp'

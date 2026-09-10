@@ -684,12 +684,23 @@ def run_css(cases: list[dict[str, Any]], minifier: str, minify_bin: Path, chromi
         rows.append(row)
 
     minify_version = run([str(minify_bin), "--version"], check=False).stdout.strip()
+    minify_commit = None
+    minify_root = minify_bin.resolve().parent
+    if (minify_root / ".git").exists():
+        rev = run(["git", "-C", str(minify_root), "rev-parse", "HEAD"], check=False)
+        if rev.returncode == 0:
+            minify_commit = rev.stdout.strip()
+    browser_version = None
+    if browser:
+        bv = run([browser, "--version"], check=False)
+        browser_version = (bv.stdout or bv.stderr or "").strip()
     lock = actual_revisions()
     report = {
         "schema_version": 1,
         "generated_at": utc_now(),
         "duration_seconds": round(time.monotonic() - started, 3),
-        "minifier": {"name": minifier, "path": str(minify_bin.resolve()), "version": minify_version},
+        "minifier": {"name": minifier, "version": minify_version, "commit": minify_commit, "path": str(minify_bin.resolve())},
+        "oracle": {"name": Path(browser).name if browser else None, "version": browser_version, "path": browser},
         "browser": {"path": browser, "error": browser_error},
         "sources": lock,
         "summary": {"total": len(rows), "counts": counts},
@@ -763,13 +774,19 @@ def render_dashboard(results: Path) -> int:
     generated = html.escape(report["generated_at"])
     minifier = report.get("minifier", {})
     minifier_label = html.escape(minifier.get("version") or minifier.get("name") or "unknown")
+    oracle = report.get("oracle", {})
+    provenance_bits = [f"<strong>Minify++</strong> {html.escape(str(minifier.get('version','')))}" + (f" ({html.escape(str(minifier.get('commit','')))[:9]})" if minifier.get('commit') else "")]
+    provenance_bits.append(f"<strong>oracle</strong> {html.escape(str(oracle.get('name','')))} {html.escape(str(oracle.get('version','')))}")
+    for sname, sdata in (report.get("sources", {}) or {}).items():
+        provenance_bits.append(f"<strong>{html.escape(sname)}</strong> <code>{html.escape(str(sdata.get('revision','')))[:12]}</code>")
+    provenance_text = '<p class="provenance">' + ' &middot; '.join(provenance_bits) + '</p>'
     content = f'''<header class="hero">
 <p class="eyebrow">CSS minifier standards lab</p>
 <h1>Conformance dashboard</h1>
 <p class="lede">Independent standards cases are transformed by the selected CSS minifier, then parsed again by a real browser. The dashboard is a static snapshot generated only after a run completes.</p>
 </header>
 <section class="metrics">{cards}</section>
-<section class="run-meta"><div><span>Cases</span><strong>{summary['total']:,}</strong></div><div><span>Duration</span><strong>{report['duration_seconds']:.3f}s</strong></div><div><span>Minifier</span><strong>{minifier_label}</strong><span>{generated}</span></div><div><span>Browser</span><strong>{browser_text}</strong></div></section>
+<section class="run-meta"><div><span>Cases</span><strong>{summary['total']:,}</strong></div><div><span>Duration</span><strong>{report['duration_seconds']:.3f}s</strong></div><div><span>Minifier</span><strong>{minifier_label}</strong><span>{generated}</span></div><div><span>Browser</span><strong>{browser_text}</strong></div></section>{provenance_text}
 <section>
 <div class="section-head"><div><p class="eyebrow">Triage</p><h2>Non-passing cases</h2></div><select id="status-filter" aria-label="Filter failures"><option value="all">All statuses</option>{''.join(f'<option value="{k}">{labels[k]}</option>' for k in order if k != 'pass')}</select></div>
 <div class="table-wrap"><table><thead><tr><th>Status</th><th>Source</th><th>Kind</th><th>Evidence</th></tr></thead><tbody id="cases">{''.join(rows)}</tbody></table></div>
@@ -799,7 +816,7 @@ def verify_dashboard(result_path: Path, index_path: Path, published_path: Path) 
     # Nift directives.
     data = load_json(result_path)
     pub = load_json(published_path)
-    for key in ("summary", "sources", "generated_at"):
+    for key in ("summary", "sources", "minifier", "oracle", "generated_at"):
         if pub.get(key) != data.get(key):
             raise RuntimeError(f"dashboard mismatch: {key} differs between result and published copy")
     text = index_path.read_text(encoding="utf-8")
