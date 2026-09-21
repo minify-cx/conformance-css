@@ -4209,6 +4209,15 @@
     },
     {
       "detail": "",
+      "id": "9490ba60b4c41d4c",
+      "kind": "style-block",
+      "offset": 639,
+      "source": "css/css-fonts/synthetic-bold-combining-mark-002.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "89dd602c45429cb3",
       "kind": "style-block",
       "offset": 699,
@@ -4659,6 +4668,15 @@
     },
     {
       "detail": "",
+      "id": "4423fc7200064c69",
+      "kind": "style-block",
+      "offset": 239,
+      "source": "css/css-fonts/synthetic-bold-combining-mark-001-ref.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "f68432cf2690b0e5",
       "kind": "style-block",
       "offset": 374,
@@ -4798,6 +4816,15 @@
       "kind": "style-block",
       "offset": 178,
       "source": "css/css-fonts/synthetic-oblique-out-of-capabilities-range-ref.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "e9145f15e161dd64",
+      "kind": "style-block",
+      "offset": 246,
+      "source": "css/css-fonts/synthetic-bold-combining-mark-002-ref.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -5536,6 +5563,15 @@
       "kind": "style-block",
       "offset": 136,
       "source": "css/css-fonts/font-weight-normal-variable-ref.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "d3e3470eb9eb8557",
+      "kind": "style-block",
+      "offset": 677,
+      "source": "css/css-fonts/synthetic-bold-combining-mark-001.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -8196,6 +8232,15 @@
     },
     {
       "detail": "",
+      "id": "c8ee3a4278700a05",
+      "kind": "style-block",
+      "offset": 404,
+      "source": "css/css-highlight-api/custom-highlight-universal-escaped-star.tentative.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "8c7dad302cfbd056",
       "kind": "style-block",
       "offset": 98,
@@ -8605,6 +8650,15 @@
       "kind": "style-block",
       "offset": 407,
       "source": "css/css-animations/animate-bg-color-with-change-during-delay-ref.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "a78defa2f47a9706",
+      "kind": "style-block",
+      "offset": 168,
+      "source": "css/css-animations/animation-append-stylesheet-reverse-ref.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -10329,6 +10383,15 @@
     },
     {
       "detail": "",
+      "id": "1d68c0875f0406b2",
+      "kind": "style-block",
+      "offset": 460,
+      "source": "css/css-animations/animation-append-stylesheet-reverse.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "97fc9f96eb8417d0",
       "kind": "style-block",
       "offset": 167,
@@ -11193,9 +11256,9 @@
     },
     {
       "detail": "",
-      "id": "bf516c7b7b769057",
+      "id": "64f60121707717e2",
       "kind": "style-block",
-      "offset": 211,
+      "offset": 269,
       "source": "css/css-shadow/slotted-text-with-flex.html",
       "status": "pass",
       "suite": "wpt-css"
@@ -11233,6 +11296,24 @@
       "kind": "style-block",
       "offset": 664,
       "source": "css/css-shadow/host-specificity-003.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "fcc7aef28305fdea",
+      "kind": "style-block",
+      "offset": 577,
+      "source": "css/css-shadow/hover-invalidates-slotted-descendant.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "8d58ad683157ed83",
+      "kind": "style-block",
+      "offset": 817,
+      "source": "css/css-shadow/hover-invalidates-slotted-descendant.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -35313,16 +35394,70 @@
     },
     {
       "detail": "",
-      "id": "d94dad40bcbf1e30",
+      "id": "4f4ce82d13a768d2",
       "kind": "declaration",
-      "offset": 961,
+      "offset": 867,
       "source": "css/css-link-params/link-parameters-computed.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "196f953dcdb381ab",
+      "id": "d1d90ecf546c4808",
+      "kind": "declaration",
+      "offset": 958,
+      "source": "css/css-link-params/link-parameters-computed.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "7f36c21e9e65e2e8",
+      "kind": "declaration",
+      "offset": 1191,
+      "source": "css/css-link-params/link-parameters-computed.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "f39c2bfe06019aa4",
+      "kind": "declaration",
+      "offset": 1281,
+      "source": "css/css-link-params/link-parameters-computed.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "26f449351c89a9bd",
+      "kind": "declaration",
+      "offset": 1363,
+      "source": "css/css-link-params/link-parameters-computed.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "8843e7d6ea450a2e",
+      "kind": "declaration",
+      "offset": 1463,
+      "source": "css/css-link-params/link-parameters-computed.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "fba2d675194901ed",
+      "kind": "declaration",
+      "offset": 1541,
+      "source": "css/css-link-params/link-parameters-computed.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "8580df700d1de8a5",
       "kind": "style-block",
       "offset": 543,
       "source": "css/css-link-params/link-parameters-computed.html",
@@ -40092,6 +40227,15 @@
     },
     {
       "detail": "",
+      "id": "2c0dfcdf830115d6",
+      "kind": "style-block",
+      "offset": 611,
+      "source": "css/css-sizing/svg-intrinsic-size-009.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "792f4f2c4f15f64b",
       "kind": "style-block",
       "offset": 109,
@@ -40672,6 +40816,15 @@
       "kind": "style-block",
       "offset": 325,
       "source": "css/css-sizing/intrinsic-percent-replaced-006.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "317d366541834997",
+      "kind": "style-block",
+      "offset": 645,
+      "source": "css/css-sizing/svg-intrinsic-size-011.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -41329,6 +41482,15 @@
       "kind": "style-block",
       "offset": 324,
       "source": "css/css-sizing/border-box-and-max-content-001.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "392eb49bc384c348",
+      "kind": "style-block",
+      "offset": 611,
+      "source": "css/css-sizing/svg-intrinsic-size-010.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -59901,6 +60063,15 @@
     },
     {
       "detail": "",
+      "id": "7361603b9e56071d",
+      "kind": "style-block",
+      "offset": 423,
+      "source": "css/css-view-transitions/pseudo-escaped-star-view-transition-group.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "8ff07ab689f47ac5",
       "kind": "style-block",
       "offset": 220,
@@ -59986,6 +60157,15 @@
       "kind": "style-block",
       "offset": 434,
       "source": "css/css-view-transitions/old-content-object-fit-fill.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "c80ece90d67bbdc9",
+      "kind": "style-block",
+      "offset": 417,
+      "source": "css/css-view-transitions/pseudo-match-escaped-star.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -60729,6 +60909,15 @@
     },
     {
       "detail": "",
+      "id": "74947a1f880fd50b",
+      "kind": "style-block",
+      "offset": 477,
+      "source": "css/css-view-transitions/pseudo-escaped-star-specificity.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "971a4ca5710df5fd",
       "kind": "style-block",
       "offset": 318,
@@ -61354,6 +61543,15 @@
       "kind": "style-block",
       "offset": 408,
       "source": "css/css-view-transitions/old-content-captures-root.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "521e7de3a828d30b",
+      "kind": "style-block",
+      "offset": 400,
+      "source": "css/css-view-transitions/pseudo-get-computed-style-escaped-star.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -62803,6 +63001,15 @@
       "kind": "style-block",
       "offset": 366,
       "source": "css/css-view-transitions/old-root-vertical-writing-mode.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "95393374bc8f1a79",
+      "kind": "style-block",
+      "offset": 442,
+      "source": "css/css-view-transitions/pseudo-mismatch-escaped-star.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -83310,9 +83517,9 @@
     },
     {
       "detail": "",
-      "id": "18cac62e4ac0a79f",
+      "id": "5b32b56b4dd84692",
       "kind": "declaration",
-      "offset": 13776,
+      "offset": 13750,
       "source": "css/css-values/random-item-computed.html",
       "status": "pass",
       "suite": "wpt-css"
@@ -83679,621 +83886,621 @@
     },
     {
       "detail": "",
-      "id": "1ea48de34e94a253",
+      "id": "fba1a82741edc9ce",
       "kind": "declaration",
-      "offset": 509,
+      "offset": 523,
       "source": "css/css-values/random-serialize.tentative.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "0b7682f64eddde2a",
+      "id": "6cc08de0cc433db3",
       "kind": "declaration",
-      "offset": 642,
+      "offset": 656,
       "source": "css/css-values/random-serialize.tentative.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "826ea58ee4f58aed",
+      "id": "683a460875ca06fe",
       "kind": "declaration",
-      "offset": 698,
+      "offset": 712,
       "source": "css/css-values/random-serialize.tentative.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "5147f2e1109419d1",
+      "id": "4e37c820a00bf05b",
       "kind": "declaration",
-      "offset": 769,
+      "offset": 783,
       "source": "css/css-values/random-serialize.tentative.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "5158b6c495a157b2",
+      "id": "314a3390640a1258",
       "kind": "declaration",
-      "offset": 834,
+      "offset": 848,
       "source": "css/css-values/random-serialize.tentative.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "e292b33f69dba6ce",
+      "id": "64838907c7de570a",
       "kind": "declaration",
-      "offset": 970,
+      "offset": 984,
       "source": "css/css-values/random-serialize.tentative.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "47f70b59887602a8",
+      "id": "f019f2200178add1",
       "kind": "declaration",
-      "offset": 1118,
+      "offset": 1132,
       "source": "css/css-values/random-serialize.tentative.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "7b76f116eca0f30d",
+      "id": "4d5d12119c84c7b6",
       "kind": "declaration",
-      "offset": 1250,
+      "offset": 1264,
       "source": "css/css-values/random-serialize.tentative.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "1ab5e6b0da24794e",
+      "id": "501698b1e53096eb",
       "kind": "declaration",
-      "offset": 1394,
+      "offset": 1408,
       "source": "css/css-values/random-serialize.tentative.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "f2d67de59ec61039",
+      "id": "b421bb0116478ce2",
       "kind": "declaration",
-      "offset": 1548,
+      "offset": 1562,
       "source": "css/css-values/random-serialize.tentative.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "dd75d8e23df152db",
+      "id": "11c7b192fc992491",
       "kind": "declaration",
-      "offset": 1714,
+      "offset": 1728,
       "source": "css/css-values/random-serialize.tentative.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "b6656cb0aa57efe5",
+      "id": "ec3039cd6d932f78",
       "kind": "declaration",
-      "offset": 1871,
+      "offset": 1885,
       "source": "css/css-values/random-serialize.tentative.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "d21329127e6a51b5",
+      "id": "73178d4dedca9363",
       "kind": "declaration",
-      "offset": 2040,
+      "offset": 2054,
       "source": "css/css-values/random-serialize.tentative.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "f0aecadb032f33ab",
+      "id": "f790abf370bc13ca",
       "kind": "declaration",
-      "offset": 2202,
+      "offset": 2216,
       "source": "css/css-values/random-serialize.tentative.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "e8b957d315a364dc",
+      "id": "bb13f1cdd38d4d44",
       "kind": "declaration",
-      "offset": 2376,
+      "offset": 2390,
       "source": "css/css-values/random-serialize.tentative.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "198ae22c225d7a0c",
+      "id": "76d1dcbbfe82cb5d",
       "kind": "declaration",
-      "offset": 2539,
+      "offset": 2553,
       "source": "css/css-values/random-serialize.tentative.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "84ccdaf3d8d3c9e2",
+      "id": "33c5fd5bbacd051c",
       "kind": "declaration",
-      "offset": 2715,
+      "offset": 2729,
       "source": "css/css-values/random-serialize.tentative.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "050ca671b13afa5b",
+      "id": "0cac9bdd44e546fb",
       "kind": "declaration",
-      "offset": 2825,
+      "offset": 2839,
       "source": "css/css-values/random-serialize.tentative.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "a4d9a3c7a4009c62",
+      "id": "3b21080efe5e5d8e",
       "kind": "declaration",
-      "offset": 2890,
+      "offset": 2918,
       "source": "css/css-values/random-serialize.tentative.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "177fc4640be87606",
+      "id": "7d2acc924aeb77a3",
       "kind": "declaration",
-      "offset": 3004,
+      "offset": 3032,
       "source": "css/css-values/random-serialize.tentative.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "a6b943ec56ea922b",
+      "id": "dc50dbbb1bb6c0d1",
       "kind": "declaration",
-      "offset": 3065,
+      "offset": 3093,
       "source": "css/css-values/random-serialize.tentative.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "f6c5eac34331df0f",
+      "id": "5dce324f27ef5ec6",
       "kind": "declaration",
-      "offset": 3135,
+      "offset": 3163,
       "source": "css/css-values/random-serialize.tentative.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "bcf4fd78ddba9060",
+      "id": "75a29d980fcb241c",
       "kind": "declaration",
-      "offset": 3211,
+      "offset": 3239,
       "source": "css/css-values/random-serialize.tentative.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "085c2fb05c576e16",
+      "id": "25b1097ef58fe576",
       "kind": "declaration",
-      "offset": 3345,
+      "offset": 3373,
       "source": "css/css-values/random-serialize.tentative.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "2f93f1357901bd53",
+      "id": "0828f027111c0530",
       "kind": "declaration",
-      "offset": 3491,
+      "offset": 3519,
       "source": "css/css-values/random-serialize.tentative.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "62b206ac31b4cad5",
+      "id": "80a3637241e3fccc",
       "kind": "declaration",
-      "offset": 3633,
+      "offset": 3661,
       "source": "css/css-values/random-serialize.tentative.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "ebd436d99cc08a11",
+      "id": "3e3db5eb69e7cf5e",
       "kind": "declaration",
-      "offset": 3787,
+      "offset": 3815,
       "source": "css/css-values/random-serialize.tentative.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "b378c3e8cc77ea04",
+      "id": "12e36873410aa9e7",
       "kind": "declaration",
-      "offset": 3951,
+      "offset": 3979,
       "source": "css/css-values/random-serialize.tentative.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "3ebbc29718463b3e",
+      "id": "ececcfda7a513b7d",
       "kind": "declaration",
-      "offset": 4127,
+      "offset": 4155,
       "source": "css/css-values/random-serialize.tentative.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "b4deb2c206ae5a20",
+      "id": "be28edba47fdbd27",
       "kind": "declaration",
-      "offset": 4292,
+      "offset": 4320,
       "source": "css/css-values/random-serialize.tentative.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "218ec25214ba3073",
+      "id": "dc1f42573a79015b",
       "kind": "declaration",
-      "offset": 4469,
+      "offset": 4497,
       "source": "css/css-values/random-serialize.tentative.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "45ae3ee334255707",
+      "id": "be56896e183728b9",
       "kind": "declaration",
-      "offset": 4641,
+      "offset": 4669,
       "source": "css/css-values/random-serialize.tentative.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "baaa95e1b032bb04",
+      "id": "ba4ca1dcdd9efb79",
       "kind": "declaration",
-      "offset": 4825,
+      "offset": 4853,
       "source": "css/css-values/random-serialize.tentative.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "e910b6dd63c45ff5",
+      "id": "6f491934704cde2a",
       "kind": "declaration",
-      "offset": 4998,
+      "offset": 5026,
       "source": "css/css-values/random-serialize.tentative.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "21b6029c548a2a56",
+      "id": "b0b87a7519328581",
       "kind": "declaration",
-      "offset": 5183,
+      "offset": 5211,
       "source": "css/css-values/random-serialize.tentative.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "d7e4b05e4a4e731c",
+      "id": "0b3d5307a1a283b0",
       "kind": "declaration",
-      "offset": 5259,
+      "offset": 5287,
       "source": "css/css-values/random-serialize.tentative.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "b9d2398b0eabfbfa",
+      "id": "fd4af8eb1198c942",
       "kind": "declaration",
-      "offset": 5362,
+      "offset": 5390,
       "source": "css/css-values/random-serialize.tentative.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "3b915562f57dedf5",
+      "id": "13b63ec43c179e01",
       "kind": "declaration",
-      "offset": 5440,
+      "offset": 5468,
       "source": "css/css-values/random-serialize.tentative.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "9994db4a7b949cec",
+      "id": "f583b3ccdaf09810",
       "kind": "declaration",
-      "offset": 5521,
+      "offset": 5549,
       "source": "css/css-values/random-serialize.tentative.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "e6a936ed9cfa7a57",
+      "id": "61b32a83492ffb86",
       "kind": "declaration",
-      "offset": 5580,
+      "offset": 5608,
       "source": "css/css-values/random-serialize.tentative.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "82e75ff0f808fdcb",
+      "id": "efe2c5756dea247d",
       "kind": "declaration",
-      "offset": 5667,
+      "offset": 5695,
       "source": "css/css-values/random-serialize.tentative.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "156e23e1990f0050",
+      "id": "ab4aa9b534c3763c",
       "kind": "declaration",
-      "offset": 5752,
+      "offset": 5780,
       "source": "css/css-values/random-serialize.tentative.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "6c306182d6d7116a",
+      "id": "c37285c115ae89f2",
       "kind": "declaration",
-      "offset": 5864,
+      "offset": 5892,
       "source": "css/css-values/random-serialize.tentative.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "1098f40842775ee8",
+      "id": "46893611cd74346c",
       "kind": "declaration",
-      "offset": 5963,
+      "offset": 5991,
       "source": "css/css-values/random-serialize.tentative.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "7c3cc43d81d249b2",
+      "id": "acf2478506894f59",
       "kind": "declaration",
-      "offset": 6101,
+      "offset": 6125,
       "source": "css/css-values/random-serialize.tentative.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "0c594853e1067626",
+      "id": "6b56bc605d726c5a",
       "kind": "declaration",
-      "offset": 6167,
+      "offset": 6191,
       "source": "css/css-values/random-serialize.tentative.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "54b2963801032159",
+      "id": "50c79ae8bd47c048",
       "kind": "declaration",
-      "offset": 6227,
+      "offset": 6251,
       "source": "css/css-values/random-serialize.tentative.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "e211c4a9ca6b5539",
+      "id": "88d7b5499910e86d",
       "kind": "declaration",
-      "offset": 6328,
+      "offset": 6352,
       "source": "css/css-values/random-serialize.tentative.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "dca64ff8f244f622",
+      "id": "cb027524df0469c2",
       "kind": "declaration",
-      "offset": 6405,
+      "offset": 6427,
       "source": "css/css-values/random-serialize.tentative.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "a0200d8d217692c9",
+      "id": "4532d8d27e18f658",
       "kind": "declaration",
-      "offset": 6559,
+      "offset": 6581,
       "source": "css/css-values/random-serialize.tentative.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "46ecc07216d578c5",
+      "id": "93e596e9e1ddfaf6",
       "kind": "declaration",
-      "offset": 6615,
+      "offset": 6635,
       "source": "css/css-values/random-serialize.tentative.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "136e3923b3110ea9",
+      "id": "f02a7a37a31fd5b0",
       "kind": "declaration",
-      "offset": 6674,
+      "offset": 6692,
       "source": "css/css-values/random-serialize.tentative.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "04fb3094b50f9333",
+      "id": "fad70450aa093f8c",
       "kind": "declaration",
-      "offset": 6728,
+      "offset": 6746,
       "source": "css/css-values/random-serialize.tentative.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "fb7ab2a854733f3e",
+      "id": "5ea2388d06e73c51",
       "kind": "declaration",
-      "offset": 6787,
+      "offset": 6805,
       "source": "css/css-values/random-serialize.tentative.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "2b967749b3579861",
+      "id": "e79c415e4446d603",
       "kind": "declaration",
-      "offset": 6919,
+      "offset": 6937,
       "source": "css/css-values/random-serialize.tentative.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "6aa66a94992869be",
+      "id": "c8a689ec69e7b0bc",
       "kind": "declaration",
-      "offset": 7049,
+      "offset": 7067,
       "source": "css/css-values/random-serialize.tentative.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "d804134e3e10b216",
+      "id": "10dec8096e0ef486",
       "kind": "declaration",
-      "offset": 7206,
+      "offset": 7224,
       "source": "css/css-values/random-serialize.tentative.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "894e5aa1f9e6f935",
+      "id": "477227725289c98c",
       "kind": "declaration",
-      "offset": 7389,
+      "offset": 7407,
       "source": "css/css-values/random-serialize.tentative.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "59e9d7a3e367d943",
+      "id": "6b8b72432110f391",
       "kind": "declaration",
-      "offset": 7447,
+      "offset": 7465,
       "source": "css/css-values/random-serialize.tentative.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "f9a5d90754bee6c0",
+      "id": "501812dab1aaa197",
       "kind": "declaration",
-      "offset": 7511,
+      "offset": 7529,
       "source": "css/css-values/random-serialize.tentative.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "052646002266f4ff",
+      "id": "999c392adc6fa276",
       "kind": "declaration",
-      "offset": 7571,
+      "offset": 7589,
       "source": "css/css-values/random-serialize.tentative.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "5bc9172cea4bbb77",
+      "id": "8b0b878a1ae8bbd1",
       "kind": "declaration",
-      "offset": 7637,
+      "offset": 7655,
       "source": "css/css-values/random-serialize.tentative.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "d5b776cb270969f1",
+      "id": "85755a7e5cc7af57",
       "kind": "declaration",
-      "offset": 7713,
+      "offset": 7731,
       "source": "css/css-values/random-serialize.tentative.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "a5520975a16e9110",
+      "id": "e96ea0ff23c4fdc8",
       "kind": "declaration",
-      "offset": 7795,
+      "offset": 7813,
       "source": "css/css-values/random-serialize.tentative.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "13b6a87f81b77045",
+      "id": "7234046266c3fc68",
       "kind": "declaration",
-      "offset": 7946,
+      "offset": 7964,
       "source": "css/css-values/random-serialize.tentative.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "0aa9f673559060ce",
+      "id": "540a99bf745323c8",
       "kind": "declaration",
-      "offset": 8109,
+      "offset": 8127,
       "source": "css/css-values/random-serialize.tentative.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "d6e99e064dd7cb94",
+      "id": "16fe0e41c23e267b",
       "kind": "declaration",
-      "offset": 8163,
+      "offset": 8181,
       "source": "css/css-values/random-serialize.tentative.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "a55b14f931680f7a",
+      "id": "06f75e69f9e37e5b",
       "kind": "declaration",
-      "offset": 8223,
+      "offset": 8241,
       "source": "css/css-values/random-serialize.tentative.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "a1de34b7edbfcbf9",
+      "id": "1cc65d37161c036f",
       "kind": "declaration",
-      "offset": 8360,
+      "offset": 8378,
       "source": "css/css-values/random-serialize.tentative.html",
       "status": "pass",
       "suite": "wpt-css"
@@ -84732,9 +84939,9 @@
     },
     {
       "detail": "",
-      "id": "66b5f73a6c56be03",
+      "id": "191e5d54976b46da",
       "kind": "style-block",
-      "offset": 355,
+      "offset": 410,
       "source": "css/css-values/random-computed.tentative.html",
       "status": "pass",
       "suite": "wpt-css"
@@ -86244,7 +86451,7 @@
     },
     {
       "detail": "",
-      "id": "f84c892cb25cc1db",
+      "id": "13cf8bf718b597fa",
       "kind": "style-block",
       "offset": 278,
       "source": "css/css-values/attr-security-animation.html",
@@ -89475,6 +89682,15 @@
     },
     {
       "detail": "",
+      "id": "d5483c35f3caf23b",
+      "kind": "style-block",
+      "offset": 481,
+      "source": "css/css-overflow/text-overflow-string-in-textarea-scrolled.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "424d08574c3d93c7",
       "kind": "style-block",
       "offset": 525,
@@ -89488,6 +89704,15 @@
       "kind": "style-block",
       "offset": 651,
       "source": "css/css-overflow/scrollable-overflow-transform-005.tentative.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "7c310f7f5dffa56e",
+      "kind": "style-block",
+      "offset": 124,
+      "source": "css/css-overflow/text-overflow-string-in-textarea-not-inherited-ref.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -89817,6 +90042,15 @@
     },
     {
       "detail": "",
+      "id": "88decbf519519e8b",
+      "kind": "style-block",
+      "offset": 716,
+      "source": "css/css-overflow/text-overflow-in-readonly-textarea-focused.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "cecc28a524743ccc",
       "kind": "style-block",
       "offset": 284,
@@ -89893,6 +90127,15 @@
       "kind": "style-block",
       "offset": 574,
       "source": "css/css-overflow/overflow-body-propagation-013.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "209a7913bc875d20",
+      "kind": "style-block",
+      "offset": 103,
+      "source": "css/css-overflow/text-overflow-in-textarea-notref.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -90483,6 +90726,15 @@
     },
     {
       "detail": "",
+      "id": "000a966357f14aa1",
+      "kind": "style-block",
+      "offset": 141,
+      "source": "css/css-overflow/text-overflow-string-in-textarea-focused-ref.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "4483ed64346c49b5",
       "kind": "style-block",
       "offset": 396,
@@ -90568,6 +90820,15 @@
       "kind": "style-block",
       "offset": 688,
       "source": "css/css-overflow/text-overflow-scroll-vertical-rl-001.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "71a161ac7c9e0083",
+      "kind": "style-block",
+      "offset": 127,
+      "source": "css/css-overflow/text-overflow-string-in-textarea-dynamic-width-notref.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -91158,6 +91419,15 @@
     },
     {
       "detail": "",
+      "id": "26b7026a8f2d65d6",
+      "kind": "style-block",
+      "offset": 317,
+      "source": "css/css-overflow/text-overflow-in-textarea.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "b1b567bf13b5fa06",
       "kind": "style-block",
       "offset": 327,
@@ -91194,6 +91464,15 @@
     },
     {
       "detail": "",
+      "id": "38ae2550a7e58741",
+      "kind": "style-block",
+      "offset": 159,
+      "source": "css/css-overflow/text-overflow-string-in-textarea-field-sizing-content-fits-ref.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "16ab2cc8d3cc6d94",
       "kind": "style-block",
       "offset": 609,
@@ -91207,6 +91486,15 @@
       "kind": "style-block",
       "offset": 275,
       "source": "css/css-overflow/scrollbar-gutter-fixedpos-001-ref.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "0a18c9a76eb66653",
+      "kind": "style-block",
+      "offset": 657,
+      "source": "css/css-overflow/text-overflow-string-in-textarea-field-sizing-content-fits.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -91428,6 +91716,15 @@
     },
     {
       "detail": "",
+      "id": "515276c7470a2d5e",
+      "kind": "style-block",
+      "offset": 116,
+      "source": "css/css-overflow/text-overflow-string-in-textarea-multiline-notref.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "414d3d69097dba8e",
       "kind": "style-block",
       "offset": 228,
@@ -91522,6 +91819,15 @@
       "kind": "style-block",
       "offset": 1138,
       "source": "css/css-overflow/margin-block-end-scroll-area-001.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "f63301d487a6c5d0",
+      "kind": "style-block",
+      "offset": 146,
+      "source": "css/css-overflow/text-overflow-string-in-textarea-field-sizing-content-notref.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -91662,6 +91968,15 @@
     },
     {
       "detail": "",
+      "id": "752c6576e265817f",
+      "kind": "style-block",
+      "offset": 504,
+      "source": "css/css-overflow/overflow-clip-preserves-dom-content.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "f6bfc33b4d35b730",
       "kind": "style-block",
       "offset": 479,
@@ -91675,6 +91990,15 @@
       "kind": "style-block",
       "offset": 195,
       "source": "css/css-overflow/inline-block-with-scrollable-descendant.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "d7b88cbf5944d58c",
+      "kind": "style-block",
+      "offset": 642,
+      "source": "css/css-overflow/text-overflow-string-in-textarea-field-sizing-content.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -91909,6 +92233,15 @@
       "kind": "style-block",
       "offset": 510,
       "source": "css/css-overflow/text-overflow-020.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "565986754ff5e646",
+      "kind": "style-block",
+      "offset": 501,
+      "source": "css/css-overflow/text-overflow-string-in-textarea-not-inherited.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -92211,6 +92544,15 @@
     },
     {
       "detail": "",
+      "id": "290103cfd31b0c4f",
+      "kind": "style-block",
+      "offset": 154,
+      "source": "css/css-overflow/text-overflow-in-readonly-textarea-focused-ref.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "a68acfc50ebcf1dc",
       "kind": "style-block",
       "offset": 649,
@@ -92454,6 +92796,15 @@
     },
     {
       "detail": "",
+      "id": "06c6a01d3778382f",
+      "kind": "style-block",
+      "offset": 779,
+      "source": "css/css-overflow/text-overflow-string-in-textarea-focused.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "f83c55ae5a235159",
       "kind": "style-block",
       "offset": 483,
@@ -92539,6 +92890,15 @@
       "kind": "style-block",
       "offset": 528,
       "source": "css/css-overflow/text-overflow-string-025.tentative.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "1d89195f056e5dd8",
+      "kind": "style-block",
+      "offset": 537,
+      "source": "css/css-overflow/text-overflow-string-in-textarea-dynamic-width.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -92719,6 +93079,15 @@
       "kind": "style-block",
       "offset": 37,
       "source": "css/css-overflow/flex-column-container-with-scrollable-descendant-ref.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "9ecfc4e4fecd2f42",
+      "kind": "style-block",
+      "offset": 502,
+      "source": "css/css-overflow/text-overflow-string-in-textarea-multiline.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -124224,6 +124593,24 @@
     },
     {
       "detail": "",
+      "id": "edb2e77eabe7a031",
+      "kind": "style-block",
+      "offset": 705,
+      "source": "css/css-text/word-spacing/word-spacing-combining-mark-002.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "e0fde3ab3d813f7c",
+      "kind": "style-block",
+      "offset": 743,
+      "source": "css/css-text/word-spacing/word-spacing-combining-mark-001.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "6ebb49eba972574a",
       "kind": "style-block",
       "offset": 544,
@@ -128742,6 +129129,15 @@
     },
     {
       "detail": "",
+      "id": "653ea0365897e68d",
+      "kind": "style-block",
+      "offset": 759,
+      "source": "css/css-text/letter-spacing/letter-spacing-combining-mark-002.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "f02bf0efa239b705",
       "kind": "style-block",
       "offset": 521,
@@ -128899,6 +129295,15 @@
       "kind": "style-block",
       "offset": 334,
       "source": "css/css-text/letter-spacing/letter-spacing-animating-font-size.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "341d441531f45806",
+      "kind": "style-block",
+      "offset": 797,
+      "source": "css/css-text/letter-spacing/letter-spacing-combining-mark-001.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -135735,10 +136140,28 @@
     },
     {
       "detail": "",
+      "id": "aaa563f57c38f452",
+      "kind": "style-block",
+      "offset": 236,
+      "source": "css/css-text/word-spacing/reference/word-spacing-combining-mark-001-ref.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "7c9b6998bdd06455",
       "kind": "style-block",
       "offset": 37,
       "source": "css/css-text/word-spacing/reference/word-spacing-animating-font-size-ref.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "75439667fd0745b2",
+      "kind": "style-block",
+      "offset": 243,
+      "source": "css/css-text/word-spacing/reference/word-spacing-combining-mark-002-ref.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -136788,6 +137211,15 @@
     },
     {
       "detail": "",
+      "id": "88bcd2de1aa9d525",
+      "kind": "style-block",
+      "offset": 245,
+      "source": "css/css-text/letter-spacing/reference/letter-spacing-combining-mark-002-ref.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "8a875c16d19333d9",
       "kind": "style-block",
       "offset": 157,
@@ -136837,6 +137269,15 @@
       "kind": "style-block",
       "offset": 149,
       "source": "css/css-text/letter-spacing/reference/letter-spacing-cursive-002-ref.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "30cf0f65ca57c699",
+      "kind": "style-block",
+      "offset": 238,
+      "source": "css/css-text/letter-spacing/reference/letter-spacing-combining-mark-001-ref.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -145495,6 +145936,15 @@
       "kind": "style-block",
       "offset": 738,
       "source": "css/css-grid/grid-definition/flex-item-grid-container-percentage-rows-001.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "ad6403f5f5ab8926",
+      "kind": "style-block",
+      "offset": 711,
+      "source": "css/css-grid/grid-definition/grid-template-columns-rows-resolved-values-003.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -182265,6 +182715,15 @@
     },
     {
       "detail": "",
+      "id": "c56ce647460f3f6d",
+      "kind": "style-block",
+      "offset": 798,
+      "source": "css/css-masking/clip-path/clip-path-with-transform-and-zoom-hittest.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "977bc13d4874607a",
       "kind": "style-block",
       "offset": 734,
@@ -182670,6 +183129,15 @@
     },
     {
       "detail": "",
+      "id": "77ec6f29ae5de1c2",
+      "kind": "style-block",
+      "offset": 844,
+      "source": "css/css-masking/clip-path/clip-path-with-transform-and-zoom.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "ccd77abd1412c34d",
       "kind": "style-block",
       "offset": 57,
@@ -182809,6 +183277,15 @@
       "kind": "style-block",
       "offset": 256,
       "source": "css/css-masking/clip-path/reference/clip-path-path-002-ref.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "89ecce1db609002c",
+      "kind": "style-block",
+      "offset": 112,
+      "source": "css/css-masking/clip-path/reference/clip-path-with-transform-and-zoom-ref.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -184015,6 +184492,24 @@
       "kind": "style-block",
       "offset": 198,
       "source": "css/css-color/reference/system-color-hightlights-vs-getSelection-002-ref.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "fe0dea509aacf650",
+      "kind": "style-block",
+      "offset": 23,
+      "source": "css/css-color/crashtests/firefox-bug-2072488.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "706af5dd7bc6fcac",
+      "kind": "style-block",
+      "offset": 181,
+      "source": "css/css-color/crashtests/light-dark-animation-crash.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -216447,6 +216942,15 @@
     },
     {
       "detail": "",
+      "id": "afb5d6afa94ab7ce",
+      "kind": "style-block",
+      "offset": 386,
+      "source": "css/css-gaps/multicol/multicol-gap-decorations-visibility-all-empty-columns.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "c9c655f06208e6de",
       "kind": "style-block",
       "offset": 360,
@@ -216739,6 +217243,15 @@
       "kind": "style-block",
       "offset": 232,
       "source": "css/css-gaps/multicol/multicol-gap-decorations-013.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "55252f107ba8df13",
+      "kind": "style-block",
+      "offset": 179,
+      "source": "css/css-gaps/multicol/multicol-gap-decorations-visibility-all-empty-columns-ref.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -217158,6 +217671,15 @@
     },
     {
       "detail": "",
+      "id": "421c5bd6b98766f7",
+      "kind": "style-block",
+      "offset": 456,
+      "source": "css/css-gaps/grid-lanes/column-gap-decorations-rule-visibility-items-all-001.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "026a358138ac3b77",
       "kind": "style-block",
       "offset": 227,
@@ -217207,6 +217729,15 @@
       "kind": "style-block",
       "offset": 520,
       "source": "css/css-gaps/grid-lanes/column-gap-decorations-list-fill-reverse.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "19416ec7cff6ea38",
+      "kind": "style-block",
+      "offset": 468,
+      "source": "css/css-gaps/grid-lanes/column-gap-decorations-rule-visibility-items-between-003.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -217324,6 +217855,15 @@
       "kind": "style-block",
       "offset": 230,
       "source": "css/css-gaps/grid-lanes/column-gap-decorations-002-ref.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "b4590efa7484f6c4",
+      "kind": "style-block",
+      "offset": 365,
+      "source": "css/css-gaps/grid-lanes/column-gap-decorations-inset-overlap-negative.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -217464,10 +218004,28 @@
     },
     {
       "detail": "",
+      "id": "62a26709822b936c",
+      "kind": "style-block",
+      "offset": 463,
+      "source": "css/css-gaps/grid-lanes/row-gap-decorations-rule-visibility-items-between-002.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "a33be30ee0d3b30c",
       "kind": "style-block",
       "offset": 421,
       "source": "css/css-gaps/grid-lanes/row-gap-decorations-inset-percentage.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "9be51c8c0e16b02d",
+      "kind": "style-block",
+      "offset": 461,
+      "source": "css/css-gaps/grid-lanes/row-gap-decorations-rule-visibility-items-around-002.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -217558,6 +218116,15 @@
       "kind": "style-block",
       "offset": 392,
       "source": "css/css-gaps/grid-lanes/column-gap-decorations-012.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "94c449af4a66a6d9",
+      "kind": "style-block",
+      "offset": 455,
+      "source": "css/css-gaps/grid-lanes/row-gap-decorations-rule-visibility-items-all-001.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -217743,6 +218310,15 @@
     },
     {
       "detail": "",
+      "id": "497310b6c9809d7b",
+      "kind": "style-block",
+      "offset": 258,
+      "source": "css/css-gaps/grid-lanes/column-gap-decorations-rule-visibility-items-between-001-ref.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "73f7c121544b7303",
       "kind": "style-block",
       "offset": 230,
@@ -217756,6 +218332,33 @@
       "kind": "style-block",
       "offset": 373,
       "source": "css/css-gaps/grid-lanes/row-gap-decorations-002.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "c6d12c929d1f848b",
+      "kind": "style-block",
+      "offset": 258,
+      "source": "css/css-gaps/grid-lanes/row-gap-decorations-rule-visibility-items-between-002-ref.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "1334cb858a0ad5e8",
+      "kind": "style-block",
+      "offset": 258,
+      "source": "css/css-gaps/grid-lanes/row-gap-decorations-rule-visibility-items-around-001-ref.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "1611d2064e98f8b5",
+      "kind": "style-block",
+      "offset": 174,
+      "source": "css/css-gaps/grid-lanes/row-gap-decorations-inset-overlap-negative-ref.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -217887,6 +218490,15 @@
     },
     {
       "detail": "",
+      "id": "7e5182d7e600f2f6",
+      "kind": "style-block",
+      "offset": 469,
+      "source": "css/css-gaps/grid-lanes/column-gap-decorations-rule-visibility-items-between-004.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "d51c8e3587599aa9",
       "kind": "style-block",
       "offset": 230,
@@ -217950,10 +218562,28 @@
     },
     {
       "detail": "",
+      "id": "571a2b6a54d7fe08",
+      "kind": "style-block",
+      "offset": 258,
+      "source": "css/css-gaps/grid-lanes/column-gap-decorations-rule-visibility-items-around-002-ref.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "a0fcea6c2e72d0c9",
       "kind": "style-block",
       "offset": 230,
       "source": "css/css-gaps/grid-lanes/row-gap-decorations-001-ref.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "296e4290f02101e2",
+      "kind": "style-block",
+      "offset": 258,
+      "source": "css/css-gaps/grid-lanes/column-gap-decorations-rule-visibility-items-between-003-ref.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -217995,6 +218625,24 @@
     },
     {
       "detail": "",
+      "id": "7c7bf77743eb3031",
+      "kind": "style-block",
+      "offset": 258,
+      "source": "css/css-gaps/grid-lanes/column-gap-decorations-rule-visibility-items-all-001-ref.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "935886f16856debf",
+      "kind": "style-block",
+      "offset": 174,
+      "source": "css/css-gaps/grid-lanes/column-gap-decorations-inset-overlap-negative-ref.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "53b39bc86d196091",
       "kind": "style-block",
       "offset": 230,
@@ -218008,6 +218656,15 @@
       "kind": "style-block",
       "offset": 404,
       "source": "css/css-gaps/grid-lanes/row-gap-decorations-010.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "646c1bc2c21df5e0",
+      "kind": "style-block",
+      "offset": 456,
+      "source": "css/css-gaps/grid-lanes/row-gap-decorations-rule-visibility-items-around-001.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -218094,6 +218751,15 @@
     },
     {
       "detail": "",
+      "id": "104923b3eab765bf",
+      "kind": "style-block",
+      "offset": 464,
+      "source": "css/css-gaps/grid-lanes/column-gap-decorations-rule-visibility-items-between-002.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "975a0a3c6ceede63",
       "kind": "style-block",
       "offset": 401,
@@ -218112,10 +218778,28 @@
     },
     {
       "detail": "",
+      "id": "4bf8dd363f7a93dd",
+      "kind": "style-block",
+      "offset": 461,
+      "source": "css/css-gaps/grid-lanes/column-gap-decorations-rule-visibility-items-all-002.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "0f9c77112a2c4bce",
       "kind": "style-block",
       "offset": 441,
       "source": "css/css-gaps/grid-lanes/row-gap-decorations-021.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "b22ddb5428bb3eab",
+      "kind": "style-block",
+      "offset": 258,
+      "source": "css/css-gaps/grid-lanes/column-gap-decorations-rule-visibility-items-around-001-ref.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -218211,6 +218895,24 @@
     },
     {
       "detail": "",
+      "id": "b642f39b871d8182",
+      "kind": "style-block",
+      "offset": 258,
+      "source": "css/css-gaps/grid-lanes/row-gap-decorations-rule-visibility-items-all-001-ref.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "29c9d551cb0877cf",
+      "kind": "style-block",
+      "offset": 258,
+      "source": "css/css-gaps/grid-lanes/column-gap-decorations-rule-visibility-items-between-002-ref.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "140d216753609fd7",
       "kind": "style-block",
       "offset": 230,
@@ -218242,6 +218944,15 @@
       "kind": "style-block",
       "offset": 230,
       "source": "css/css-gaps/grid-lanes/column-gap-decorations-009-ref.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "6fbcfe88a5f61400",
+      "kind": "style-block",
+      "offset": 462,
+      "source": "css/css-gaps/grid-lanes/column-gap-decorations-rule-visibility-items-around-001.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -218409,6 +219120,15 @@
     },
     {
       "detail": "",
+      "id": "12357ecf519e3ad6",
+      "kind": "style-block",
+      "offset": 462,
+      "source": "css/css-gaps/grid-lanes/row-gap-decorations-rule-visibility-items-between-001.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "0a01c11fca8c797d",
       "kind": "style-block",
       "offset": 230,
@@ -218463,6 +219183,15 @@
     },
     {
       "detail": "",
+      "id": "304333f9fb574325",
+      "kind": "style-block",
+      "offset": 467,
+      "source": "css/css-gaps/grid-lanes/column-gap-decorations-rule-visibility-items-around-002.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "d4f4ffbc1d5a579e",
       "kind": "style-block",
       "offset": 230,
@@ -218485,6 +219214,15 @@
       "kind": "style-block",
       "offset": 227,
       "source": "css/css-gaps/grid-lanes/column-gap-decorations-list-fill-track-reverse-ref.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "9343dbf4e9c6549a",
+      "kind": "style-block",
+      "offset": 464,
+      "source": "css/css-gaps/grid-lanes/column-gap-decorations-rule-visibility-items-between-001.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -218535,6 +219273,15 @@
     },
     {
       "detail": "",
+      "id": "0a65dc4a77104427",
+      "kind": "style-block",
+      "offset": 461,
+      "source": "css/css-gaps/grid-lanes/gap-decorations-rule-visibility-items-normal-001.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "bed785f324a14541",
       "kind": "style-block",
       "offset": 392,
@@ -218566,6 +219313,15 @@
       "kind": "style-block",
       "offset": 230,
       "source": "css/css-gaps/grid-lanes/column-gap-decorations-003-ref.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "4eceffe3c0d0bab7",
+      "kind": "style-block",
+      "offset": 258,
+      "source": "css/css-gaps/grid-lanes/gap-decorations-rule-visibility-items-normal-001-ref.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -218679,6 +219435,15 @@
     },
     {
       "detail": "",
+      "id": "09119b09efe2e2f1",
+      "kind": "style-block",
+      "offset": 366,
+      "source": "css/css-gaps/grid-lanes/row-gap-decorations-inset-overlap-negative.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "1c3b37a4279efc3f",
       "kind": "style-block",
       "offset": 230,
@@ -218760,10 +219525,46 @@
     },
     {
       "detail": "",
+      "id": "575f9a312707c200",
+      "kind": "style-block",
+      "offset": 258,
+      "source": "css/css-gaps/grid-lanes/row-gap-decorations-rule-visibility-items-between-001-ref.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "1c9dc0a609a401c0",
+      "kind": "style-block",
+      "offset": 258,
+      "source": "css/css-gaps/grid-lanes/column-gap-decorations-rule-visibility-items-between-004-ref.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "47537c5c79377108",
+      "kind": "style-block",
+      "offset": 188,
+      "source": "css/css-gaps/grid-lanes/column-gap-decorations-inset-overlap-spanner-ref.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "252309dbad05860a",
       "kind": "style-block",
       "offset": 236,
       "source": "css/css-gaps/grid-lanes/row-gap-decorations-024-ref.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "16e54c03d554c3bf",
+      "kind": "style-block",
+      "offset": 376,
+      "source": "css/css-gaps/grid-lanes/column-gap-decorations-inset-overlap-spanner.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -221374,6 +222175,78 @@
       "kind": "style-block",
       "offset": 440,
       "source": "css/css-gaps/grid/subgrid/fragmentation/subgrid-gap-decorations-fragmentation-021.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "22741ba2b8ea13b7",
+      "kind": "style-block",
+      "offset": 178,
+      "source": "css/css-gaps/multicol/fragmentation/multicol-gap-decorations-fragmentation-001-ref.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "0a5551febd3999a9",
+      "kind": "style-block",
+      "offset": 502,
+      "source": "css/css-gaps/multicol/fragmentation/multicol-gap-decorations-fragmentation-001.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "a0c67e7138d80920",
+      "kind": "style-block",
+      "offset": 252,
+      "source": "css/css-gaps/multicol/fragmentation/multicol-gap-decorations-fragmentation-004-ref.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "02b67205152fb2ba",
+      "kind": "style-block",
+      "offset": 515,
+      "source": "css/css-gaps/multicol/fragmentation/multicol-gap-decorations-fragmentation-002.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "70518f197eafdedf",
+      "kind": "style-block",
+      "offset": 626,
+      "source": "css/css-gaps/multicol/fragmentation/multicol-gap-decorations-fragmentation-004.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "e09f56dab741d5b5",
+      "kind": "style-block",
+      "offset": 561,
+      "source": "css/css-gaps/multicol/fragmentation/multicol-gap-decorations-fragmentation-003.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "9407cfef80fded1e",
+      "kind": "style-block",
+      "offset": 178,
+      "source": "css/css-gaps/multicol/fragmentation/multicol-gap-decorations-fragmentation-002-ref.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "5b6b434dbadd3f24",
+      "kind": "style-block",
+      "offset": 178,
+      "source": "css/css-gaps/multicol/fragmentation/multicol-gap-decorations-fragmentation-003-ref.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -227688,6 +228561,15 @@
     },
     {
       "detail": "",
+      "id": "63de130ade94f80f",
+      "kind": "style-block",
+      "offset": 307,
+      "source": "css/css-inline/text-box-trim/text-box-trim-scroll-container-002.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "d40b822762eb1ba3",
       "kind": "style-block",
       "offset": 1022,
@@ -227886,6 +228768,15 @@
     },
     {
       "detail": "",
+      "id": "8febdede638d38d9",
+      "kind": "style-block",
+      "offset": 283,
+      "source": "css/css-inline/text-box-trim/text-box-trim-fieldset-001.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "6310437b02882374",
       "kind": "style-block",
       "offset": 354,
@@ -227980,6 +228871,15 @@
       "kind": "style-block",
       "offset": 387,
       "source": "css/css-inline/text-box-trim/text-box-on-non-root-inline-box.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "f7782ed9d188f170",
+      "kind": "style-block",
+      "offset": 309,
+      "source": "css/css-inline/text-box-trim/text-box-trim-scroll-container-001.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -228597,6 +229497,15 @@
     },
     {
       "detail": "",
+      "id": "df2a2917d30a9a2c",
+      "kind": "style-block",
+      "offset": 309,
+      "source": "css/css-inline/text-box-trim/text-box-trim-scroll-container-003.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "85d6067a83b43ad5",
       "kind": "style-block",
       "offset": 170,
@@ -228628,6 +229537,15 @@
       "kind": "style-block",
       "offset": 1275,
       "source": "css/css-inline/text-box-trim/text-box-trim-end-001.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "7870515ace909394",
+      "kind": "style-block",
+      "offset": 479,
+      "source": "css/css-inline/text-box-trim/text-box-trim-scroll-container-004.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -251340,63 +252258,90 @@
     },
     {
       "detail": "",
-      "id": "062fc5a13be5aae2",
+      "id": "b7687a2ea4d91b78",
       "kind": "declaration",
-      "offset": 533,
+      "offset": 532,
       "source": "css/css-transitions/parsing/transition-property-valid.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "1d2af13373009281",
+      "id": "833cdab1fd57ed61",
       "kind": "declaration",
-      "offset": 582,
+      "offset": 581,
       "source": "css/css-transitions/parsing/transition-property-valid.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "8f681a2bed11d0f6",
+      "id": "2ce9970c235b650a",
       "kind": "declaration",
-      "offset": 630,
+      "offset": 629,
       "source": "css/css-transitions/parsing/transition-property-valid.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "342ff8636dc40dfe",
+      "id": "c35310145664462a",
       "kind": "declaration",
-      "offset": 678,
+      "offset": 677,
       "source": "css/css-transitions/parsing/transition-property-valid.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "0a27f3181cae15f3",
+      "id": "52ec0d273060d719",
       "kind": "declaration",
-      "offset": 736,
+      "offset": 735,
       "source": "css/css-transitions/parsing/transition-property-valid.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "2214ee21c1ee56cb",
+      "id": "147b466e18b24c02",
       "kind": "declaration",
-      "offset": 796,
+      "offset": 795,
       "source": "css/css-transitions/parsing/transition-property-valid.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "8945fd81d3a8bdd2",
+      "id": "b57e4b770f6c156a",
       "kind": "declaration",
-      "offset": 851,
+      "offset": 850,
+      "source": "css/css-transitions/parsing/transition-property-valid.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "6c005586a08f87f0",
+      "kind": "declaration",
+      "offset": 912,
+      "source": "css/css-transitions/parsing/transition-property-valid.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "d01dfc53dfb26d55",
+      "kind": "declaration",
+      "offset": 970,
+      "source": "css/css-transitions/parsing/transition-property-valid.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "3f00262f8c6a14b8",
+      "kind": "declaration",
+      "offset": 1069,
       "source": "css/css-transitions/parsing/transition-property-valid.html",
       "status": "pass",
       "suite": "wpt-css"
@@ -251578,15 +252523,6 @@
       "kind": "declaration",
       "offset": 634,
       "source": "css/css-transitions/parsing/transition-delay-valid.html",
-      "status": "pass",
-      "suite": "wpt-css"
-    },
-    {
-      "detail": "",
-      "id": "4d33043e9d494b32",
-      "kind": "declaration",
-      "offset": 514,
-      "source": "css/css-transitions/parsing/transition-property-computed.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -255588,6 +256524,15 @@
     },
     {
       "detail": "",
+      "id": "1a52322e7e308e10",
+      "kind": "style-block",
+      "offset": 452,
+      "source": "css/css-overflow/line-clamp/line-clamp-auto-062.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "dc8acbbe4690794f",
       "kind": "style-block",
       "offset": 346,
@@ -255642,6 +256587,15 @@
     },
     {
       "detail": "",
+      "id": "a4cd142fabd40023",
+      "kind": "style-block",
+      "offset": 562,
+      "source": "css/css-overflow/line-clamp/line-clamp-with-floats-013.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "1ed5e64189dd51dc",
       "kind": "style-block",
       "offset": 492,
@@ -255669,6 +256623,15 @@
     },
     {
       "detail": "",
+      "id": "122fac911b46cd21",
+      "kind": "style-block",
+      "offset": 525,
+      "source": "css/css-overflow/line-clamp/line-clamp-with-floats-008.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "3deb2ff6274a566e",
       "kind": "style-block",
       "offset": 636,
@@ -255691,6 +256654,15 @@
       "kind": "style-block",
       "offset": 599,
       "source": "css/css-overflow/line-clamp/line-clamp-with-fixed-pos-016.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "8dedce50c2334d1b",
+      "kind": "style-block",
+      "offset": 460,
+      "source": "css/css-overflow/line-clamp/line-clamp-auto-058.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -256159,6 +257131,15 @@
       "kind": "style-block",
       "offset": 493,
       "source": "css/css-overflow/line-clamp/line-clamp-balance-007.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "da7df4b1734c56c3",
+      "kind": "style-block",
+      "offset": 486,
+      "source": "css/css-overflow/line-clamp/line-clamp-preserves-dom-content.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -256641,6 +257622,15 @@
     },
     {
       "detail": "",
+      "id": "2c82108008d5f0eb",
+      "kind": "style-block",
+      "offset": 452,
+      "source": "css/css-overflow/line-clamp/line-clamp-auto-060.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "4624983551b90ca9",
       "kind": "style-block",
       "offset": 525,
@@ -256690,6 +257680,15 @@
       "kind": "style-block",
       "offset": 547,
       "source": "css/css-overflow/line-clamp/line-clamp-030.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "c9636c87eaef8420",
+      "kind": "style-block",
+      "offset": 536,
+      "source": "css/css-overflow/line-clamp/line-clamp-with-floats-009.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -257235,6 +258234,15 @@
     },
     {
       "detail": "",
+      "id": "f6084d265ee4a7aa",
+      "kind": "style-block",
+      "offset": 577,
+      "source": "css/css-overflow/line-clamp/line-clamp-with-floats-014.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "55dbb9c2200df1b1",
       "kind": "style-block",
       "offset": 499,
@@ -257311,6 +258319,15 @@
       "kind": "style-block",
       "offset": 434,
       "source": "css/css-overflow/line-clamp/webkit-line-clamp-049.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "21562e7b29095550",
+      "kind": "style-block",
+      "offset": 452,
+      "source": "css/css-overflow/line-clamp/line-clamp-auto-061.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -257748,6 +258765,15 @@
     },
     {
       "detail": "",
+      "id": "2c15bad156f2bf85",
+      "kind": "style-block",
+      "offset": 875,
+      "source": "css/css-overflow/scroll-markers/scroll-buttons-contents-appearance.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "4d9bbae472e01d23",
       "kind": "style-block",
       "offset": 244,
@@ -257874,6 +258900,15 @@
     },
     {
       "detail": "",
+      "id": "6adf755e81b0a84f",
+      "kind": "style-block",
+      "offset": 187,
+      "source": "css/css-overflow/scroll-markers/scroll-marker-group-position-change-crash.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "7c517376217f2bd6",
       "kind": "style-block",
       "offset": 212,
@@ -257941,6 +258976,15 @@
       "kind": "style-block",
       "offset": 463,
       "source": "css/css-overflow/scroll-markers/scroll-marker-hover.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "e319f3cc14eb5847",
+      "kind": "style-block",
+      "offset": 857,
+      "source": "css/css-overflow/scroll-markers/scroll-buttons-counter-appearance-ref.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -258126,6 +259170,15 @@
     },
     {
       "detail": "",
+      "id": "db395f97b09072b0",
+      "kind": "style-block",
+      "offset": 964,
+      "source": "css/css-overflow/scroll-markers/scroll-buttons-counter-appearance.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "8345fe1d0c3abae0",
       "kind": "style-block",
       "offset": 211,
@@ -258166,6 +259219,15 @@
       "kind": "style-block",
       "offset": 126,
       "source": "css/css-overflow/scroll-markers/column-scroll-marker-007-ref.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "b2a14d60720c85b1",
+      "kind": "style-block",
+      "offset": 689,
+      "source": "css/css-overflow/scroll-markers/scroll-buttons-contents-appearance-ref.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -261420,9 +262482,9 @@
     },
     {
       "detail": "",
-      "id": "f4e08dcb1aff780a",
+      "id": "8222a9ffc259c571",
       "kind": "style-block",
-      "offset": 372,
+      "offset": 356,
       "source": "css/css-overflow/line-clamp/reference/line-clamp-auto-048-ref.html",
       "status": "pass",
       "suite": "wpt-css"
@@ -261784,6 +262846,15 @@
       "kind": "style-block",
       "offset": 75,
       "source": "css/css-overflow/line-clamp/reference/webkit-line-clamp-008-ref.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "b95fc1292a598807",
+      "kind": "style-block",
+      "offset": 395,
+      "source": "css/css-overflow/line-clamp/reference/line-clamp-auto-058-ref.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -262360,6 +263431,15 @@
       "kind": "style-block",
       "offset": 75,
       "source": "css/css-overflow/line-clamp/reference/line-clamp-auto-053-ref.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "b6ad2245d9f59d47",
+      "kind": "style-block",
+      "offset": 75,
+      "source": "css/css-overflow/line-clamp/reference/line-clamp-with-floats-009-ref.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -263337,7 +264417,7 @@
     },
     {
       "detail": "",
-      "id": "702a948bfe068a02",
+      "id": "0bbee3235e065649",
       "kind": "stylesheet",
       "offset": 0,
       "source": "css/css-tables/height-distribution/support/scrollbars.css",
@@ -274047,6 +275127,15 @@
     },
     {
       "detail": "",
+      "id": "df153d65ca3f0d71",
+      "kind": "style-block",
+      "offset": 559,
+      "source": "css/css-conditional/container-queries/query-style-color-powerless.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "0f43d5e857577601",
       "kind": "style-block",
       "offset": 337,
@@ -274348,6 +275437,15 @@
       "kind": "style-block",
       "offset": 347,
       "source": "css/css-conditional/container-queries/style-query-container-name-change.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "ad095d5cc5dc613e",
+      "kind": "style-block",
+      "offset": 449,
+      "source": "css/css-conditional/container-queries/style-range-var-in-function-change.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -282308,8 +283406,8 @@
       "suite": "wpt-css"
     }
   ],
-  "duration_seconds": 100.337,
-  "generated_at": "2026-09-14T08:57:58Z",
+  "duration_seconds": 116.954,
+  "generated_at": "2026-09-21T08:59:55Z",
   "minifier": {
     "commit": "4866db785c78abb564697ade821d0e4425b89364",
     "name": "Minify++",
@@ -282326,15 +283424,15 @@
   "sources": {
     "wpt": {
       "branch": "master",
-      "revision": "987a2d0c1a45f1a193f1f05d9508c4efc307c3bf",
-      "synced_at": "2026-09-14T08:56:10Z",
+      "revision": "730ca21861cfab9c9a2a5f508a13ec9b88673782",
+      "synced_at": "2026-09-21T08:57:48Z",
       "url": "https://github.com/web-platform-tests/wpt.git"
     }
   },
   "summary": {
     "counts": {
-      "pass": 31367
+      "pass": 31489
     },
-    "total": 31367
+    "total": 31489
   }
 }
