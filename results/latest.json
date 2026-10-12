@@ -924,6 +924,15 @@
     },
     {
       "detail": "",
+      "id": "7dfd582a8a48834c",
+      "kind": "style-block",
+      "offset": 651,
+      "source": "css/css-pseudo/selection-transparent-text-ua-background.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "56b2df4bc6397e99",
       "kind": "style-block",
       "offset": 357,
@@ -2580,6 +2589,15 @@
     },
     {
       "detail": "",
+      "id": "409a5dc6d3e612c8",
+      "kind": "style-block",
+      "offset": 244,
+      "source": "css/css-pseudo/selection-transparent-text-invisible-ref.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "e1d4f2de468127e4",
       "kind": "style-block",
       "offset": 461,
@@ -2895,9 +2913,9 @@
     },
     {
       "detail": "",
-      "id": "0c6a7815f32f8579",
+      "id": "6de7b7e934038e2e",
       "kind": "style-block",
-      "offset": 651,
+      "offset": 727,
       "source": "css/css-pseudo/highlight-painting-shadows-vertical.html",
       "status": "pass",
       "suite": "wpt-css"
@@ -4011,9 +4029,9 @@
     },
     {
       "detail": "",
-      "id": "acbb3c10956f601f",
+      "id": "35bd8036995a1b64",
       "kind": "style-block",
-      "offset": 275,
+      "offset": 351,
       "source": "css/css-pseudo/highlight-painting-shadows-vertical-ref.html",
       "status": "pass",
       "suite": "wpt-css"
@@ -4060,6 +4078,15 @@
       "kind": "style-block",
       "offset": 251,
       "source": "css/css-pseudo/highlight-painting-currentcolor-005-ref.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "a325144143efd92e",
+      "kind": "style-block",
+      "offset": 773,
+      "source": "css/css-pseudo/selection-transparent-text-author-background.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -4150,6 +4177,15 @@
       "kind": "style-block",
       "offset": 733,
       "source": "css/css-pseudo/first-letter-capitalize-supplementary-char.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "1b60a55036123f5b",
+      "kind": "style-block",
+      "offset": 270,
+      "source": "css/css-pseudo/selection-transparent-text-author-background-ref.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -26133,6 +26169,15 @@
     },
     {
       "detail": "",
+      "id": "b1549a1dd59f403a",
+      "kind": "style-block",
+      "offset": 23,
+      "source": "css/css-display/display-contents-svg-pseudo-crash.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "5dd10a998eaf3cfb",
       "kind": "style-block",
       "offset": 344,
@@ -26394,7 +26439,7 @@
     },
     {
       "detail": "",
-      "id": "3f950d8e92816235",
+      "id": "0f21cbfc17f954da",
       "kind": "style-block",
       "offset": 320,
       "source": "css/css-display/select-4-option-optgroup-display-none-ref.html",
@@ -26461,6 +26506,15 @@
       "kind": "style-block",
       "offset": 351,
       "source": "css/css-display/display-contents-float-001.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "f5777d1ddd3f78aa",
+      "kind": "style-block",
+      "offset": 481,
+      "source": "css/css-display/select-4-option-optgroup-display-none.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -26785,6 +26839,15 @@
       "kind": "style-block",
       "offset": 528,
       "source": "css/cssom-view/element-scroll-promises.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "3b737d808c34a1d5",
+      "kind": "style-block",
+      "offset": 454,
+      "source": "css/cssom-view/elementFromPoint-negative-z-index-inline-overflow-clip.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -27915,6 +27978,15 @@
     },
     {
       "detail": "",
+      "id": "e2136ebb53223c8f",
+      "kind": "style-block",
+      "offset": 461,
+      "source": "css/cssom-view/elementFromPoint-negative-z-index-inline.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "44c4f1f0f14c3b81",
       "kind": "style-block",
       "offset": 332,
@@ -28099,6 +28171,15 @@
       "kind": "style-block",
       "offset": 4343,
       "source": "css/css-mixins/function-relative-units.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "7958e06058d45829",
+      "kind": "style-block",
+      "offset": 638,
+      "source": "css/css-mixins/function-property-context.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -30232,6 +30313,15 @@
       "kind": "style-block",
       "offset": 519,
       "source": "css/filter-effects/backdrop-filter-paint-order-ref.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "a1c2f6b478d3526c",
+      "kind": "style-block",
+      "offset": 808,
+      "source": "css/filter-effects/feTile-01.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -38319,6 +38409,15 @@
     },
     {
       "detail": "",
+      "id": "4c94d83d6bfaa8c3",
+      "kind": "style-block",
+      "offset": 23,
+      "source": "css/css-backgrounds/background-image-gradient-currentcolor-self-repaint-ref.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "a32ebe523588595b",
       "kind": "style-block",
       "offset": 384,
@@ -40771,6 +40870,15 @@
       "kind": "style-block",
       "offset": 768,
       "source": "css/css-backgrounds/background-origin-003.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "d8413bc1ef9e0745",
+      "kind": "style-block",
+      "offset": 633,
+      "source": "css/css-backgrounds/background-image-gradient-currentcolor-self-repaint.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -49416,6 +49524,15 @@
     },
     {
       "detail": "",
+      "id": "eb2a4dc092b51431",
+      "kind": "style-block",
+      "offset": 48,
+      "source": "css/css-grid/observer-chain-crash.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "b4e15191fb750609",
       "kind": "style-block",
       "offset": 762,
@@ -50568,9 +50685,9 @@
     },
     {
       "detail": "",
-      "id": "a10f85f0be048d5b",
+      "id": "32bf15e5c3f032aa",
       "kind": "style-block",
-      "offset": 553,
+      "offset": 330,
       "source": "css/css-scroll-snap/scroll-snap-type-pair-007.html",
       "status": "pass",
       "suite": "wpt-css"
@@ -53457,6 +53574,15 @@
     },
     {
       "detail": "",
+      "id": "c58ee3c6c144ada6",
+      "kind": "style-block",
+      "offset": 1305,
+      "source": "css/selectors/featureless-007.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "e2d89edb93b94479",
       "kind": "style-block",
       "offset": 280,
@@ -54649,6 +54775,24 @@
       "kind": "style-block",
       "offset": 388,
       "source": "css/selectors/dir-selector-change-003.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "bec194061257dd1e",
+      "kind": "style-block",
+      "offset": 692,
+      "source": "css/selectors/featureless-006.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "ddd1467f62ca498c",
+      "kind": "style-block",
+      "offset": 3511,
+      "source": "css/selectors/featureless-006.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -57147,6 +57291,24 @@
     },
     {
       "detail": "",
+      "id": "367d5c3367ef11ab",
+      "kind": "style-block",
+      "offset": 21501,
+      "source": "css/css-cascade/scope-invalidation.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "62a725b184d79823",
+      "kind": "style-block",
+      "offset": 22071,
+      "source": "css/css-cascade/scope-invalidation.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "5019d6d0e6cf73a3",
       "kind": "style-block",
       "offset": 471,
@@ -57709,6 +57871,15 @@
       "kind": "style-block",
       "offset": 346,
       "source": "css/css-cascade/all-prop-revert-layer.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "6200f833beaad96d",
+      "kind": "style-block",
+      "offset": 4337,
+      "source": "css/css-cascade/layer-cssom-insert-after-style.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -78405,6 +78576,15 @@
     },
     {
       "detail": "",
+      "id": "ad32d3d377d1e45c",
+      "kind": "style-block",
+      "offset": 631,
+      "source": "css/css-flexbox/column-flex-child-center-with-indefinite-height.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "fcdda65c20b16144",
       "kind": "style-block",
       "offset": 287,
@@ -88503,6 +88683,15 @@
     },
     {
       "detail": "",
+      "id": "b6c92b221dc6bdfa",
+      "kind": "style-block",
+      "offset": 508,
+      "source": "css/css-transitions/starting-style-revert-layer-cascade.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "22c602adda38f056",
       "kind": "style-block",
       "offset": 510,
@@ -90802,6 +90991,15 @@
       "kind": "style-block",
       "offset": 53,
       "source": "css/printing/table-in-flex-overflow-print-ref.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "ea174c6cf2bbb0d3",
+      "kind": "style-block",
+      "offset": 352,
+      "source": "css/printing/table-row-group-float-crash-print.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -103938,6 +104136,15 @@
     },
     {
       "detail": "",
+      "id": "06c1e726f9fd393e",
+      "kind": "style-block",
+      "offset": 658,
+      "source": "css/css-text-decor/text-decoration-wavy-phase-across-elements-001.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "e24d5529b4c6eb3f",
       "kind": "style-block",
       "offset": 420,
@@ -112785,6 +112992,15 @@
     },
     {
       "detail": "",
+      "id": "172d260d16923c0b",
+      "kind": "style-block",
+      "offset": 133,
+      "source": "css/css-fonts/variations/ital-variable-ref.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "bdaecb186e635338",
       "kind": "style-block",
       "offset": 136,
@@ -112834,6 +113050,15 @@
       "kind": "style-block",
       "offset": 53,
       "source": "css/css-fonts/variations/font-descriptor-range-reversed-ref.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "7b4a8657cdead2b4",
+      "kind": "style-block",
+      "offset": 576,
+      "source": "css/css-fonts/variations/ital-variable.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -114301,6 +114526,15 @@
       "kind": "style-block",
       "offset": 75,
       "source": "css/CSS2/normal-flow/margin-collapse-min-height-001-ref.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "e2304d57aeec873e",
+      "kind": "style-block",
+      "offset": 554,
+      "source": "css/CSS2/normal-flow/dynamic-padding-change-with-style-update-before-layout.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -124903,6 +125137,15 @@
     },
     {
       "detail": "",
+      "id": "ff7c20f8f6a4c2bc",
+      "kind": "style-block",
+      "offset": 333,
+      "source": "css/css-view-transitions/scoped/scope-containment-remembered-size.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "311deccb48a042d4",
       "kind": "style-block",
       "offset": 535,
@@ -125218,6 +125461,15 @@
     },
     {
       "detail": "",
+      "id": "535cc0081c0e3d91",
+      "kind": "style-block",
+      "offset": 416,
+      "source": "css/css-view-transitions/scoped/scope-containment-keeps-author-remembered-size.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "30afdc2884bf8397",
       "kind": "stylesheet",
       "offset": 0,
@@ -125357,6 +125609,15 @@
       "kind": "stylesheet",
       "offset": 0,
       "source": "css/css-view-transitions/navigation/resources/opt-out-style.css",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "53c7952cd902eaa9",
+      "kind": "style-block",
+      "offset": 82,
+      "source": "css/css-view-transitions/navigation/resources/pageswap-media-change.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -129448,6 +129709,15 @@
     },
     {
       "detail": "",
+      "id": "0ea09cbd3a071dcb",
+      "kind": "style-block",
+      "offset": 718,
+      "source": "css/css-gaps/grid-lanes/column-gap-decorations-rule-visibility-items-between-010.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "bc77d6bdb03462cd",
       "kind": "style-block",
       "offset": 481,
@@ -129479,6 +129749,15 @@
       "kind": "style-block",
       "offset": 258,
       "source": "css/css-gaps/grid-lanes/row-gap-decorations-rule-visibility-items-around-002-ref.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "cb10063649d6d9f5",
+      "kind": "style-block",
+      "offset": 724,
+      "source": "css/css-gaps/grid-lanes/column-gap-decorations-rule-visibility-items-between-009.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -129655,6 +129934,24 @@
     },
     {
       "detail": "",
+      "id": "fa4fa9cde6ecf4c1",
+      "kind": "style-block",
+      "offset": 106,
+      "source": "css/css-gaps/grid-lanes/row-gap-decorations-rule-visibility-items-around-004-ref.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "05e66cfe3865345d",
+      "kind": "style-block",
+      "offset": 106,
+      "source": "css/css-gaps/grid-lanes/column-gap-decorations-rule-visibility-items-between-008-ref.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "aedeb599d682dcbf",
       "kind": "style-block",
       "offset": 462,
@@ -129677,6 +129974,15 @@
       "kind": "style-block",
       "offset": 427,
       "source": "css/css-gaps/grid-lanes/column-gap-decorations-022.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "2e1eea118997bc85",
+      "kind": "style-block",
+      "offset": 106,
+      "source": "css/css-gaps/grid-lanes/column-gap-decorations-rule-visibility-items-between-007-ref.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -129817,10 +130123,28 @@
     },
     {
       "detail": "",
+      "id": "babd4832a4f1aec3",
+      "kind": "style-block",
+      "offset": 106,
+      "source": "css/css-gaps/grid-lanes/row-gap-decorations-rule-visibility-items-around-006-ref.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "c6d12c929d1f848b",
       "kind": "style-block",
       "offset": 258,
       "source": "css/css-gaps/grid-lanes/row-gap-decorations-rule-visibility-items-between-002-ref.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "3c4e6a1f1af0fcf1",
+      "kind": "style-block",
+      "offset": 716,
+      "source": "css/css-gaps/grid-lanes/row-gap-decorations-rule-visibility-items-around-007.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -129844,6 +130168,15 @@
     },
     {
       "detail": "",
+      "id": "357879c8d77eccef",
+      "kind": "style-block",
+      "offset": 545,
+      "source": "css/css-gaps/grid-lanes/column-gap-decorations-rule-visibility-items-between-008.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "ecf95eb72748ca0e",
       "kind": "style-block",
       "offset": 463,
@@ -129862,9 +130195,9 @@
     },
     {
       "detail": "",
-      "id": "299ba6ea3234a88a",
+      "id": "7b1b81d4a88e601f",
       "kind": "style-block",
-      "offset": 452,
+      "offset": 478,
       "source": "css/css-gaps/grid-lanes/row-gap-decorations-rule-visibility-items-between-004.html",
       "status": "pass",
       "suite": "wpt-css"
@@ -129875,6 +130208,15 @@
       "kind": "style-block",
       "offset": 239,
       "source": "css/css-gaps/grid-lanes/row-subgrid-parent-rule-break-none-ref.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "d51fa45427810433",
+      "kind": "style-block",
+      "offset": 520,
+      "source": "css/css-gaps/grid-lanes/row-gap-decorations-rule-visibility-items-between-006.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -129920,6 +130262,15 @@
       "kind": "style-block",
       "offset": 230,
       "source": "css/css-gaps/grid-lanes/column-gap-decorations-list-dense-order-ref.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "f8da0776f468011e",
+      "kind": "style-block",
+      "offset": 613,
+      "source": "css/css-gaps/grid-lanes/row-gap-decorations-rule-visibility-items-around-005.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -130303,6 +130654,15 @@
     },
     {
       "detail": "",
+      "id": "28f5728c87c6d5a0",
+      "kind": "style-block",
+      "offset": 106,
+      "source": "css/css-gaps/grid-lanes/row-gap-decorations-rule-visibility-items-between-008-ref.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "f5db6733c99ba156",
       "kind": "style-block",
       "offset": 405,
@@ -130334,6 +130694,15 @@
       "kind": "style-block",
       "offset": 236,
       "source": "css/css-gaps/grid-lanes/row-gap-decorations-inset-overlap-join-ref.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "9b20ae0c903ff034",
+      "kind": "style-block",
+      "offset": 540,
+      "source": "css/css-gaps/grid-lanes/row-gap-decorations-rule-visibility-items-around-006.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -130474,6 +130843,15 @@
     },
     {
       "detail": "",
+      "id": "9fd3d9efd00e9541",
+      "kind": "style-block",
+      "offset": 533,
+      "source": "css/css-gaps/grid-lanes/row-gap-decorations-rule-visibility-items-between-005.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "d9eba9361e5719c5",
       "kind": "style-block",
       "offset": 437,
@@ -130483,7 +130861,16 @@
     },
     {
       "detail": "",
-      "id": "ee19c644c5533f98",
+      "id": "08903426ec24ef24",
+      "kind": "style-block",
+      "offset": 718,
+      "source": "css/css-gaps/grid-lanes/row-gap-decorations-rule-visibility-items-between-009.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "95ddb4266d0a8935",
       "kind": "style-block",
       "offset": 106,
       "source": "css/css-gaps/grid-lanes/row-gap-decorations-rule-visibility-items-between-004-ref.html",
@@ -130505,6 +130892,15 @@
       "kind": "style-block",
       "offset": 230,
       "source": "css/css-gaps/grid-lanes/column-gap-decorations-019-ref.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "69fe84bae541a192",
+      "kind": "style-block",
+      "offset": 250,
+      "source": "css/css-gaps/grid-lanes/column-gap-decorations-rule-visibility-items-between-005-ref.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -130577,6 +130973,15 @@
       "kind": "style-block",
       "offset": 258,
       "source": "css/css-gaps/grid-lanes/column-gap-decorations-rule-visibility-items-empty-around-ref.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "5dc05dad3025ad69",
+      "kind": "style-block",
+      "offset": 106,
+      "source": "css/css-gaps/grid-lanes/row-gap-decorations-rule-visibility-items-between-009-ref.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -130690,9 +131095,9 @@
     },
     {
       "detail": "",
-      "id": "104923b3eab765bf",
+      "id": "9691492463e5eacb",
       "kind": "style-block",
-      "offset": 464,
+      "offset": 635,
       "source": "css/css-gaps/grid-lanes/column-gap-decorations-rule-visibility-items-between-002.html",
       "status": "pass",
       "suite": "wpt-css"
@@ -130703,6 +131108,15 @@
       "kind": "style-block",
       "offset": 239,
       "source": "css/css-gaps/grid-lanes/column-subgrid-spanning-item-decorations-ref.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "5fa22e85a544e0d3",
+      "kind": "style-block",
+      "offset": 106,
+      "source": "css/css-gaps/grid-lanes/row-gap-decorations-rule-visibility-items-between-006-ref.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -130721,6 +131135,15 @@
       "kind": "style-block",
       "offset": 408,
       "source": "css/css-gaps/grid-lanes/row-gap-decorations-018.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "561cd1c48679bc4c",
+      "kind": "style-block",
+      "offset": 106,
+      "source": "css/css-gaps/grid-lanes/row-gap-decorations-rule-visibility-items-between-007-ref.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -130789,6 +131212,15 @@
     },
     {
       "detail": "",
+      "id": "676747cda44bb9b2",
+      "kind": "style-block",
+      "offset": 106,
+      "source": "css/css-gaps/grid-lanes/column-gap-decorations-rule-visibility-items-between-010-ref.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "4906eb0a99e9175f",
       "kind": "style-block",
       "offset": 409,
@@ -130807,6 +131239,15 @@
     },
     {
       "detail": "",
+      "id": "7beee6106350154f",
+      "kind": "style-block",
+      "offset": 526,
+      "source": "css/css-gaps/grid-lanes/column-gap-decorations-rule-visibility-items-between-006.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "511f494dc1679fc9",
       "kind": "style-block",
       "offset": 515,
@@ -130820,6 +131261,15 @@
       "kind": "style-block",
       "offset": 239,
       "source": "css/css-gaps/grid-lanes/column-subgrid-gap-override-decorations-ref.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "ca1920ad395d2b0e",
+      "kind": "style-block",
+      "offset": 545,
+      "source": "css/css-gaps/grid-lanes/column-gap-decorations-rule-visibility-items-around-006.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -130874,6 +131324,15 @@
       "kind": "style-block",
       "offset": 412,
       "source": "css/css-gaps/grid-lanes/row-gap-decorations-012.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "db5543d5361c5e2f",
+      "kind": "style-block",
+      "offset": 621,
+      "source": "css/css-gaps/grid-lanes/column-gap-decorations-rule-visibility-items-between-007.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -131041,7 +131500,7 @@
     },
     {
       "detail": "",
-      "id": "29c9d551cb0877cf",
+      "id": "3eceafe52642c47a",
       "kind": "style-block",
       "offset": 258,
       "source": "css/css-gaps/grid-lanes/column-gap-decorations-rule-visibility-items-between-002-ref.html",
@@ -131081,6 +131540,24 @@
       "kind": "style-block",
       "offset": 239,
       "source": "css/css-gaps/grid-lanes/column-subgrid-empty-decorations-ref.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "6846975e08623edb",
+      "kind": "style-block",
+      "offset": 525,
+      "source": "css/css-gaps/grid-lanes/column-gap-decorations-rule-visibility-items-around-004.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "423615e4490c7f8e",
+      "kind": "style-block",
+      "offset": 619,
+      "source": "css/css-gaps/grid-lanes/column-gap-decorations-rule-visibility-items-around-005.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -131221,10 +131698,46 @@
     },
     {
       "detail": "",
+      "id": "98ae1cddae967ccc",
+      "kind": "style-block",
+      "offset": 540,
+      "source": "css/css-gaps/grid-lanes/row-gap-decorations-rule-visibility-items-between-008.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "68f11b4b5db5f8b1",
+      "kind": "style-block",
+      "offset": 106,
+      "source": "css/css-gaps/grid-lanes/column-gap-decorations-rule-visibility-items-around-007-ref.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "7de359ad298038a4",
       "kind": "style-block",
       "offset": 384,
       "source": "css/css-gaps/grid-lanes/column-gap-decorations-015.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "25458c6e2acafcf1",
+      "kind": "style-block",
+      "offset": 722,
+      "source": "css/css-gaps/grid-lanes/column-gap-decorations-rule-visibility-items-around-007.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "5dfd07b306c5d380",
+      "kind": "style-block",
+      "offset": 106,
+      "source": "css/css-gaps/grid-lanes/column-gap-decorations-rule-visibility-items-around-004-ref.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -131455,6 +131968,15 @@
     },
     {
       "detail": "",
+      "id": "4a28d18cf2acea32",
+      "kind": "style-block",
+      "offset": 539,
+      "source": "css/css-gaps/grid-lanes/column-gap-decorations-rule-visibility-items-between-005.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "e5517217196cf7aa",
       "kind": "style-block",
       "offset": 236,
@@ -131608,6 +132130,15 @@
     },
     {
       "detail": "",
+      "id": "c4c1c07465affdeb",
+      "kind": "style-block",
+      "offset": 250,
+      "source": "css/css-gaps/grid-lanes/row-gap-decorations-rule-visibility-items-between-005-ref.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "c536da43587d55d4",
       "kind": "style-block",
       "offset": 424,
@@ -131639,6 +132170,15 @@
       "kind": "style-block",
       "offset": 406,
       "source": "css/css-gaps/grid-lanes/row-gap-decorations-013.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "83c46b7c1255a596",
+      "kind": "style-block",
+      "offset": 106,
+      "source": "css/css-gaps/grid-lanes/row-gap-decorations-rule-visibility-items-around-003-ref.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -131702,6 +132242,15 @@
       "kind": "style-block",
       "offset": 236,
       "source": "css/css-gaps/grid-lanes/column-gap-decorations-040-ref.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "16225f440b9f379b",
+      "kind": "style-block",
+      "offset": 106,
+      "source": "css/css-gaps/grid-lanes/column-gap-decorations-rule-visibility-items-around-006-ref.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -131968,6 +132517,33 @@
     },
     {
       "detail": "",
+      "id": "ece471c0f1121501",
+      "kind": "style-block",
+      "offset": 106,
+      "source": "css/css-gaps/grid-lanes/row-gap-decorations-rule-visibility-items-between-010-ref.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "df269a9024803edf",
+      "kind": "style-block",
+      "offset": 519,
+      "source": "css/css-gaps/grid-lanes/row-gap-decorations-rule-visibility-items-around-004.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "efc919d6869a5582",
+      "kind": "style-block",
+      "offset": 106,
+      "source": "css/css-gaps/grid-lanes/column-gap-decorations-rule-visibility-items-between-006-ref.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "0f9c77112a2c4bce",
       "kind": "style-block",
       "offset": 441,
@@ -132076,6 +132652,15 @@
     },
     {
       "detail": "",
+      "id": "e2e8eba9106c758f",
+      "kind": "style-block",
+      "offset": 712,
+      "source": "css/css-gaps/grid-lanes/row-gap-decorations-rule-visibility-items-between-010.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "150e71f770bb3103",
       "kind": "style-block",
       "offset": 230,
@@ -132089,6 +132674,15 @@
       "kind": "style-block",
       "offset": 574,
       "source": "css/css-gaps/grid-lanes/column-gap-decorations-rule-visibility-items-repaint-normal-to-between.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "a188d24261bd591a",
+      "kind": "style-block",
+      "offset": 615,
+      "source": "css/css-gaps/grid-lanes/row-gap-decorations-rule-visibility-items-between-007.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -136693,6 +137287,15 @@
     },
     {
       "detail": "",
+      "id": "a770090d57186cf7",
+      "kind": "style-block",
+      "offset": 540,
+      "source": "css/css-shapes/shape-outside/shape-image/shape-image-030.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "5e3f4f5c503e1b2a",
       "kind": "style-block",
       "offset": 845,
@@ -139028,6 +139631,15 @@
       "kind": "style-block",
       "offset": 602,
       "source": "css/css-shapes/shape-outside/shape-image/gradients/shape-outside-linear-gradient-004.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "e5d6bca3eb3502ac",
+      "kind": "style-block",
+      "offset": 647,
+      "source": "css/css-shapes/shape-outside/shape-image/gradients/shape-outside-linear-gradient-last-column.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -148222,54 +148834,90 @@
     },
     {
       "detail": "",
-      "id": "a908f3c70f40c576",
+      "id": "a23110fec0db8435",
       "kind": "style-block",
-      "offset": 4210,
+      "offset": 4228,
       "source": "css/css-mixins/functions/function-shadow.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "84b286792170006a",
+      "id": "bf209211f5463af1",
       "kind": "style-block",
-      "offset": 4406,
+      "offset": 4434,
       "source": "css/css-mixins/functions/function-shadow.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "f97d9fe116fe01b2",
+      "id": "bf422f5c33488923",
       "kind": "style-block",
-      "offset": 4784,
+      "offset": 4736,
       "source": "css/css-mixins/functions/function-shadow.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "302f4f9d4c0a4eda",
+      "id": "b65cd82627442e17",
       "kind": "style-block",
-      "offset": 5005,
+      "offset": 4969,
       "source": "css/css-mixins/functions/function-shadow.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "186b6ac6c9dfd753",
+      "id": "25d2ed01cc1d8747",
       "kind": "style-block",
-      "offset": 5468,
+      "offset": 5236,
       "source": "css/css-mixins/functions/function-shadow.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "88ebf1421f0e3b53",
+      "id": "1cc6eb73f960a3d1",
       "kind": "style-block",
-      "offset": 5664,
+      "offset": 5432,
+      "source": "css/css-mixins/functions/function-shadow.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "8cb8ee72e7647482",
+      "kind": "style-block",
+      "offset": 5810,
+      "source": "css/css-mixins/functions/function-shadow.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "fef1ac0ca24cf06a",
+      "kind": "style-block",
+      "offset": 6031,
+      "source": "css/css-mixins/functions/function-shadow.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "3bc7dff088f59855",
+      "kind": "style-block",
+      "offset": 6494,
+      "source": "css/css-mixins/functions/function-shadow.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "6f8613e9a8fbceb2",
+      "kind": "style-block",
+      "offset": 6690,
       "source": "css/css-mixins/functions/function-shadow.html",
       "status": "pass",
       "suite": "wpt-css"
@@ -165799,7 +166447,7 @@
     },
     {
       "detail": "",
-      "id": "e5da911ef3a61791",
+      "id": "13e50615a0cc9d97",
       "kind": "style-block",
       "offset": 519,
       "source": "css/css-writing-modes/forms/text-input-baseline.html",
@@ -166906,45 +167554,45 @@
     },
     {
       "detail": "",
-      "id": "9268b2623589a64e",
+      "id": "0a5cbfb38febbb57",
       "kind": "declaration",
-      "offset": 478,
+      "offset": 485,
       "source": "css/css-overflow/parsing/max-lines-valid.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "a7088d06a8dc356c",
+      "id": "2ff27bf868e8c3e9",
       "kind": "declaration",
-      "offset": 517,
+      "offset": 524,
       "source": "css/css-overflow/parsing/max-lines-valid.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "f18e1ada28056060",
+      "id": "5f91c8b942b7c3ad",
       "kind": "declaration",
-      "offset": 553,
+      "offset": 560,
       "source": "css/css-overflow/parsing/max-lines-valid.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "4b6c0a0700c55d3f",
+      "id": "93492a9661a3faef",
       "kind": "declaration",
-      "offset": 589,
+      "offset": 596,
       "source": "css/css-overflow/parsing/max-lines-valid.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "cd561e897519977e",
+      "id": "836ca0bbda231079",
       "kind": "declaration",
-      "offset": 630,
+      "offset": 637,
       "source": "css/css-overflow/parsing/max-lines-valid.html",
       "status": "pass",
       "suite": "wpt-css"
@@ -167482,162 +168130,180 @@
     },
     {
       "detail": "",
-      "id": "5b08f03210fe3a3e",
+      "id": "6d7dd37642e62b3e",
       "kind": "declaration",
-      "offset": 527,
+      "offset": 535,
       "source": "css/css-overflow/parsing/line-clamp-valid.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "0bebccc07124fda0",
+      "id": "5ba3f225486e7295",
       "kind": "declaration",
-      "offset": 568,
+      "offset": 576,
       "source": "css/css-overflow/parsing/line-clamp-valid.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "aa5491b2f30b1c21",
+      "id": "ce605c9d91145746",
       "kind": "declaration",
-      "offset": 605,
+      "offset": 613,
       "source": "css/css-overflow/parsing/line-clamp-valid.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "7167f40fc9ac6da9",
+      "id": "747a3c8f16e1f98f",
       "kind": "declaration",
-      "offset": 642,
+      "offset": 650,
       "source": "css/css-overflow/parsing/line-clamp-valid.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "6e601e6e762fac4d",
+      "id": "a27f5091b0ebae8e",
       "kind": "declaration",
-      "offset": 683,
+      "offset": 691,
       "source": "css/css-overflow/parsing/line-clamp-valid.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "2932936a2f379dea",
+      "id": "97e583e2469fd36e",
       "kind": "declaration",
-      "offset": 735,
+      "offset": 743,
       "source": "css/css-overflow/parsing/line-clamp-valid.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "499184a79ba04f9f",
+      "id": "b6e8a8fc266a3d12",
       "kind": "declaration",
-      "offset": 809,
+      "offset": 817,
       "source": "css/css-overflow/parsing/line-clamp-valid.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "44bf5dc947c4c994",
+      "id": "4ca4bfc898bb05f4",
       "kind": "declaration",
-      "offset": 858,
+      "offset": 866,
       "source": "css/css-overflow/parsing/line-clamp-valid.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "71eb389b8f786e8c",
+      "id": "9b16df8d9c422a9e",
       "kind": "declaration",
-      "offset": 900,
+      "offset": 908,
       "source": "css/css-overflow/parsing/line-clamp-valid.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "23d724fe8bbdfa15",
+      "id": "f5ef861205b90e79",
       "kind": "declaration",
-      "offset": 951,
+      "offset": 959,
       "source": "css/css-overflow/parsing/line-clamp-valid.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "1abd4116ac814969",
+      "id": "d1f8b241ae99b575",
       "kind": "declaration",
-      "offset": 1004,
+      "offset": 1012,
       "source": "css/css-overflow/parsing/line-clamp-valid.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "091a8a51297de50c",
+      "id": "36b9d91848d8fed0",
       "kind": "declaration",
-      "offset": 1072,
+      "offset": 1080,
       "source": "css/css-overflow/parsing/line-clamp-valid.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "d012c4523545da8a",
+      "id": "9204926fe07f9877",
       "kind": "declaration",
-      "offset": 1126,
+      "offset": 1134,
       "source": "css/css-overflow/parsing/line-clamp-valid.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "9963c435d4a15b30",
+      "id": "e21d69cad0212757",
       "kind": "declaration",
-      "offset": 1179,
+      "offset": 1187,
       "source": "css/css-overflow/parsing/line-clamp-valid.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "5028f28e6428fbfb",
+      "id": "68e4e84b4fb17eac",
       "kind": "declaration",
-      "offset": 1254,
+      "offset": 1262,
       "source": "css/css-overflow/parsing/line-clamp-valid.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "1fcb5626d925ba77",
+      "id": "7f9752ed0170b3d1",
       "kind": "declaration",
-      "offset": 1306,
+      "offset": 1314,
       "source": "css/css-overflow/parsing/line-clamp-valid.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "bc763189d1d3c9b0",
+      "id": "44219471b4353f1c",
       "kind": "declaration",
-      "offset": 1361,
+      "offset": 1366,
       "source": "css/css-overflow/parsing/line-clamp-valid.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "55feef6f552a84f2",
+      "id": "5668d2f5741619f8",
       "kind": "declaration",
-      "offset": 1475,
+      "offset": 1421,
+      "source": "css/css-overflow/parsing/line-clamp-valid.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "15902fba8c937392",
+      "kind": "declaration",
+      "offset": 1535,
+      "source": "css/css-overflow/parsing/line-clamp-valid.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "0236170d692552d2",
+      "kind": "declaration",
+      "offset": 1592,
       "source": "css/css-overflow/parsing/line-clamp-valid.html",
       "status": "pass",
       "suite": "wpt-css"
@@ -169525,6 +170191,15 @@
     },
     {
       "detail": "",
+      "id": "6327a967d9d8ba40",
+      "kind": "style-block",
+      "offset": 191,
+      "source": "css/css-overflow/scroll-markers/column-scroll-marker-activation-target-current-ref.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "b804c270f928be6d",
       "kind": "style-block",
       "offset": 200,
@@ -169939,6 +170614,15 @@
     },
     {
       "detail": "",
+      "id": "67a553eb980e014d",
+      "kind": "style-block",
+      "offset": 519,
+      "source": "css/css-overflow/scroll-markers/scroll-button-link-activation.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "6335b685a7656976",
       "kind": "style-block",
       "offset": 242,
@@ -170069,6 +170753,15 @@
       "kind": "style-block",
       "offset": 249,
       "source": "css/css-overflow/scroll-markers/scroll-marker-006.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "f4d0d051201280e9",
+      "kind": "style-block",
+      "offset": 876,
+      "source": "css/css-overflow/scroll-markers/column-scroll-marker-activation-target-current.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -170447,6 +171140,15 @@
       "kind": "style-block",
       "offset": 589,
       "source": "css/css-overflow/line-clamp/line-clamp-041.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "290a6ac44e55ae07",
+      "kind": "style-block",
+      "offset": 443,
+      "source": "css/css-overflow/line-clamp/line-clamp-with-abspos-025.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -171019,9 +171721,9 @@
     },
     {
       "detail": "",
-      "id": "88f801733ff302a5",
+      "id": "35179d600d21e303",
       "kind": "style-block",
-      "offset": 740,
+      "offset": 664,
       "source": "css/css-overflow/line-clamp/block-ellipsis-036.html",
       "status": "pass",
       "suite": "wpt-css"
@@ -171532,6 +172234,15 @@
     },
     {
       "detail": "",
+      "id": "f4d1782feb7579b3",
+      "kind": "style-block",
+      "offset": 453,
+      "source": "css/css-overflow/line-clamp/line-clamp-with-popover-001.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "30b88be78e22da8d",
       "kind": "style-block",
       "offset": 767,
@@ -171784,6 +172495,15 @@
     },
     {
       "detail": "",
+      "id": "9040d2f56f2c018f",
+      "kind": "style-block",
+      "offset": 484,
+      "source": "css/css-overflow/line-clamp/line-clamp-with-abspos-026.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "7b86114d46393fd2",
       "kind": "style-block",
       "offset": 569,
@@ -171842,6 +172562,15 @@
       "kind": "style-block",
       "offset": 536,
       "source": "css/css-overflow/line-clamp/line-clamp-with-floats-009.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "301f61acd63a3fc3",
+      "kind": "style-block",
+      "offset": 597,
+      "source": "css/css-overflow/line-clamp/line-clamp-preserves-tabbing.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -171986,6 +172715,15 @@
       "kind": "style-block",
       "offset": 588,
       "source": "css/css-overflow/line-clamp/block-ellipsis-040.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "9eeb7056e2a42626",
+      "kind": "style-block",
+      "offset": 460,
+      "source": "css/css-overflow/line-clamp/line-clamp-with-abspos-024.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -172315,9 +173053,9 @@
     },
     {
       "detail": "",
-      "id": "bdacc12bd691a264",
+      "id": "8610fed5d3323fe5",
       "kind": "style-block",
-      "offset": 787,
+      "offset": 788,
       "source": "css/css-overflow/line-clamp/line-clamp-039.html",
       "status": "pass",
       "suite": "wpt-css"
@@ -172346,15 +173084,6 @@
       "kind": "style-block",
       "offset": 398,
       "source": "css/css-overflow/line-clamp/line-clamp-020.html",
-      "status": "pass",
-      "suite": "wpt-css"
-    },
-    {
-      "detail": "",
-      "id": "da7df4b1734c56c3",
-      "kind": "style-block",
-      "offset": 486,
-      "source": "css/css-overflow/line-clamp/line-clamp-preserves-dom-content.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -173125,6 +173854,15 @@
     },
     {
       "detail": "",
+      "id": "892b64384dc5c72b",
+      "kind": "style-block",
+      "offset": 75,
+      "source": "css/css-overflow/line-clamp/reference/line-clamp-with-abspos-024-ref.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "cbf73461e257654c",
       "kind": "style-block",
       "offset": 75,
@@ -173426,6 +174164,15 @@
       "kind": "style-block",
       "offset": 75,
       "source": "css/css-overflow/line-clamp/reference/webkit-line-clamp-014-ref.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "ea31a43c3ca0550b",
+      "kind": "style-block",
+      "offset": 84,
+      "source": "css/css-overflow/line-clamp/reference/line-clamp-with-popover-001-ref.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -179425,6 +180172,15 @@
     },
     {
       "detail": "",
+      "id": "22f43ad652cd28aa",
+      "kind": "style-block",
+      "offset": 776,
+      "source": "css/css-grid/alignment/grid-justify-content-001.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "94a672bf9e7ebf62",
       "kind": "style-block",
       "offset": 529,
@@ -179551,10 +180307,28 @@
     },
     {
       "detail": "",
+      "id": "43696af82a2ef91f",
+      "kind": "style-block",
+      "offset": 459,
+      "source": "css/css-grid/alignment/grid-alignment-implies-size-change-037.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "5bda3c118c8ac825",
       "kind": "style-block",
       "offset": 677,
       "source": "css/css-grid/alignment/grid-content-distribution-with-collapsed-tracks-012.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "ae8f77b4dabdb4e6",
+      "kind": "style-block",
+      "offset": 756,
+      "source": "css/css-grid/alignment/grid-justify-content-distribution-vertical-lr-001.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -179618,6 +180392,15 @@
       "kind": "style-block",
       "offset": 571,
       "source": "css/css-grid/alignment/grid-self-alignment-baseline-with-grid-001.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "3550bf4608d141a7",
+      "kind": "style-block",
+      "offset": 469,
+      "source": "css/css-grid/alignment/grid-alignment-implies-size-change-042.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -179798,6 +180581,15 @@
       "kind": "style-block",
       "offset": 482,
       "source": "css/css-grid/alignment/grid-block-axis-alignment-auto-margins-003.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "a9034cb43f182db7",
+      "kind": "style-block",
+      "offset": 900,
+      "source": "css/css-grid/alignment/grid-item-stretch-margin-border-padding-vertical-rl-001.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -180109,6 +180901,15 @@
     },
     {
       "detail": "",
+      "id": "549fd2934ca2e272",
+      "kind": "style-block",
+      "offset": 467,
+      "source": "css/css-grid/alignment/grid-alignment-implies-size-change-040.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "1055541234877d80",
       "kind": "style-block",
       "offset": 843,
@@ -180316,6 +181117,15 @@
     },
     {
       "detail": "",
+      "id": "91e7aedf01ed23ea",
+      "kind": "style-block",
+      "offset": 464,
+      "source": "css/css-grid/alignment/grid-alignment-implies-size-change-039.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "709e5b5098a5995d",
       "kind": "style-block",
       "offset": 830,
@@ -180374,6 +181184,15 @@
       "kind": "style-block",
       "offset": 991,
       "source": "css/css-grid/alignment/grid-content-alignment-and-self-alignment-001.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "66a5a347cab0f895",
+      "kind": "style-block",
+      "offset": 577,
+      "source": "css/css-grid/alignment/grid-item-auto-margins-and-specified-margins-001.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -180622,6 +181441,15 @@
     },
     {
       "detail": "",
+      "id": "f91de1598ea123c5",
+      "kind": "style-block",
+      "offset": 474,
+      "source": "css/css-grid/alignment/grid-alignment-implies-size-change-044.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "7c287f9318f27b30",
       "kind": "style-block",
       "offset": 120,
@@ -180635,6 +181463,15 @@
       "kind": "style-block",
       "offset": 748,
       "source": "css/css-grid/alignment/grid-self-alignment-non-static-positioned-items-009.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "65d39e7b34f4cb68",
+      "kind": "style-block",
+      "offset": 747,
+      "source": "css/css-grid/alignment/grid-justify-content-distribution-001.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -180784,10 +181621,28 @@
     },
     {
       "detail": "",
+      "id": "e306af7438732a91",
+      "kind": "style-block",
+      "offset": 770,
+      "source": "css/css-grid/alignment/grid-justify-content-vertical-rl-001.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "c72fcd12678785bc",
       "kind": "style-block",
       "offset": 694,
       "source": "css/css-grid/alignment/grid-content-distribution-with-collapsed-tracks-023.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "c69518e70d669b14",
+      "kind": "style-block",
+      "offset": 760,
+      "source": "css/css-grid/alignment/grid-item-auto-margins-and-stretch-001.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -181369,6 +182224,15 @@
     },
     {
       "detail": "",
+      "id": "1ba13343f15f4d44",
+      "kind": "style-block",
+      "offset": 466,
+      "source": "css/css-grid/alignment/grid-alignment-implies-size-change-041.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "1f74749c12487b26",
       "kind": "style-block",
       "offset": 780,
@@ -181598,6 +182462,15 @@
       "kind": "style-block",
       "offset": 866,
       "source": "css/css-grid/alignment/grid-column-axis-alignment-positioned-items-009.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "7ca765c04c4216ed",
+      "kind": "style-block",
+      "offset": 642,
+      "source": "css/css-grid/alignment/grid-content-distribution-stretch-different-sized-tracks-001.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -182080,6 +182953,15 @@
     },
     {
       "detail": "",
+      "id": "7ef4f57b4452b714",
+      "kind": "style-block",
+      "offset": 805,
+      "source": "css/css-grid/alignment/grid-item-stretch-dynamic-size-margin-change-001.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "9e8abf8e718606d9",
       "kind": "style-block",
       "offset": 968,
@@ -182138,6 +183020,15 @@
       "kind": "style-block",
       "offset": 753,
       "source": "css/css-grid/alignment/grid-self-alignment-stretch-vertical-lr-016.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "1342d9090251d28c",
+      "kind": "style-block",
+      "offset": 952,
+      "source": "css/css-grid/alignment/grid-justify-self-cell-001.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -182224,10 +183115,28 @@
     },
     {
       "detail": "",
+      "id": "f3b94f0a7304d8d1",
+      "kind": "style-block",
+      "offset": 471,
+      "source": "css/css-grid/alignment/grid-alignment-implies-size-change-043.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "608f44cc761444b7",
       "kind": "style-block",
       "offset": 842,
       "source": "css/css-grid/alignment/grid-self-alignment-stretch-vertical-rl-002.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "2a0beb3871f10198",
+      "kind": "style-block",
+      "offset": 462,
+      "source": "css/css-grid/alignment/grid-alignment-implies-size-change-038.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -184366,10 +185275,28 @@
     },
     {
       "detail": "",
+      "id": "13b4b2ff8e89fe28",
+      "kind": "style-block",
+      "offset": 623,
+      "source": "css/css-grid/layout-algorithm/grid-item-sizing-orthogonal-flows-001.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "2fdeceeba5aa2d5e",
       "kind": "style-block",
       "offset": 347,
       "source": "css/css-grid/layout-algorithm/grid-spanning-item-with-paddings-auto-columns-001-ref.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "2a802e7545cd8795",
+      "kind": "style-block",
+      "offset": 587,
+      "source": "css/css-grid/layout-algorithm/grid-percentage-of-indefinite-auto-track-size-001.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -184402,10 +185329,46 @@
     },
     {
       "detail": "",
+      "id": "50d06709602fc53c",
+      "kind": "style-block",
+      "offset": 487,
+      "source": "css/css-grid/layout-algorithm/grid-intrinsic-tracks-item-with-border-001.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "b8ac00288de88138",
+      "kind": "style-block",
+      "offset": 679,
+      "source": "css/css-grid/layout-algorithm/grid-percentage-tracks-container-size-001.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "9a0ddbb270054762",
       "kind": "style-block",
       "offset": 685,
       "source": "css/css-grid/layout-algorithm/grid-item-stale-block-size-001.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "54b1663c9eca7020",
+      "kind": "style-block",
+      "offset": 443,
+      "source": "css/css-grid/layout-algorithm/grid-minmax-spanning-items-rows-001.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "54e388e26c0f348c",
+      "kind": "style-block",
+      "offset": 554,
+      "source": "css/css-grid/layout-algorithm/grid-percentage-tracks-intrinsic-container-001.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -184456,6 +185419,15 @@
     },
     {
       "detail": "",
+      "id": "b50f1ef299759a4b",
+      "kind": "style-block",
+      "offset": 398,
+      "source": "css/css-grid/layout-algorithm/grid-auto-rows-content-resolution-001.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "d3ce26790d2f6f1c",
       "kind": "style-block",
       "offset": 1170,
@@ -184492,10 +185464,28 @@
     },
     {
       "detail": "",
+      "id": "e4549a26128623ac",
+      "kind": "style-block",
+      "offset": 461,
+      "source": "css/css-grid/layout-algorithm/grid-item-margin-auto-columns-rows-vertical-rl-002.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "035f8e92eeaab56b",
       "kind": "style-block",
       "offset": 842,
       "source": "css/css-grid/layout-algorithm/grid-container-percentage-002.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "8db92a3f1f152dfd",
+      "kind": "style-block",
+      "offset": 344,
+      "source": "css/css-grid/layout-algorithm/grid-percentage-tracks-container-margin-border-padding-001.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -184555,6 +185545,15 @@
     },
     {
       "detail": "",
+      "id": "dfd590f8de3dac0a",
+      "kind": "style-block",
+      "offset": 507,
+      "source": "css/css-grid/layout-algorithm/grid-minmax-spanning-items-columns-001.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "09eb5058bba05306",
       "kind": "style-block",
       "offset": 519,
@@ -184609,6 +185608,15 @@
     },
     {
       "detail": "",
+      "id": "ffd3d0258ef5e30a",
+      "kind": "style-block",
+      "offset": 574,
+      "source": "css/css-grid/layout-algorithm/grid-intrinsic-width-minmax-tracks-001.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "65fb08b311a62928",
       "kind": "style-block",
       "offset": 521,
@@ -184645,6 +185653,15 @@
     },
     {
       "detail": "",
+      "id": "beb6ab2f042ce8eb",
+      "kind": "style-block",
+      "offset": 548,
+      "source": "css/css-grid/layout-algorithm/grid-spanning-items-percentage-grid-001.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "592f4ba99cea17b2",
       "kind": "style-block",
       "offset": 80,
@@ -184676,6 +185693,15 @@
       "kind": "style-block",
       "offset": 587,
       "source": "css/css-grid/layout-algorithm/grid-find-fr-size-gutters-001.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "f0ccf0df5fce6667",
+      "kind": "style-block",
+      "offset": 513,
+      "source": "css/css-grid/layout-algorithm/grid-percentage-of-indefinite-track-size-001.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -184721,6 +185747,15 @@
       "kind": "style-block",
       "offset": 509,
       "source": "css/css-grid/layout-algorithm/flex-and-intrinsic-sizes-002.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "e9384e34bb704e7c",
+      "kind": "style-block",
+      "offset": 422,
+      "source": "css/css-grid/layout-algorithm/grid-flex-rows-container-height-change-001.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -184798,6 +185833,15 @@
     },
     {
       "detail": "",
+      "id": "da43fce07f406f82",
+      "kind": "style-block",
+      "offset": 605,
+      "source": "css/css-grid/layout-algorithm/grid-item-positioning-orthogonal-flows-001.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "1fa46497fa5aad22",
       "kind": "style-block",
       "offset": 1177,
@@ -184820,6 +185864,15 @@
       "kind": "style-block",
       "offset": 616,
       "source": "css/css-grid/layout-algorithm/grid-find-fr-size-restart-algorithm.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "82a5c3f3cae877a1",
+      "kind": "style-block",
+      "offset": 523,
+      "source": "css/css-grid/layout-algorithm/grid-auto-columns-content-resolution-001.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -184870,6 +185923,15 @@
     },
     {
       "detail": "",
+      "id": "643e482291224e7c",
+      "kind": "style-block",
+      "offset": 507,
+      "source": "css/css-grid/layout-algorithm/grid-minmax-content-tracks-multiple-items-001.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "f37fb7c055138fdc",
       "kind": "style-block",
       "offset": 794,
@@ -184906,6 +185968,24 @@
     },
     {
       "detail": "",
+      "id": "2562bd25b98417d3",
+      "kind": "style-block",
+      "offset": 754,
+      "source": "css/css-grid/layout-algorithm/grid-spanning-items-orthogonal-flows-001.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "a16af73e0c0294b3",
+      "kind": "style-block",
+      "offset": 483,
+      "source": "css/css-grid/layout-algorithm/grid-track-sizing-item-removal-001.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "f073081c0f8178c4",
       "kind": "style-block",
       "offset": 745,
@@ -184919,6 +185999,24 @@
       "kind": "style-block",
       "offset": 887,
       "source": "css/css-grid/layout-algorithm/grid-flex-track-intrinsic-sizes-003.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "512eca37e2320853",
+      "kind": "style-block",
+      "offset": 578,
+      "source": "css/css-grid/layout-algorithm/grid-relayout-orthogonal-items-same-result-001.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "eb6140379ddee4b4",
+      "kind": "style-block",
+      "offset": 601,
+      "source": "css/css-grid/layout-algorithm/grid-track-sizing-item-addition-001.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -184946,6 +186044,15 @@
       "kind": "style-block",
       "offset": 711,
       "source": "css/css-grid/layout-algorithm/grid-flex-track-intrinsic-sizes-002.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "d4fc0ceda6827768",
+      "kind": "style-block",
+      "offset": 560,
+      "source": "css/css-grid/layout-algorithm/grid-flex-tracks-item-with-border-001.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -185239,10 +186346,28 @@
     },
     {
       "detail": "",
+      "id": "2eb2c4ca135cd9a8",
+      "kind": "style-block",
+      "offset": 753,
+      "source": "css/css-grid/placement/grid-placement-negative-position-resolution-001.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "41f44fae0635e2a5",
       "kind": "style-block",
       "offset": 413,
       "source": "css/css-grid/placement/grid-layout-placement-shorthands.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "d7788719a807ca9d",
+      "kind": "style-block",
+      "offset": 646,
+      "source": "css/css-grid/placement/grid-auto-placement-order-change-001.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -185257,6 +186382,51 @@
     },
     {
       "detail": "",
+      "id": "af652bc5311c4cec",
+      "kind": "style-block",
+      "offset": 601,
+      "source": "css/css-grid/placement/grid-placement-negative-integer-explicit-grid-001.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "1f76726a87839a65",
+      "kind": "style-block",
+      "offset": 679,
+      "source": "css/css-grid/placement/grid-auto-placement-definite-span-001.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "5290106cc7c1ed48",
+      "kind": "style-block",
+      "offset": 844,
+      "source": "css/css-grid/placement/grid-auto-placement-automatic-span-001.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "9c09c20dd5c98605",
+      "kind": "style-block",
+      "offset": 664,
+      "source": "css/css-grid/placement/grid-auto-placement-fixed-row-column-001.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "46394b9289f0a978",
+      "kind": "style-block",
+      "offset": 845,
+      "source": "css/css-grid/placement/grid-placement-named-lines-and-areas-001.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "7e2ae9bdb01e5a49",
       "kind": "style-block",
       "offset": 665,
@@ -185266,10 +186436,37 @@
     },
     {
       "detail": "",
+      "id": "501ac9a61c65c09d",
+      "kind": "style-block",
+      "offset": 730,
+      "source": "css/css-grid/placement/grid-placement-unknown-named-area-001.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "5fa2af1f42be63d1",
       "kind": "style-block",
       "offset": 772,
       "source": "css/css-grid/placement/grid-negative-line-placement-001.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "d0d0cb8f6eb2c77e",
+      "kind": "style-block",
+      "offset": 861,
+      "source": "css/css-grid/placement/grid-placement-named-grid-area-resolution-001.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "63bff3ebdce2de93",
+      "kind": "style-block",
+      "offset": 740,
+      "source": "css/css-grid/placement/grid-auto-placement-item-addition-001.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -185365,6 +186562,15 @@
     },
     {
       "detail": "",
+      "id": "145912cf50a084be",
+      "kind": "style-block",
+      "offset": 882,
+      "source": "css/css-grid/placement/grid-auto-flow-resolution-001.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "500e696b8faf5a58",
       "kind": "style-block",
       "offset": 406,
@@ -185374,10 +186580,37 @@
     },
     {
       "detail": "",
+      "id": "1559c15475d2611d",
+      "kind": "style-block",
+      "offset": 615,
+      "source": "css/css-grid/placement/grid-placement-unknown-named-grid-line-001.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "8281134d87cc7f88",
       "kind": "style-block",
       "offset": 506,
       "source": "css/css-grid/placement/grid-placement-using-named-grid-lines-009.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "c0253fd30879f290",
+      "kind": "style-block",
+      "offset": 806,
+      "source": "css/css-grid/placement/grid-placement-invalid-double-span-001.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "7f5459a349bac9e7",
+      "kind": "style-block",
+      "offset": 693,
+      "source": "css/css-grid/placement/grid-placement-dynamic-change-001.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -185423,6 +186656,15 @@
       "kind": "style-block",
       "offset": 642,
       "source": "css/css-grid/placement/grid-container-change-named-grid-recompute-child-positions-001.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "9a78513ba3f40c5e",
+      "kind": "style-block",
+      "offset": 727,
+      "source": "css/css-grid/placement/grid-placement-huge-negative-indexes-001.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -185626,6 +186868,15 @@
     },
     {
       "detail": "",
+      "id": "60bb9207c7a41608",
+      "kind": "style-block",
+      "offset": 448,
+      "source": "css/css-grid/grid-model/grid-container-padding-border-size-001.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "a0bdd62073e0f6a2",
       "kind": "style-block",
       "offset": 684,
@@ -185684,6 +186935,15 @@
       "kind": "style-block",
       "offset": 674,
       "source": "css/css-grid/grid-model/grid-first-letter-003.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "0c5393ae2c0a2388",
+      "kind": "style-block",
+      "offset": 462,
+      "source": "css/css-grid/grid-model/grid-container-rows-or-columns-only-001.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -185855,6 +187115,15 @@
       "kind": "style-block",
       "offset": 659,
       "source": "css/css-grid/grid-model/grid-areas-overflowing-grid-container-004.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "b54d2c146549d00f",
+      "kind": "style-block",
+      "offset": 627,
+      "source": "css/css-grid/grid-model/grid-min-max-width-001.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -186175,6 +187444,15 @@
     },
     {
       "detail": "",
+      "id": "3509fcfdb61397f1",
+      "kind": "style-block",
+      "offset": 720,
+      "source": "css/css-grid/implicit-grids/grid-implicit-columns-auto-resolution-001.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "dff9441fbb0489e4",
       "kind": "style-block",
       "offset": 407,
@@ -186184,10 +187462,46 @@
     },
     {
       "detail": "",
+      "id": "81ec17e9abe122e0",
+      "kind": "style-block",
+      "offset": 520,
+      "source": "css/css-grid/implicit-grids/grid-auto-columns-rows-resolution-001.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "449162f7d3c95083",
       "kind": "style-block",
       "offset": 432,
       "source": "css/css-grid/implicit-grids/grid-support-grid-auto-columns-rows-003.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "a1e10346aac967d4",
+      "kind": "style-block",
+      "offset": 552,
+      "source": "css/css-grid/implicit-grids/grid-auto-columns-rows-auto-flow-resolution-001.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "1bf1bfdcf599ad64",
+      "kind": "style-block",
+      "offset": 708,
+      "source": "css/css-grid/implicit-grids/grid-implicit-tracks-before-explicit-001.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "558d24aac971ea49",
+      "kind": "style-block",
+      "offset": 486,
+      "source": "css/css-grid/implicit-grids/grid-implicit-rows-auto-resolution-001.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -186742,6 +188056,15 @@
     },
     {
       "detail": "",
+      "id": "28774350a1ff98df",
+      "kind": "style-block",
+      "offset": 496,
+      "source": "css/css-grid/grid-items/grid-items-percentage-paddings-margins-writing-modes-001.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "e6c77bb5d4fb908a",
       "kind": "style-block",
       "offset": 538,
@@ -187129,6 +188452,15 @@
     },
     {
       "detail": "",
+      "id": "e679394e86285f0e",
+      "kind": "style-block",
+      "offset": 565,
+      "source": "css/css-grid/grid-items/grid-item-percentage-height-auto-height-grid-001.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "8df38227715bca65",
       "kind": "style-block",
       "offset": 560,
@@ -187300,6 +188632,15 @@
     },
     {
       "detail": "",
+      "id": "f780f4607cb049ab",
+      "kind": "style-block",
+      "offset": 536,
+      "source": "css/css-grid/grid-items/grid-item-min-width-height-auto-001.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "e52039cdc5e900b6",
       "kind": "style-block",
       "offset": 603,
@@ -187394,6 +188735,24 @@
       "kind": "style-block",
       "offset": 60,
       "source": "css/css-grid/grid-items/grid-items-percentage-margins-and-fixed-paddings-001-ref.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "66cbd719d7444cf1",
+      "kind": "style-block",
+      "offset": 356,
+      "source": "css/css-grid/grid-items/grid-items-percentage-paddings-margins-track-change-001.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "d409c637ecc13f4d",
+      "kind": "style-block",
+      "offset": 653,
+      "source": "css/css-grid/grid-items/grid-item-percentage-resolution-writing-modes-quirks-001.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -187529,6 +188888,15 @@
       "kind": "style-block",
       "offset": 418,
       "source": "css/css-grid/grid-items/grid-items-fixed-paddings-001.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "f4dca1f5892d3952",
+      "kind": "style-block",
+      "offset": 712,
+      "source": "css/css-grid/grid-items/grid-item-children-percentage-resolution-001.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -187858,6 +189226,24 @@
     },
     {
       "detail": "",
+      "id": "e9811d4eb3ae0061",
+      "kind": "style-block",
+      "offset": 724,
+      "source": "css/css-grid/grid-items/grid-item-min-height-border-box-001.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "2ff9fd8e135ffc58",
+      "kind": "style-block",
+      "offset": 779,
+      "source": "css/css-grid/grid-items/grid-item-min-width-margin-box-001.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "afcbec8c8241cd45",
       "kind": "style-block",
       "offset": 516,
@@ -188033,6 +189419,15 @@
       "kind": "style-block",
       "offset": 927,
       "source": "css/css-grid/grid-items/grid-item-margin-box-overflowing-grid-area-paint-001.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "a30164fb48604589",
+      "kind": "style-block",
+      "offset": 559,
+      "source": "css/css-grid/grid-items/grid-item-percentage-resolution-writing-modes-001.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -211780,6 +213175,15 @@
     },
     {
       "detail": "",
+      "id": "0ab3312e9974f5b5",
+      "kind": "style-block",
+      "offset": 348,
+      "source": "css/selectors/invalidation/has-sibling-propagation.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "faadfeb68edb2eec",
       "kind": "style-block",
       "offset": 448,
@@ -216910,10 +218314,37 @@
     },
     {
       "detail": "",
+      "id": "8d6d48dea62d2dad",
+      "kind": "style-block",
+      "offset": 46,
+      "source": "css/css-contain/crashtests/contain-style-discarded-item.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "5a40b8f4fea0bfb0",
+      "kind": "style-block",
+      "offset": 46,
+      "source": "css/css-contain/crashtests/contain-style-first-letter.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "e20b8abf82f7e472",
       "kind": "style-block",
       "offset": 177,
       "source": "css/css-contain/crashtests/change-text-node-data.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "8da7607de1f0baf7",
+      "kind": "style-block",
+      "offset": 46,
+      "source": "css/css-contain/crashtests/contain-style-first-letter-colgroup.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -217769,6 +219200,15 @@
       "kind": "style-block",
       "offset": 427,
       "source": "css/css-contain/content-visibility/content-visibility-003.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "e65ea75ce6f2d0ab",
+      "kind": "style-block",
+      "offset": 1119,
+      "source": "css/css-contain/content-visibility/content-visibility-auto-with-inline-size-containment.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -219457,6 +220897,15 @@
     },
     {
       "detail": "",
+      "id": "8a717db1944f09b1",
+      "kind": "style-block",
+      "offset": 517,
+      "source": "css/css-borders/corner-shape/corner-shape-outline-auto-003.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "1d65fcdc3d00099b",
       "kind": "style-block",
       "offset": 318,
@@ -219686,6 +221135,24 @@
       "kind": "style-block",
       "offset": 161,
       "source": "css/css-borders/corner-shape/corner-shape-offset-path-coord-box-002-ref.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "f207033c47112fb4",
+      "kind": "style-block",
+      "offset": 46,
+      "source": "css/css-borders/corner-shape/corner-shape-outline-auto-002-ref.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "b0217f9820ac95db",
+      "kind": "style-block",
+      "offset": 517,
+      "source": "css/css-borders/corner-shape/corner-shape-outline-auto-002.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -220352,6 +221819,15 @@
       "kind": "style-block",
       "offset": 116,
       "source": "css/css-borders/corner-shape/corner-shape-overflow-clip-margin-ref.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "0d52e772c944821c",
+      "kind": "style-block",
+      "offset": 448,
+      "source": "css/css-borders/corner-shape/corner-shape-outline-auto-001.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -225419,6 +226895,33 @@
       "kind": "declaration",
       "offset": 1268,
       "source": "css/css-overscroll-behavior/parsing/overscroll-behavior-valid.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "a11de7acb5a63e2d",
+      "kind": "declaration",
+      "offset": 1954,
+      "source": "css/css-overscroll-behavior/parsing/overscroll-behavior-computed.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "f06eb958ba7a24c0",
+      "kind": "declaration",
+      "offset": 2014,
+      "source": "css/css-overscroll-behavior/parsing/overscroll-behavior-computed.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "8f87a802cca7dc65",
+      "kind": "declaration",
+      "offset": 2071,
+      "source": "css/css-overscroll-behavior/parsing/overscroll-behavior-computed.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -233074,7 +234577,7 @@
     },
     {
       "detail": "",
-      "id": "c406dfa1028de007",
+      "id": "30c46ea5eb9a6c44",
       "kind": "style-block",
       "offset": 366,
       "source": "css/css-text/white-space/trailing-space-before-br-001.html",
@@ -234779,6 +236282,15 @@
       "kind": "style-block",
       "offset": 7,
       "source": "css/css-text/crashtests/text-indent-each-line-crash.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "5d8309e311d82a3b",
+      "kind": "style-block",
+      "offset": 297,
+      "source": "css/css-text/crashtests/overflow-wrap-anywhere-fractional-width-crash.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -236656,9 +238168,9 @@
     },
     {
       "detail": "",
-      "id": "32e252b02b5c8f54",
+      "id": "a3c3831930a063ef",
       "kind": "style-block",
-      "offset": 476,
+      "offset": 498,
       "source": "css/css-text/line-breaking/line-breaking-003.html",
       "status": "pass",
       "suite": "wpt-css"
@@ -236705,6 +238217,15 @@
       "kind": "style-block",
       "offset": 531,
       "source": "css/css-text/line-breaking/line-breaking-atomic-018.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "97c28fbb75e366ea",
+      "kind": "style-block",
+      "offset": 174,
+      "source": "css/css-text/line-breaking/line-breaking-text-001-ref.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -236840,6 +238361,15 @@
       "kind": "style-block",
       "offset": 503,
       "source": "css/css-text/line-breaking/line-breaking-atomic-001.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "bf2ef2b17999cc2f",
+      "kind": "style-block",
+      "offset": 305,
+      "source": "css/css-text/line-breaking/line-breaking-text-001.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -257734,6 +259264,15 @@
     },
     {
       "detail": "",
+      "id": "29cb19321255c1af",
+      "kind": "style-block",
+      "offset": 214,
+      "source": "css/css-flexbox/reference/column-flex-child-center-with-indefinite-height-ref.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "3145de0a7abeb3c5",
       "kind": "style-block",
       "offset": 155,
@@ -262612,6 +264151,15 @@
     },
     {
       "detail": "",
+      "id": "b8377203fe067b52",
+      "kind": "style-block",
+      "offset": 335,
+      "source": "css/css-conditional/container-queries/size-feature-fractional.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "cc56974810fa00d7",
       "kind": "style-block",
       "offset": 297,
@@ -267193,6 +268741,15 @@
     },
     {
       "detail": "",
+      "id": "acae7ec71b03f44c",
+      "kind": "style-block",
+      "offset": 348,
+      "source": "css/css-break/grid/grid-lanes/column-multi-lane-fragmentation-017.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "c3bbadddb6efa76b",
       "kind": "style-block",
       "offset": 334,
@@ -267233,6 +268790,15 @@
       "kind": "style-block",
       "offset": 399,
       "source": "css/css-break/grid/grid-lanes/column-grid-lanes-oof-fragmentation-007.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "c79855cede9cf11c",
+      "kind": "style-block",
+      "offset": 352,
+      "source": "css/css-break/grid/grid-lanes/row-multi-lane-fragmentation-019.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -267328,6 +268894,15 @@
     },
     {
       "detail": "",
+      "id": "3661f2ea7f2c0329",
+      "kind": "style-block",
+      "offset": 341,
+      "source": "css/css-break/grid/grid-lanes/row-multi-lane-fragmentation-020.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "24e96ff8e4cf7a06",
       "kind": "style-block",
       "offset": 311,
@@ -267359,6 +268934,15 @@
       "kind": "style-block",
       "offset": 360,
       "source": "css/css-break/grid/grid-lanes/row-multi-lane-fragmentation-010.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "0bfe667b7c60c7fa",
+      "kind": "style-block",
+      "offset": 333,
+      "source": "css/css-break/grid/grid-lanes/row-multi-lane-fragmentation-017.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -267427,6 +269011,15 @@
     },
     {
       "detail": "",
+      "id": "5c14ed75f65a2588",
+      "kind": "style-block",
+      "offset": 337,
+      "source": "css/css-break/grid/grid-lanes/column-multi-lane-fragmentation-015.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "5aaac9abfa6acea0",
       "kind": "style-block",
       "offset": 354,
@@ -267449,6 +269042,24 @@
       "kind": "style-block",
       "offset": 322,
       "source": "css/css-break/grid/grid-lanes/column-multi-lane-fragmentation-001.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "069a90282609aff1",
+      "kind": "style-block",
+      "offset": 23,
+      "source": "css/css-break/grid/grid-lanes/column-multi-lane-fragmentation-016-ref.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "ed5f680cd4c76398",
+      "kind": "style-block",
+      "offset": 358,
+      "source": "css/css-break/grid/grid-lanes/column-multi-lane-fragmentation-018.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -267490,6 +269101,15 @@
     },
     {
       "detail": "",
+      "id": "a1f626249ace27c2",
+      "kind": "style-block",
+      "offset": 23,
+      "source": "css/css-break/grid/grid-lanes/row-multi-lane-fragmentation-019-ref.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "79825565c17f522c",
       "kind": "style-block",
       "offset": 338,
@@ -267508,10 +269128,37 @@
     },
     {
       "detail": "",
+      "id": "68a5f2e8f57912cb",
+      "kind": "style-block",
+      "offset": 23,
+      "source": "css/css-break/grid/grid-lanes/row-multi-lane-fragmentation-021-ref.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "09deba8877c552af",
+      "kind": "style-block",
+      "offset": 341,
+      "source": "css/css-break/grid/grid-lanes/column-multi-lane-fragmentation-016.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "8a1a0bada3c01262",
       "kind": "style-block",
       "offset": 308,
       "source": "css/css-break/grid/grid-lanes/row-single-lane-fragmentation-001.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "ca58389aa92f5cab",
+      "kind": "style-block",
+      "offset": 337,
+      "source": "css/css-break/grid/grid-lanes/row-multi-lane-fragmentation-018.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -267530,6 +269177,15 @@
       "kind": "style-block",
       "offset": 354,
       "source": "css/css-break/grid/grid-lanes/column-multi-lane-fragmentation-014.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "500cae87aafb258c",
+      "kind": "style-block",
+      "offset": 352,
+      "source": "css/css-break/grid/grid-lanes/column-multi-lane-fragmentation-020.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -267634,6 +269290,15 @@
     },
     {
       "detail": "",
+      "id": "0e63e718d5b05d09",
+      "kind": "style-block",
+      "offset": 23,
+      "source": "css/css-break/grid/grid-lanes/column-multi-lane-fragmentation-020-ref.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "7f2ff1b5d0ddfad2",
       "kind": "style-block",
       "offset": 393,
@@ -267706,6 +269371,15 @@
     },
     {
       "detail": "",
+      "id": "ccd0a27885752fc5",
+      "kind": "style-block",
+      "offset": 348,
+      "source": "css/css-break/grid/grid-lanes/column-multi-lane-fragmentation-019.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
       "id": "ad1ec8cb43bd9c8a",
       "kind": "style-block",
       "offset": 308,
@@ -267719,6 +269393,15 @@
       "kind": "style-block",
       "offset": 449,
       "source": "css/css-break/grid/grid-lanes/grid-lanes-fragmentation-001.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "f89143578839335b",
+      "kind": "style-block",
+      "offset": 23,
+      "source": "css/css-break/grid/grid-lanes/column-multi-lane-fragmentation-018-ref.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -267773,6 +269456,15 @@
       "kind": "style-block",
       "offset": 471,
       "source": "css/css-break/grid/grid-lanes/grid-lanes-fragmentation-003.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "a4a947b1bb0277a3",
+      "kind": "style-block",
+      "offset": 346,
+      "source": "css/css-break/grid/grid-lanes/row-multi-lane-fragmentation-021.html",
       "status": "pass",
       "suite": "wpt-css"
     },
@@ -270649,45 +272341,81 @@
     },
     {
       "detail": "",
-      "id": "1bc645d1df87bb58",
+      "id": "ac7c9c7ace8d197b",
       "kind": "declaration",
-      "offset": 2855,
+      "offset": 2756,
       "source": "css/css-color/parsing/alpha-color-computed.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "59d21cc31f87be36",
+      "id": "40a862f60189f648",
       "kind": "declaration",
-      "offset": 2961,
+      "offset": 2873,
       "source": "css/css-color/parsing/alpha-color-computed.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "76366f229688c121",
+      "id": "892511875909d5f8",
       "kind": "declaration",
-      "offset": 3067,
+      "offset": 2976,
       "source": "css/css-color/parsing/alpha-color-computed.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "512f790e36a2058d",
+      "id": "4f4263038af91e77",
       "kind": "declaration",
-      "offset": 3182,
+      "offset": 3077,
       "source": "css/css-color/parsing/alpha-color-computed.html",
       "status": "pass",
       "suite": "wpt-css"
     },
     {
       "detail": "",
-      "id": "b3e0ea651f1cc141",
+      "id": "f9fcd13352f9edad",
       "kind": "declaration",
-      "offset": 3306,
+      "offset": 3297,
+      "source": "css/css-color/parsing/alpha-color-computed.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "061ffe6de9349859",
+      "kind": "declaration",
+      "offset": 3403,
+      "source": "css/css-color/parsing/alpha-color-computed.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "5df058f55c8ce414",
+      "kind": "declaration",
+      "offset": 3509,
+      "source": "css/css-color/parsing/alpha-color-computed.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "a75d3e99dbd3e482",
+      "kind": "declaration",
+      "offset": 3624,
+      "source": "css/css-color/parsing/alpha-color-computed.html",
+      "status": "pass",
+      "suite": "wpt-css"
+    },
+    {
+      "detail": "",
+      "id": "f034ebf26cf6d962",
+      "kind": "declaration",
+      "offset": 3748,
       "source": "css/css-color/parsing/alpha-color-computed.html",
       "status": "pass",
       "suite": "wpt-css"
@@ -286461,8 +288189,8 @@
       "suite": "wpt-css"
     }
   ],
-  "duration_seconds": 159.548,
-  "generated_at": "2026-10-05T10:30:30Z",
+  "duration_seconds": 160.444,
+  "generated_at": "2026-10-12T10:53:28Z",
   "minifier": {
     "commit": "4866db785c78abb564697ade821d0e4425b89364",
     "name": "Minify++",
@@ -286479,16 +288207,16 @@
   "sources": {
     "wpt": {
       "branch": "master",
-      "revision": "25124fb10060fd038ec70094902d1190a8260f4e",
-      "synced_at": "2026-10-05T10:27:40Z",
+      "revision": "f0b559fab875d161275a59057f97fa6f546e8d1f",
+      "synced_at": "2026-10-12T10:50:41Z",
       "url": "https://github.com/web-platform-tests/wpt.git"
     }
   },
   "summary": {
     "counts": {
       "cssom-difference": 5,
-      "pass": 31819
+      "pass": 32011
     },
-    "total": 31824
+    "total": 32016
   }
 }
